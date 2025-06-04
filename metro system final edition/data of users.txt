@@ -1,0 +1,10 @@
+information of person is in this sequence :(name--> id  --> role --> subsucribtion [   fixed - subscription_type  -  expiry  -  activation  -  plan_type  -  Num_trips  -  duriation_plan type  -  remaining_trips  -  balance wallet  -  zoneprice  -  zone  -  wallet name  ] ------> balance --> password-->email)
+7
+
+omar   11111   1   n   0 0 0   10000   123456789   omar@gmail.com
+ali   12345   1   n   0 0 0   20000   987654321   aly@gmail.com
+nour   292   0   n   Smart_wallet. 6/5/2025 332   650   17102005   nouraahmed.9912@gmail.com
+haya   3610   0   y   General_pass. 6/5/2026 6/5/2025 year 730 1 728 4000 2   1000   55558888   haya@gmail.com
+maher   8136   0   n   Smart_wallet. 7/5/2025 400   4800   147258369   maher@gmail.com
+moaaz   8512   0   y   Scholar_pass. 7/8/2025 7/5/2025 month 180 3 177 300 4   9700   03092006   moaaz@gmail.com
+Ali._.Omar   3250   0   n   Smart_wallet. 7/5/2025 290   -240   gashg123   amasatwq2345@gmail.com

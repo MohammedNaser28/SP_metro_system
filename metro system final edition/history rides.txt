@@ -1,0 +1,10 @@
+292     Abbassia.     El-Ahram.     8     06/05/2025
+292     Ring_Road.     Cairo_University.     10     06/05/2025
+3610     Cairo_Stadium.     Imbaba.     729     06/05/2025
+3610     Sudan.     Ring_Road.     728     07/05/2025
+8136     Helwan.     Mar-Girgis.     179     07/05/2025
+8136     Bab_El-Shaaria.     Switching.     178     07/05/2025
+8512     Adly_Mansour.     Abbassia.     179     07/05/2025
+8512     Sudan.     Cairo_University.     178     07/05/2025
+8512     Dokki.     Kit_Kat.     177     07/05/2025
+3250     Koliet_El-Zeraa.     Manshiet_El-Sadr.     10     07/05/2025

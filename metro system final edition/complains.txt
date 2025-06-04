@@ -1,0 +1,9 @@
+The sequence of data is (name---> id ----> complaints)
+
+omar  11111              NO COMPLAINS
+ali  12345              NO COMPLAINS
+nour  292             NO COMPLAINS
+haya  3610           NO COMPLAINS
+maher  8136       NO COMPLAINS
+moaaz  8512    NO COMPLAINS
+Ali._.Omar  3250 the best metro system ever  -- 
