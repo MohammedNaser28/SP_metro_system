@@ -19,7 +19,7 @@ const int MAX_rides = 10000;
 const int MAX_STATIONS_PER_LINE = 40;
 const int NUM_LINES = 3;
 const int MAX = (MAX_STATIONS_PER_LINE * NUM_LINES) * 100;
-
+// alooooool
 int stationcnt = 0;
 int real_zone;
 int balance;
