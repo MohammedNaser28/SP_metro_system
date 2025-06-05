@@ -13,7 +13,7 @@
 #include <sstream>
 #define usersnum 1000
 # define Size 10000
-using namespace std;
+using namespace std;//why are you here 
 
 const int MAX_rides = 10000;
 const int MAX_STATIONS_PER_LINE = 40;
