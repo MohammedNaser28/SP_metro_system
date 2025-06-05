@@ -18,7 +18,7 @@ using namespace std;//why are you here
 const int MAX_rides = 10000;
 const int MAX_STATIONS_PER_LINE = 40;
 const int NUM_LINES = 3;
-const int MAX = (MAX_STATIONS_PER_LINE * NUM_LINES) * 10;
+const int MAX = (MAX_STATIONS_PER_LINE * NUM_LINES) * 100;
 
 int stationcnt = 0;
 int real_zone;
