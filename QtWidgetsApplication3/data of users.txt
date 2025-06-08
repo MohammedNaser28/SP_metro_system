@@ -1,5 +1,0 @@
-information of person is in this sequence:
-(name --> id --> role --> balance --> password --> email)
-1
-
- ID1 0 0  

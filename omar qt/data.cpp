@@ -117,7 +117,7 @@ void saveusersinfo() {
         return;
     }
 
-    dataofusers << "information of person is in this sequence:\n"
+    dataofusers << "information of person is in this sequence:"
         << "(name --> id --> role --> balance --> password --> email)\n";
 
     dataofusers << number_of_users_in_array << "\n\n";
