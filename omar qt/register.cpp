@@ -36,12 +36,29 @@ bool Register::SignInFun(const string& username, const string& userpass, bool& v
     return IsFound;
 }
 
+bool invalid_email = false;
 bool Register::newaccount(const string& username, const string& userpass, const string& email)
 {
     for (int i = 0; i < number_of_users_in_array; i++) {
         if (arr_users[i].username == username || arr_users[i].contactdet.email == email)
             return false; // User exists
     }
+    ///
+    if (email.size() <= 10)
+    {
+         invalid_email=true;
+         return false;
+    }
+    if (email.size() > 10)
+    {
+        string check = email.substr(email.size() - 10, 10);
+        if (check != "@gmail.com")
+        {
+             invalid_email=true;
+             return false;
+        }
+    }
+    ///
     arr_users[number_of_users_in_array].username = username;
     arr_users[number_of_users_in_array].pass = userpass;
     arr_users[number_of_users_in_array].contactdet.email = email;
@@ -85,7 +102,11 @@ void Register::on_pushButton_sign_clicked()
         QMessageBox::information(this, "Sign Up", "Account created successfully!");
         emit switchToMainWindow();
     }
-    else {
+    else if (invalid_email)
+    {
+        QMessageBox::warning(this, "Sign Up", "Incorrect email!");
+    }
+    else if (!success) {
         QMessageBox::warning(this, "Sign Up", "Username or email already exists.");
     }
 }
