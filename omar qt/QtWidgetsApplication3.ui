@@ -231,8 +231,8 @@
      <widget class="QWidget" name="widget_21" native="true">
       <property name="geometry">
        <rect>
-        <x>89</x>
-        <y>79</y>
+        <x>110</x>
+        <y>80</y>
         <width>511</width>
         <height>471</height>
        </rect>
@@ -242,7 +242,7 @@
         <rect>
          <x>140</x>
          <y>50</y>
-         <width>221</width>
+         <width>291</width>
          <height>51</height>
         </rect>
        </property>
@@ -250,7 +250,23 @@
         <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
        </property>
        <property name="text">
-        <string>Rides History</string>
+        <string>Rides History </string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="textBrowser">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>150</y>
+         <width>491</width>
+         <height>331</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>14</pointsize>
+        </font>
        </property>
       </widget>
      </widget>
@@ -1669,7 +1685,7 @@ background-position: center;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
