@@ -7,6 +7,7 @@
 #include <QCoreApplication> // Required for QCoreApplication::applicationDirPath()
 #define l Qt::endl
 using namespace std;
+//hello iam nour
 
 
 //register 
