@@ -11,6 +11,7 @@
 #include "QtWidgetsApplication3.h"
 #include "ui_QtWidgetsApplication3.h"  // Include the generated UI class
 #include"dependence.h"
+#include "structures.h"
 
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
@@ -33,6 +34,10 @@ QtWidgetsApplication3::~QtWidgetsApplication3()
 //}
 
 void  QtWidgetsApplication3::on_personal_details_clicked() {
+  
+    ui->label_31->setText(QString::fromStdString(arr_users[indexofuser].id));
+    ui->label_32->setText(QString::fromStdString(arr_users[indexofuser].username));
+
     ui->stackedWidget->setCurrentWidget(ui->current_data);
 }
 void  QtWidgetsApplication3::on_rides_clicked() {

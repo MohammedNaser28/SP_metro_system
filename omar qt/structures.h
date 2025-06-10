@@ -3,8 +3,7 @@
 #include "dependence.h"
 #include "global.h"
 #include <string>
-
-using std::string;
+using namespace std;
 
 struct RideInfo {
     string id;
