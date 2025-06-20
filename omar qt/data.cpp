@@ -864,4 +864,25 @@ void load_user_subsc() {
 //history rides 
 
 
-//stations 
+void read_stations() {
+    ifstream input_stations("stations.txt");
+    if (!input_stations.is_open()) {
+        cout << "Error: Could not open stations.txt\n";
+        return;
+    }
+
+    input_stations.ignore(1000, '\n');
+
+    for (int i = 0; i < MAX_STATIONS_PER_LINE; i++) {
+        for (int j = 0; j < NUM_LINES; j++) {
+            input_stations >> allStations[i][j].name;
+            if (allStations[i][j].name != "-" || allStations[i][j].name != "Switching.") {
+                num_stations++;
+            }
+            allStations[i][j].number = (j * MAX_STATIONS_PER_LINE) + (i + 1);
+            allStations[i][j].line = j + 1;
+        }
+    }
+
+    input_stations.close();
+}

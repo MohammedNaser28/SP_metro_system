@@ -1,13 +1,4 @@
-//#include "QtWidgetsApplication3.h"
-//
-//QtWidgetsApplication3::QtWidgetsApplication3(QWidget *parent)
-//    : QMainWindow(parent)
-//{
-//    ui.setupUi(this);
-//}
-//
-//QtWidgetsApplication3::~QtWidgetsApplication3()
-//{}
+
 #include "QtWidgetsApplication3.h"
 #include "ui_QtWidgetsApplication3.h"  // Include the generated UI class
 #include"dependence.h"
@@ -45,12 +36,7 @@ QtWidgetsApplication3::~QtWidgetsApplication3()
     delete ui;  // Clean up
 }
 
-//void  QtWidgetsApplication3::on_pushButton_12_clicked() {
-//    ui->stackedWidget->setCurrentWidget(ui->create_account);
-//}
-//void  QtWidgetsApplication3::on_pushButton_13_clicked() {
-//    ui->stackedWidget->setCurrentWidget(ui->login);
-//}
+
 
 void  QtWidgetsApplication3::on_personal_details_clicked() {
     ui->email_label->setText(QString::fromStdString(arr_users[indexofuser].contactdet.email));
@@ -66,9 +52,7 @@ void  QtWidgetsApplication3::on_rides_clicked() {
 void  QtWidgetsApplication3::on_sub_settings_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->manage_plan);
 }
-//void  QtWidgetsApplication3::on_logout_clicked() {
-//    ui->stackedWidget->setCurrentWidget(ui->welcome1);
-//}
+
 void  QtWidgetsApplication3::on_pushButton_6_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->new_rides);
 }
@@ -97,7 +81,7 @@ void  QtWidgetsApplication3::on_pushButton_10_clicked() {
             if (arr_subscription[i].fixed == 'y') {
                 output += "Fixed Payment every:\n";
 
-                // Monthly subscriptions
+                
                 for (int j = 0; j < arr_subscription[i].month_count; j++) {
                     output += QString::number(arr_subscription[i].month_sub[j].duration) +
                         " months for " +
@@ -133,7 +117,7 @@ void  QtWidgetsApplication3::on_pushButton_10_clicked() {
 
             }
             else if (arr_subscription[i].fixed == 'n') {
-                // Wallet-based subscriptions
+                
                 output += "You can add funds in multiples of " +
                     QString::number(arr_subscription[i].wallet_sub.fund_multiple) +
                     " LE at any time\n";
@@ -159,7 +143,7 @@ void  QtWidgetsApplication3::on_pushButton_10_clicked() {
         }
     }
 
-    // Now output contains everything
+    
     ui->list_info->setText(output);
 
 }
@@ -197,9 +181,7 @@ void QtWidgetsApplication3::on_exit2_clicked() {
 void QtWidgetsApplication3::on_exit3_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 }
-//void QtWidgetsApplication3::on_exit01_clicked() {
-//    ui->stackedWidget->setCurrentWidget(ui->end);
-//}
+
 void QtWidgetsApplication3::on_exit02_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 }
