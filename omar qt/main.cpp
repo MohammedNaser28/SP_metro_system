@@ -3,6 +3,7 @@
 #include <QApplication>
 #include"register.h"
 #include"data.h"
+//last one 
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);  // Initialize the application
