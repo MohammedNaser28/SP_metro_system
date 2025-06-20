@@ -12,7 +12,8 @@ int main(int argc, char* argv[])
     load_subsc_data();
     load_user_subsc();//problem is here dont use it 
     read_stations();  //LOAD STATIONS
-
+    loadRideHist();
+   
 
     Register x;
     QtWidgetsApplication3 w;
@@ -31,6 +32,7 @@ int main(int argc, char* argv[])
         saveusersinfo();
         save_subsc_data();
         save_user_subsc();
+        save_rides_to_file();
         });
 
     x.show();
