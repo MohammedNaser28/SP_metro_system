@@ -47,6 +47,7 @@ bool Register::newaccount(const string& username, const string& userpass, const 
     arr_users[number_of_users_in_array].contactdet.email = email;
     arr_users[number_of_users_in_array].admin_role = false;
     arr_users[number_of_users_in_array].id = "ID" + to_string(number_of_users_in_array + 1); // simple ID
+    indexofuser = number_of_users_in_array; 
     number_of_users_in_array++;
     return true;
 }
