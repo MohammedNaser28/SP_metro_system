@@ -46,6 +46,9 @@ private slots:
     void on_exit6_clicked();
     void on_exit7_clicked();
     void on_exit8_clicked();
+    /*ride stations */
+   
+
  
 private:
     Ui::MainWindow* ui;  // Use Ui::MainWindow, not Ui::QtWidgetsApplication3

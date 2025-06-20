@@ -1,7 +1,4 @@
 information of person is in this sequence:(name --> id --> role --> balance --> password --> email)
-4
+1
 
 omar ID1 0 0 123456789 omar@gmail.com
-alol ID2 0 0 12345678 abayaly9@gmail.co
-alol2 ID3 0 0 12345678 anayaly@
-moaaz ID4 0 0 123456789 moaaz@gmail.com

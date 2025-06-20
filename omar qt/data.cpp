@@ -1,15 +1,10 @@
 
 #include "data.h"
-#include <iostream>
-#include <QFile>
-#include <QTextStream>
-#include <QDebug>
-#include <QCoreApplication> // Required for QCoreApplication::applicationDirPath()
-#define endl Qt::endl
 using namespace std;
+#include <QCoreApplication> // Required for QCoreApplication::applicationDirPath()
 
 
-//register 
+
 void ReadFromFile() {
     ifstream inputfromfile("data of users.txt");
     if (!inputfromfile.is_open()) {
@@ -48,6 +43,7 @@ void ReadFromFile() {
 
     inputcomplaint.close();
 }
+
 
 void saveusersinfo() {
     ofstream outfile_complaints("complains.txt");
@@ -99,245 +95,26 @@ void saveusersinfo() {
     dataofusers.close();
 }
 
-//subsc data 
-void load_subsc_data() {
-    QFile file("subsc data.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        cout << "No subscription data found!" << endl;
+
+void read_stations() {
+    ifstream input_stations("stations.txt");
+    if (!input_stations.is_open()) {
+        cout << "Error: Could not open stations.txt\n";
         return;
     }
 
-    QTextStream in(&file);
-    in >> num_of_subsc;
+    input_stations.ignore(1000, '\n');
 
-    for (int i = 0; i < num_of_subsc; i++) {
-        QString qUsername;
-        in >> qUsername;
-        arr_users[i].username = qUsername.toStdString();
-        in >> arr_subscription[i].fixed;
-
-        if (arr_subscription[i].fixed == 'y') {
-
-            in >> arr_subscription[i].month_count;
-            for (int j = 0; j < arr_subscription[i].month_count; j++) {
-                in >> arr_subscription[i].month_sub[j].duration
-                    >> arr_subscription[i].month_sub[j].no_of_trips
-                    >> arr_subscription[i].month_sub[j].zone_num;
-                for (int k = 0; k < arr_subscription[i].month_sub[j].zone_num; k++) {
-                    in >> arr_subscription[i].month_sub[j].zonesPrice[k];
-                }
+    for (int i = 0; i < MAX_STATIONS_PER_LINE; i++) {
+        for (int j = 0; j < NUM_LINES; j++) {
+            input_stations >> allStations[i][j].name;
+            if (allStations[i][j].name != "-") {
+                num_stations++;
             }
-
-            in >> arr_subscription[i].year_count;
-            for (int j = 0; j < arr_subscription[i].year_count; j++) {
-                in >> arr_subscription[i].year_sub[j].duration
-                    >> arr_subscription[i].year_sub[j].no_of_trips
-                    >> arr_subscription[i].year_sub[j].zone_num;
-                for (int k = 0; k < arr_subscription[i].year_sub[j].zone_num; k++) {
-                    in >> arr_subscription[i].year_sub[j].zonesPrice[k];
-                }
-            }
-
-            in.readLine(); // to move to next line
-            arr_subscription[i].notes = in.readLine().toStdString();
-
-        }
-        else if (arr_subscription[i].fixed == 'n') {
-
-            in >> arr_subscription[i].wallet_sub.card_balance
-                >> arr_subscription[i].wallet_sub.fund_multiple
-                >> arr_subscription[i].wallet_sub.zone_num;
-
-            for (int k = 0; k < arr_subscription[i].wallet_sub.zone_num; k++) {
-                in >> arr_subscription[i].wallet_sub.zonesPrice[k];
-            }
-
-            in.readLine(); // to move to next line
-            arr_subscription[i].notes = in.readLine().toStdString();
+            allStations[i][j].number = (j * MAX_STATIONS_PER_LINE) + (i + 1);
+            allStations[i][j].line = j + 1;
         }
     }
 
-    file.close();
+    input_stations.close();
 }
-
-void save_subsc_data() {
-    QFile file("subsc data.txt");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        cout << "Error opening file for writing!" << endl;
-        return;
-    }
-
-    QTextStream out(&file);
-
-    out << num_of_subsc << endl;
-
-    for (int i = 0; i < num_of_subsc; i++) {
-        if (arr_subscription[i].fixed == 'y') {
-
-            out << arr_subscription[i].plan_name.c_str() << endl;
-            out << arr_subscription[i].fixed << endl;
-
-            out << arr_subscription[i].month_count << endl;
-            for (int j = 0; j < arr_subscription[i].month_count; j++) {
-                out << arr_subscription[i].month_sub[j].duration << "   "
-                    << arr_subscription[i].month_sub[j].no_of_trips << "   "
-                    << arr_subscription[i].month_sub[j].zone_num << "   ";
-                for (int k = 0; k < arr_subscription[i].month_sub[j].zone_num; k++) {
-                    out << arr_subscription[i].month_sub[j].zonesPrice[k] << "   ";
-                }
-                out << endl;
-            }
-
-            out << arr_subscription[i].year_count << endl;
-            for (int j = 0; j < arr_subscription[i].year_count; j++) {
-                out << arr_subscription[i].year_sub[j].duration << "   "
-                    << arr_subscription[i].year_sub[j].no_of_trips << "   "
-                    << arr_subscription[i].year_sub[j].zone_num << "   ";
-                for (int k = 0; k < arr_subscription[i].year_sub[j].zone_num; k++) {
-                    out << arr_subscription[i].year_sub[j].zonesPrice[k] << "   ";
-                }
-                out << endl;
-            }
-
-            out << arr_subscription[i].notes.c_str() << endl;
-        }
-        else if (arr_subscription[i].fixed == 'n') {
-
-            out << arr_subscription[i].plan_name.c_str() << endl
-                << arr_subscription[i].fixed << endl
-                << arr_subscription[i].wallet_sub.card_balance << "   "
-                << arr_subscription[i].wallet_sub.fund_multiple << "   "
-                << arr_subscription[i].wallet_sub.zone_num << "   ";
-            for (int k = 0; k < arr_subscription[i].wallet_sub.zone_num; k++) {
-                out << arr_subscription[i].wallet_sub.zonesPrice[k] << "   ";
-            }
-
-            out << endl;
-            out << arr_subscription[i].notes.c_str() << "   " << endl;
-        }
-    }
-
-    file.close();
-}
-
-
-
-//user subsc
-
-
-void save_user_subsc() {
-    QFile file("subsc.txt");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        cout << "Error opening file for writing!" << endl;
-        return;
-    }
-
-    QTextStream out(&file);
-    QString qUsername, qid, qSubsctype, qplantype, qactivation, qExpir;
-    for (int i = 0; i < number_of_users_in_array; i++) {
-        out << arr_users[i].sub.fixed;
-
-        out << qUsername;
-        arr_users[i].username = qUsername.toStdString();
-
-        out<< qid;
-        arr_users[i].id = qid.toStdString();
-
-        if (arr_users[i].sub.fixed == 'y') {
-            out << qSubsctype;
-            arr_users[i].sub.subscription_type = qSubsctype.toStdString();
-
-
-            out <<qplantype;
-            arr_users[i].sub.plan_type = qplantype.toStdString();
-
-            out << arr_users[i].sub.duriation_plan_type
-                << arr_users[i].sub.Num_trips
-                << arr_users[i].sub.remaining_trips
-                << arr_users[i].sub.zone
-                << arr_users[i].sub.zonePrice;
-
-
-            out << qactivation;
-            arr_users[i].sub.activation = qactivation.toStdString();
-            out << qExpir;
-            arr_users[i].sub.expiry = qExpir.toStdString();;
-        }
-        else if (arr_users[i].sub.fixed == 'n') {
-            out << qSubsctype;
-            arr_users[i].sub.subscription_type = qSubsctype.toStdString();
-            out << arr_users[i].sub.zone
-                << arr_users[i].sub.zonePrice;
-                
-            out << qactivation;
-            arr_users[i].sub.activation = qactivation.toStdString();
-
-            out << arr_users[i].sub.balancew;
-
-
-        }
-    }
-
-    file.close();
-}
-
-void load_user_subsc() {
-    QFile file("subsc.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        cout << "No subscription data found!" << endl;
-        return;
-    }
-
-    QTextStream in(&file);
-    QString qUsername, qid, qSubsctype, qplantype, qactivation, qExpir;
-    for (int i = 0; i < number_of_users_in_array; i++) {
-        in >> arr_users[i].sub.fixed;
-        
-        in <<qUsername;
-        arr_users[i].username = qUsername.toStdString();
-
-        in >> qid;
-        arr_users[i].id = qid.toStdString();
-
-        if (arr_users[i].sub.fixed == 'y') {
-            in >> qSubsctype;
-            arr_users[i].sub.subscription_type= qSubsctype.toStdString();
-              
-                
-            in >> qplantype;
-            arr_users[i].sub.plan_type = qplantype.toStdString();
-                
-            in >> arr_users[i].sub.duriation_plan_type
-                >> arr_users[i].sub.Num_trips
-                >> arr_users[i].sub.remaining_trips
-                >> arr_users[i].sub.zone
-                >> arr_users[i].sub.zonePrice;
-
-
-            in >> qactivation;
-            arr_users[i].sub.activation = qactivation.toStdString();
-            in >> qExpir;
-            arr_users[i].sub.expiry= qExpir.toStdString();;
-        }
-        else if (arr_users[i].sub.fixed == 'n') {
-            in >> qSubsctype;
-            arr_users[i].sub.subscription_type = qSubsctype.toStdString();
-            in >> arr_users[i].sub.zone
-                >> arr_users[i].sub.zonePrice;
-               
-            in >> qactivation;
-             arr_users[i].sub.activation = qactivation.toStdString();
-              
-             in>> arr_users[i].sub.balancew;
-        }
-
-        in.readLine(); // to consume leftover newline
-    }
-
-    file.close();
-}
-
-//history rides 
-
-
-//stations 

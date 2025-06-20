@@ -84,16 +84,7 @@
     <Text Include="data of users.txt">
       <Filter>Header Files</Filter>
     </Text>
-    <Text Include="subsc.txt">
-      <Filter>Header Files</Filter>
-    </Text>
-    <Text Include="history rides.txt">
-      <Filter>Header Files</Filter>
-    </Text>
     <Text Include="stations.txt">
-      <Filter>Header Files</Filter>
-    </Text>
-    <Text Include="subsc data.txt">
       <Filter>Header Files</Filter>
     </Text>
   </ItemGroup>

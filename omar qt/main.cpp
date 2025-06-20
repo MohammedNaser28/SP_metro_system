@@ -8,6 +8,8 @@ int main(int argc, char* argv[])
     QApplication a(argc, argv);  // Initialize the application
 
     ReadFromFile();  // <<< LOAD USERS BEFORE ANYTHING
+    read_stations();  //LOAD STATIONS
+
 
     Register x;
     QtWidgetsApplication3 w;

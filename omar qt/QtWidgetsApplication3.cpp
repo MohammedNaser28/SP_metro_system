@@ -11,6 +11,8 @@
 #include "QtWidgetsApplication3.h"
 #include "ui_QtWidgetsApplication3.h"  // Include the generated UI class
 #include"dependence.h"
+#include"global.h"
+#include"structures.h"
 
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
@@ -18,6 +20,23 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
 {
     ui->setupUi(this);  // Set up the UI components
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
+
+
+    ///--------           FILL STATIONS COMBOBOX            ----------///
+
+    for (int i = 0; i < MAX_STATIONS_PER_LINE; i++)
+    {
+        for (int j = 0; j < NUM_LINES; j++) 
+        {
+           
+            if (allStations[i][j].name == "-" || allStations[i][j].name == "Switching.")
+            {
+                continue;
+            }
+            ui->startstation->addItem(QString::fromStdString(allStations[i][j].name));
+            ui->endstation->addItem(QString::fromStdString(allStations[i][j].name));
+        }
+    }
 }
 
 QtWidgetsApplication3::~QtWidgetsApplication3()
@@ -59,45 +78,6 @@ void  QtWidgetsApplication3::on_pushButton_9_clicked() {
 void  QtWidgetsApplication3::on_pushButton_10_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscriptions);
 }
-
-
-//void QtWidgetsApplication3::on_pushButton_23_clicked(){
-//    QString username = ui->lineEdit_username->text().trimmed();
-//    QString password = ui->lineEdit_password->text().trimmed();
-//
-//    if (username == "haya" && password == "haya") {
-//        QMessageBox::information(this, "Login", "Username and Password is correct");
-//        ui->stackedWidget->setCurrentWidget(ui->welcome2);
-//
-//    }
-//    else {
-//        QMessageBox::warning(this, "Login", "Username and Password is not correct");
-//    }
-//}
-////void QtWidgetsApplication3::on_pushButton_sign_clicked(){
-//    QString username = ui->lineEdit_username_2->text().trimmed();
-//    QString password = ui->lineEdit_password_2->text().trimmed();
-//    QString email = ui->lineEdit_email->text().trimmed();
-//    QString balance = ui->lineEdit_balance->text().trimmed();
-//    ui->stackedWidget->setCurrentWidget(ui->welcome2);
-//
-//}
-//void QtWidgetsApplication3::on_pushButton_sign_clicked() {
-//    QString username = ui->lineEdit_username_2->text().trimmed();
-//    QString password = ui->lineEdit_password_2->text().trimmed();
-//    QString email = ui->lineEdit_email->text().trimmed();
-//
-//    bool success = newaccount(username.toStdString(), password.toStdString(), email.toStdString());
-//
-//    if (success) {
-//        QMessageBox::information(this, "Sign Up", "Account created successfully");
-//        ui->stackedWidget->setCurrentWidget(ui->welcome2);
-//    }
-//    else {
-//        QMessageBox::warning(this, "Sign Up", "Account creation failed. Try different username/email.");
-//    }
-//}
-
 
 void QtWidgetsApplication3::on_back1_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
