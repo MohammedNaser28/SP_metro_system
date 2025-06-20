@@ -87,5 +87,11 @@
     <Text Include="stations.txt">
       <Filter>Header Files</Filter>
     </Text>
+    <Text Include="subsc data.txt">
+      <Filter>Header Files</Filter>
+    </Text>
+    <Text Include="subsc.txt">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

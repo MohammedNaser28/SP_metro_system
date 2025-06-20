@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 
     ReadFromFile();  // <<< LOAD USERS BEFORE ANYTHING
     load_subsc_data();
-    load_user_subsc();
+    load_user_subsc();//problem is here dont use it 
     read_stations();  //LOAD STATIONS
 
 
