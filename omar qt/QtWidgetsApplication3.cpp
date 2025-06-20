@@ -14,6 +14,7 @@
 #include"global.h"
 #include"structures.h"
 
+
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)  // Correct link to the UI class generated from the .ui file
@@ -52,6 +53,11 @@ QtWidgetsApplication3::~QtWidgetsApplication3()
 //}
 
 void  QtWidgetsApplication3::on_personal_details_clicked() {
+    ui->email_label->setText(QString::fromStdString(arr_users[indexofuser].contactdet.email));
+    ui->pass_label->setText(QString::fromStdString(arr_users[indexofuser].pass));
+    ui->id_label->setText(QString::fromStdString(arr_users[indexofuser].id));
+    ui->balance_label->setText(QString::number(arr_users[indexofuser].balance));
+    ui->username_label->setText(QString::fromStdString(arr_users[indexofuser].username));
     ui->stackedWidget->setCurrentWidget(ui->current_data);
 }
 void  QtWidgetsApplication3::on_rides_clicked() {
@@ -77,6 +83,85 @@ void  QtWidgetsApplication3::on_pushButton_9_clicked() {
 }
 void  QtWidgetsApplication3::on_pushButton_10_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscriptions);
+    QString output;
+
+    if (num_of_subsc == 0) {
+        output += "No available subscriptions\n";
+    }
+    else {
+        output += "* There are many options, choose what suits you *\n\n";
+
+        for (int i = 0; i < num_of_subsc; i++) {
+            output += "\t*" + QString::number(i + 1) + " - " + QString::fromStdString(arr_subscription[i].plan_name) + "\n";
+
+            if (arr_subscription[i].fixed == 'y') {
+                output += "Fixed Payment every:\n";
+
+                // Monthly subscriptions
+                for (int j = 0; j < arr_subscription[i].month_count; j++) {
+                    output += QString::number(arr_subscription[i].month_sub[j].duration) +
+                        " months for " +
+                        QString::number(arr_subscription[i].month_sub[j].no_of_trips) +
+                        " trips with limited stations access\n";
+
+                    for (int k = 0; k < arr_subscription[i].month_sub[j].zone_num; k++) {
+                        output += "For Zone " + QString::number(k + 1) + " : " +
+                            QString::number(arr_subscription[i].month_sub[j].zonesPrice[k]) +
+                            " LE\n";
+                    }
+
+                    output += "\n";
+                }
+
+                // Yearly subscriptions
+                for (int j = 0; j < arr_subscription[i].year_count; j++) {
+                    output += QString::number(arr_subscription[i].year_sub[j].duration) +
+                        " years for " +
+                        QString::number(arr_subscription[i].year_sub[j].no_of_trips) +
+                        " trips with limited stations access\n";
+
+                    for (int k = 0; k < arr_subscription[i].year_sub[j].zone_num; k++) {
+                        output += "For Zone " + QString::number(k + 1) + " : " +
+                            QString::number(arr_subscription[i].year_sub[j].zonesPrice[k]) +
+                            " LE\n";
+                    }
+
+                    output += "\n";
+                }
+
+                output += "*******************************\n\n";
+
+            }
+            else if (arr_subscription[i].fixed == 'n') {
+                // Wallet-based subscriptions
+                output += "You can add funds in multiples of " +
+                    QString::number(arr_subscription[i].wallet_sub.fund_multiple) +
+                    " LE at any time\n";
+
+                output += "The card balance cannot exceed " +
+                    QString::number(arr_subscription[i].wallet_sub.card_balance) +
+                    " LE\n";
+
+                output += "No time restrictions\n";
+                output += "Zones prices:\n";
+
+                for (int k = 0; k < arr_subscription[i].wallet_sub.zone_num; k++) {
+                    output += "For Zone " + QString::number(k + 1) + " : " +
+                        QString::number(arr_subscription[i].wallet_sub.zonesPrice[k]) +
+                        " LE\n";
+                }
+
+                output += "\n*******************************\n\n";
+            }
+
+            // Add notes
+            output += QString::fromStdString(arr_subscription[i].notes) + "\n\n";
+        }
+    }
+
+    // Now output contains everything
+    ui->list_info->setText(output);
+
 }
 
 void QtWidgetsApplication3::on_back1_clicked() {
