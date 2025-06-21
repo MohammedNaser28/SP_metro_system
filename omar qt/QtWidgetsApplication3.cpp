@@ -148,6 +148,13 @@ void  QtWidgetsApplication3::on_pushButton_10_clicked() {
 
 }
 
+void  QtWidgetsApplication3::on_confirmride_clicked()
+{
+    string start_st, end_st;
+    start_st = ui->startstation->currentText().toStdString();
+    end_st = ui->endstation->currentText().toStdString();
+}
+
 void QtWidgetsApplication3::on_back1_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }

@@ -1011,6 +1011,8 @@ void load_user_subsc() {
 ////history rides 
 
 
+///-----         STATIONS PART          ----///
+
 void read_stations() {
     ifstream input_stations("stations.txt");
     if (!input_stations.is_open()) {
@@ -1033,6 +1035,30 @@ void read_stations() {
 
     input_stations.close();
 }
+
+
+void stations2file() {
+    ofstream output("stations.txt", ios::out);
+    if (!output.is_open()) {
+        cout << "Error: Could not open stations.txt for writing\n";
+        return;
+    }
+
+    output << "line 1" << "  \t\t\t\tline 2" << "  \t\t\t\t\tline 3" << endl << endl;
+
+    for (int i = 0; i < MAX_STATIONS_PER_LINE; i++) {
+        for (int j = 0; j < NUM_LINES; j++) {
+            output << left << setw(20) << allStations[i][j].name << "\t";
+        }
+        output << endl;
+    }
+
+    output.close();
+}
+
+
+
+
 
 
 //history 

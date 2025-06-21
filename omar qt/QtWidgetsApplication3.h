@@ -26,6 +26,7 @@ private slots:
     void on_pushButton_8_clicked();
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
+    void on_confirmride_clicked();
    /* void on_pushButton_13_clicked();
     void on_pushButton_sign_clicked();*/
     void on_back1_clicked();
