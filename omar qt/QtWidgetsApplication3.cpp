@@ -13,22 +13,6 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     ui->setupUi(this);  // Set up the UI components
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 
-
-    ///--------           FILL STATIONS COMBOBOX            ----------///
-
-    for (int i = 0; i < MAX_STATIONS_PER_LINE; i++)
-    {
-        for (int j = 0; j < NUM_LINES; j++) 
-        {
-           
-            if (allStations[i][j].name == "-" || allStations[i][j].name == "Switching.")
-            {
-                continue;
-            }
-            ui->startstation->addItem(QString::fromStdString(allStations[i][j].name));
-            ui->endstation->addItem(QString::fromStdString(allStations[i][j].name));
-        }
-    }
 }
 
 QtWidgetsApplication3::~QtWidgetsApplication3()
@@ -55,6 +39,22 @@ void  QtWidgetsApplication3::on_sub_settings_clicked() {
 
 void  QtWidgetsApplication3::on_pushButton_6_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->new_rides);
+
+    ///--------           FILL STATIONS COMBOBOX            ----------///
+
+    for (int i = 0; i < NUM_LINES; i++)
+    {
+        for (int j = 0; j < MAX_STATIONS_PER_LINE; j++)
+        {
+
+            if (allStations[j][i].name == "-" || allStations[j][i].name == "Switching.")
+            {
+                continue;
+            }
+            ui->startstation->addItem(QString::fromStdString(allStations[j][i].name));
+            ui->endstation->addItem(QString::fromStdString(allStations[j][i].name));
+        }
+    }
 }
 void  QtWidgetsApplication3::on_pushButton_7_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->rides_history);
