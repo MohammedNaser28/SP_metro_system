@@ -72,26 +72,43 @@ void calc_kit_kat_index()
     }
 }
 
-void findShortestPath(int start, int end) {
+
+
+int find_st_num(string start)
+{
+    for (int i = 0;i < NUM_LINES;i++)
+    {
+
+        for (int j = 0;j < MAX_STATIONS_PER_LINE;j++)
+        {
+            if (start == allStations[i][j].name)
+                return allStations[i][j].number;
+
+        }
+    }
+}
+
+string findShortestPath(int start, int end) {
     int parent[MAX];
+    string path_string;
     calc_kit_kat_index();
     if ((start > kit_kat_index && start < switching_index && end > switching_index) ||
         (end > kit_kat_index && end<switching_index && start>switching_index))
     {
-        cout << "\n--- Route ---\n";
+        path_string+="\n--- Route ---\n";
         if (start < switching_index)     ///start in rod elfarag branch
         {
             int cnt = start - kit_kat_index;
             for (int i = cnt - 1;i >= -1;i--)
             {
                 stationcnt++;
-                cout << "-> " << allStations[kit_kat_index + i - (2 * MAX_STATIONS_PER_LINE)][2].name << endl;
+                path_string+=("-> "+ allStations[kit_kat_index + i - (2 * MAX_STATIONS_PER_LINE)][2].name + '\n');
             }
 
             for (int i = 0;i < (end - switching_index);i++)
             {
                 stationcnt++;
-                cout << "-> " << allStations[i + switching_index - (2 * MAX_STATIONS_PER_LINE)][2].name << endl;
+                path_string += ("-> " + allStations[i + switching_index - (2 * MAX_STATIONS_PER_LINE)][2].name +"\n");
             }
 
         }
@@ -101,27 +118,27 @@ void findShortestPath(int start, int end) {
             for (int i = cnt - 1;i >= 0;i--)
             {
                 stationcnt++;
-                cout << "-> " << allStations[switching_index + i - (2 * MAX_STATIONS_PER_LINE)][2].name << endl;
+                path_string += ("-> " + allStations[switching_index + i - (2 * MAX_STATIONS_PER_LINE)][2].name +"\n");
             }
             for (int i = -1;i < (end - kit_kat_index);i++)
             {
                 stationcnt++;
-                cout << "-> " << allStations[kit_kat_index + i - (2 * MAX_STATIONS_PER_LINE)][2].name << endl;
+                path_string += ("-> " + allStations[kit_kat_index + i - (2 * MAX_STATIONS_PER_LINE)][2].name + "\n");
             }
 
         }
-        return;
+        return path_string;
     }
     if (!bfs(start, end, parent)) {
-        cout << "No path found.\n";
-        return;
+        path_string+="No path found.\n";
+        return path_string;
     }
 
     int path[MAX], count = 0;
     for (int at = end; at != -1; at = parent[at])
         path[count++] = at;
 
-    cout << "\n--- Route ---\n";
+   path_string+="\n--- Route ---\n";
 
     int lastLine = -1;
     string lastName = "";
@@ -138,10 +155,10 @@ void findShortestPath(int start, int end) {
         int line = graph[curr][next];
 
         if (line != lastLine && lastLine != -1) {
-            cout << "-- Switch to Line " << line << " --\n";
+            path_string+=( "-- Switch to Line " + to_string(line) + " --\n");
         }
 
-        cout << "-> " << currName << "\n";
+        path_string += ("-> " + currName + "\n");
         lastLine = line;
         lastName = currName;
     }
@@ -149,6 +166,8 @@ void findShortestPath(int start, int end) {
 
     string lastStationName = allStations[(end - 1) % MAX_STATIONS_PER_LINE][(end - 1) / MAX_STATIONS_PER_LINE].name;
     if (lastStationName != lastName) {
-        cout << "-> " << lastStationName << "\n";
+        path_string += ("-> " + lastStationName + "\n");
     }
+
+    return path_string;
 }

@@ -4,7 +4,7 @@
 #include"dependence.h"
 #include"global.h"
 #include"structures.h"
-
+#include"stations.h"
 
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
@@ -153,6 +153,10 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
     string start_st, end_st;
     start_st = ui->startstation->currentText().toStdString();
     end_st = ui->endstation->currentText().toStdString();
+    buildGraph();
+   string path= findShortestPath(find_st_num(start_st),find_st_num(end_st));
+   ui->textBrowser->clear();
+   ui->textBrowser->setText(QString::fromStdString(path));
 }
 
 void QtWidgetsApplication3::on_back1_clicked() {
