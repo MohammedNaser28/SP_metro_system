@@ -155,8 +155,8 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
     end_st = ui->endstation->currentText().toStdString();
     buildGraph();
    string path= findShortestPath(find_st_num(start_st),find_st_num(end_st));
-   ui->textBrowser->clear();
-   ui->textBrowser->setText(QString::fromStdString(path));
+   ui->viewride->clear();
+   ui->viewride->setText(QString::fromStdString(path));
 }
 
 void QtWidgetsApplication3::on_back1_clicked() {

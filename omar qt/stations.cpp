@@ -1,6 +1,6 @@
 #include<string>
 #include"structures.h"
-#include"global.cpp"
+#include"global.h"
 
 
 
@@ -76,10 +76,10 @@ void calc_kit_kat_index()
 
 int find_st_num(string start)
 {
-    for (int i = 0;i < NUM_LINES;i++)
+    for (int i = 0;i < MAX_STATIONS_PER_LINE;i++)
     {
 
-        for (int j = 0;j < MAX_STATIONS_PER_LINE;j++)
+        for (int j = 0;j < NUM_LINES;j++)
         {
             if (start == allStations[i][j].name)
                 return allStations[i][j].number;
@@ -102,7 +102,7 @@ string findShortestPath(int start, int end) {
             for (int i = cnt - 1;i >= -1;i--)
             {
                 stationcnt++;
-                path_string+=("-> "+ allStations[kit_kat_index + i - (2 * MAX_STATIONS_PER_LINE)][2].name + '\n');
+                path_string+=("-> "+ allStations[kit_kat_index + i - (2 * MAX_STATIONS_PER_LINE)][2].name + "\n");
             }
 
             for (int i = 0;i < (end - switching_index);i++)

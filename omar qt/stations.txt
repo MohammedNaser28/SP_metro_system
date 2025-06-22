@@ -5,7 +5,7 @@ Ain_Helwan.         	Sakiat_Mekki.       	El-Haykestep.
 Helwan_University.  	Omm_El-Misryeen.    	Omar_Ibn_El-Khattab.	
 Wadi_Hof.           	Giza.               	Qobaa.              	
 Hadayek_Helwan.     	Faisal.             	Hesham_Barakat.     	
-El-Ma'sara.         	Cairo_University.   	El-Nozha.           	
+El-Ma'sara.         	Cairo_University_2.   	El-Nozha.           	
 Torah_El-Asmant.    	El_Bohouth.         	Shams_Club.         	
 Kotsika.            	Dokki.              	Alf_Maskan.         	
 Torah_El-Balad.     	Opera.              	Heliopolis.         	

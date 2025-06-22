@@ -11,7 +11,7 @@ int num_of_subsc = 0;
 int kit_kat_index = 0;
 int switching_index = 0;
 int arr_sub_insights[1000] = { 0 };
-const int MAX = (MAX_STATIONS_PER_LINE * NUM_LINES) * 10;
+
 // Short integers
 short indexofuser = 0;
 short number_of_users_in_array = 0;

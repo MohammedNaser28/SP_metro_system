@@ -9,7 +9,7 @@ constexpr int MAX_rides = 10000;
 constexpr int MAX_STATIONS_PER_LINE = 40;
 constexpr int NUM_LINES = 3;
 constexpr int MAX_GRAPH_SIZE = (MAX_STATIONS_PER_LINE * NUM_LINES) * 10;
-
+const int MAX = (MAX_STATIONS_PER_LINE * NUM_LINES) * 10;
 // Global variable declarations
 extern int stationcnt;
 extern int real_zone;
