@@ -101,88 +101,7 @@ void  QtWidgetsApplication3::on_pushButton_8_clicked() {
 void  QtWidgetsApplication3::on_pushButton_9_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->renew_sub);
 }
-//void  QtWidgetsApplication3::on_pushButton_10_clicked() {
-//    ui->stackedWidget->setCurrentWidget(ui->subscriptions);
-//    QString output;
-//
-//    if (num_of_subsc == 0) {
-//        output += "No available subscriptions\n";
-//    }
-//    else {
-//        output += "* There are many options, choose what suits you *\n\n";
-//
-//        for (int i = 0; i < num_of_subsc; i++) {
-//            output += "\t*" + QString::number(i + 1) + " - " + QString::fromStdString(arr_subscription[i].plan_name) + "\n";
-//
-//            if (arr_subscription[i].fixed == 'y') {
-//                output += "Fixed Payment every:\n";
-//
-//                
-//                for (int j = 0; j < arr_subscription[i].month_count; j++) {
-//                    output += QString::number(arr_subscription[i].month_sub[j].duration) +
-//                        " months for " +
-//                        QString::number(arr_subscription[i].month_sub[j].no_of_trips) +
-//                        " trips with limited stations access\n";
-//
-//                    for (int k = 0; k < arr_subscription[i].month_sub[j].zone_num; k++) {
-//                        output += "For Zone " + QString::number(k + 1) + " : " +
-//                            QString::number(arr_subscription[i].month_sub[j].zonesPrice[k]) +
-//                            " LE\n";
-//                    }
-//
-//                    output += "\n";
-//                }
-//
-//                // Yearly subscriptions
-//                for (int j = 0; j < arr_subscription[i].year_count; j++) {
-//                    output += QString::number(arr_subscription[i].year_sub[j].duration) +
-//                        " years for " +
-//                        QString::number(arr_subscription[i].year_sub[j].no_of_trips) +
-//                        " trips with limited stations access\n";
-//
-//                    for (int k = 0; k < arr_subscription[i].year_sub[j].zone_num; k++) {
-//                        output += "For Zone " + QString::number(k + 1) + " : " +
-//                            QString::number(arr_subscription[i].year_sub[j].zonesPrice[k]) +
-//                            " LE\n";
-//                    }
-//
-//                    output += "\n";
-//                }
-//
-//                output += "*******************************\n\n";
-//
-//            }
-//            else if (arr_subscription[i].fixed == 'n') {
-//                
-//                output += "You can add funds in multiples of " +
-//                    QString::number(arr_subscription[i].wallet_sub.fund_multiple) +
-//                    " LE at any time\n";
-//
-//                output += "The card balance cannot exceed " +
-//                    QString::number(arr_subscription[i].wallet_sub.card_balance) +
-//                    " LE\n";
-//
-//                output += "No time restrictions\n";
-//                output += "Zones prices:\n";
-//
-//                for (int k = 0; k < arr_subscription[i].wallet_sub.zone_num; k++) {
-//                    output += "For Zone " + QString::number(k + 1) + " : " +
-//                        QString::number(arr_subscription[i].wallet_sub.zonesPrice[k]) +
-//                        " LE\n";
-//                }
-//
-//                output += "\n*******************************\n\n";
-//            }
-//
-//            // Add notes
-//            output += QString::fromStdString(arr_subscription[i].notes) + "\n\n";
-//        }
-//    }
-//
-//    
-//    ui->list_info->setText(output);
-//
-//}
+
 
 void QtWidgetsApplication3::on_pushButton_10_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscriptions);
@@ -258,11 +177,15 @@ void QtWidgetsApplication3::on_pushButton_10_clicked() {
 
 
 void QtWidgetsApplication3::on_pushButton_confirm_clicked() {
-    if (chosenSubscriptionIndex == -1) {
+    if (chosenSubscriptionIndex == -1) 
+    {
         QMessageBox::warning(this, "No Selection", "Please choose a subscription first.");
         return;
     }
 
+    QString selectedPlan = QString::fromStdString(arr_subscription[chosenSubscriptionIndex].plan_name);
+    QMessageBox::information(this, "Subscribed!", "You selected: " + selectedPlan);
+}
 void  QtWidgetsApplication3::on_confirmride_clicked()
 {
     string start_st, end_st;
@@ -272,8 +195,8 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
    string path= findShortestPath(find_st_num(start_st),find_st_num(end_st));
    ui->viewride->clear();
    ui->viewride->setText(QString::fromStdString(path));
-    QString selectedPlan = QString::fromStdString(arr_subscription[chosenSubscriptionIndex].plan_name);
-    QMessageBox::information(this, "Subscribed!", "You selected: " + selectedPlan);
+
+
 
 }
 
