@@ -93,5 +93,8 @@
     <Text Include="subsc.txt">
       <Filter>Header Files</Filter>
     </Text>
+    <Text Include="history rides.txt">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

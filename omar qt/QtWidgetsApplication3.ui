@@ -87,16 +87,6 @@
        <string>exit program</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="subscriptions_list">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>270</y>
-        <width>101</width>
-        <height>51</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
@@ -110,17 +100,40 @@
        <string>There are many options, choose what suits you</string>
       </property>
      </widget>
-     <widget class="QLabel" name="list_info">
+     <widget class="QListWidget" name="listWidget_subscriptions">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>200</y>
-        <width>411</width>
-        <height>321</height>
+        <x>65</x>
+        <y>221</y>
+        <width>251</width>
+        <height>301</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>530</y>
+        <width>80</width>
+        <height>24</height>
        </rect>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>Confirm</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="label_subscription_details">
+      <property name="geometry">
+       <rect>
+        <x>333</x>
+        <y>219</y>
+        <width>351</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -273,6 +286,19 @@
        </property>
        <property name="text">
         <string>Rides History</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEdit_rideHistory">
+       <property name="geometry">
+        <rect>
+         <x>63</x>
+         <y>99</y>
+         <width>411</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
