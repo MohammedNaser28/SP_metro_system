@@ -47,6 +47,7 @@ private slots:
     void on_exit6_clicked();
     void on_exit7_clicked();
     void on_exit8_clicked();
+    void on_pushButton_confirm_clicked();
     /*ride stations */
    
 

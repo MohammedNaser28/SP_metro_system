@@ -115,6 +115,7 @@
   <ItemGroup>
     <Text Include="complains.txt" />
     <Text Include="data of users.txt" />
+    <Text Include="history rides.txt" />
     <Text Include="stations.txt" />
     <Text Include="subsc data.txt" />
     <Text Include="subsc.txt" />
