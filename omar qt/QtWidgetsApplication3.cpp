@@ -263,6 +263,15 @@ void QtWidgetsApplication3::on_pushButton_confirm_clicked() {
         return;
     }
 
+void  QtWidgetsApplication3::on_confirmride_clicked()
+{
+    string start_st, end_st;
+    start_st = ui->startstation->currentText().toStdString();
+    end_st = ui->endstation->currentText().toStdString();
+    buildGraph();
+   string path= findShortestPath(find_st_num(start_st),find_st_num(end_st));
+   ui->viewride->clear();
+   ui->viewride->setText(QString::fromStdString(path));
     QString selectedPlan = QString::fromStdString(arr_subscription[chosenSubscriptionIndex].plan_name);
     QMessageBox::information(this, "Subscribed!", "You selected: " + selectedPlan);
 
