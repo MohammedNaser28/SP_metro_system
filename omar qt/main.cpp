@@ -25,6 +25,7 @@ int main(int argc, char* argv[])
 
     QObject::connect(&w, &QtWidgetsApplication3::switchToDialog, &w, [&x, &w]() {
         w.hide();
+        x.setPage(1); 
         x.show();
         });
 

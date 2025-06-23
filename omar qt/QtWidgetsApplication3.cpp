@@ -5,7 +5,7 @@
 #include"global.h"
 #include"structures.h"
 #include"stations.h"
-
+#include"register.h"
 int chosenSubscriptionIndex = -1;
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
@@ -255,6 +255,11 @@ void QtWidgetsApplication3::on_exit8_clicked() {
 
 
 
+
+
+void QtWidgetsApplication3::on_logout_clicked() {
+    emit switchToDialog();
+}
 
 
 
