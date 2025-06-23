@@ -1,5 +1,4 @@
-﻿
-#include "QtWidgetsApplication3.h"
+﻿#include "QtWidgetsApplication3.h"
 #include "ui_QtWidgetsApplication3.h"  // Include the generated UI class
 #include"dependence.h"
 #include"global.h"
