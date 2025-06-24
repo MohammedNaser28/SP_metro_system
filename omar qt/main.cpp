@@ -23,6 +23,12 @@ int main(int argc, char* argv[])
         w.show();
         });
 
+    QObject::connect(&x, &Register::windowadmin, &x, [&x, &w]() {
+        x.hide();
+        w.show();
+        w.gotoadmin();
+        });
+
     QObject::connect(&w, &QtWidgetsApplication3::switchToDialog, &w, [&x, &w]() {
         w.hide();
         x.show();

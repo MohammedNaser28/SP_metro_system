@@ -5,6 +5,9 @@
 #include"global.h"
 #include"structures.h"
 #include"stations.h"
+#include "view users.h"
+#include <QTableWidget>
+
 
 int chosenSubscriptionIndex = -1;
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
@@ -173,6 +176,39 @@ void QtWidgetsApplication3::on_pushButton_10_clicked() {
         ui->label_subscription_details->setPlainText(details);  // For QTextEdit
         });
 }
+
+void  QtWidgetsApplication3::on_pushButton_15_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
+
+
+        ui->tableWidget_users->setRowCount(0);
+        ui->tableWidget_users->setColumnCount(5);
+        QStringList headers;
+        headers << "Name"<<"Complaints" << "Email" << "Balance" << "Subscription Type";
+        ui->tableWidget_users->setHorizontalHeaderLabels(headers);
+
+        int row = 0;
+        for (int i = 0; i < number_of_users_in_array; ++i) {
+            if (arr_users[i].admin_role == 0) {
+                ui->tableWidget_users->insertRow(row);
+
+                ui->tableWidget_users->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(arr_users[i].username)));
+                ui->tableWidget_users->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(arr_users[i].complaints)));
+                ui->tableWidget_users->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(arr_users[i].contactdet.email)));
+                ui->tableWidget_users->setItem(row, 3, new QTableWidgetItem(QString::number(arr_users[i].balance)));
+                ui->tableWidget_users->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(arr_users[i].sub.subscription_type)));
+           
+
+                row++;
+            }
+        }
+    
+}
+
+void QtWidgetsApplication3::gotoadmin() {
+    ui->stackedWidget->setCurrentWidget(ui->admin);  
+}
+
 
 
 

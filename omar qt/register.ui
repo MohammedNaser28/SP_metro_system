@@ -71,7 +71,7 @@ border:1px solid white;</string>
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>230</y>
+        <y>200</y>
         <width>161</width>
         <height>24</height>
        </rect>
@@ -107,8 +107,8 @@ border:1px solid white;</string>
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>230</y>
+        <x>80</x>
+        <y>200</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -123,8 +123,8 @@ border:1px solid white;</string>
      <widget class="QPushButton" name="pushButton_login">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>310</y>
+        <x>230</x>
+        <y>370</y>
         <width>80</width>
         <height>24</height>
        </rect>
@@ -160,6 +160,29 @@ border:1px solid white;</string>
 background-position: center;
     background-repeat: no-repeat;
 </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_admincheck_2">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>280</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>280</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;admin passkey (if admin)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>

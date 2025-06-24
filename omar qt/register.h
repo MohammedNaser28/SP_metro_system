@@ -29,4 +29,5 @@ private slots:
 
 signals:
     void switchToMainWindow();
+    void windowadmin();
 };

@@ -60,6 +60,9 @@
     <ClCompile Include="stations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="view users.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="structures.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="view users.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

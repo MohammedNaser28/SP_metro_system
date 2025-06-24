@@ -13,6 +13,7 @@ class QtWidgetsApplication3 : public QMainWindow
 public:
     explicit QtWidgetsApplication3(QWidget* parent = nullptr);
     ~QtWidgetsApplication3();
+    void gotoadmin();
 
 private slots:
    /* void on_pushButton_23_clicked();*/
@@ -26,6 +27,7 @@ private slots:
     void on_pushButton_8_clicked();
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
+    void on_pushButton_15_clicked();
     void on_confirmride_clicked();
    /* void on_pushButton_13_clicked();
     void on_pushButton_sign_clicked();*/

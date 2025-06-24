@@ -96,6 +96,7 @@
     <ClCompile Include="register.cpp" />
     <ClCompile Include="stations.cpp" />
     <ClCompile Include="structures.cpp" />
+    <ClCompile Include="view users.cpp" />
     <QtRcc Include="QtWidgetsApplication3.qrc" />
     <QtMoc Include="QtWidgetsApplication3.h" />
     <ClCompile Include="main.cpp" />
@@ -107,6 +108,7 @@
     <ClInclude Include="data.h" />
     <ClInclude Include="dependence.h" />
     <ClInclude Include="global.h" />
+    <ClInclude Include="view users.h" />
     <QtMoc Include="register.h" />
     <ClInclude Include="stations.h" />
     <ClInclude Include="structures.h" />

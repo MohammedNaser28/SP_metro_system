@@ -96,14 +96,27 @@ void Register::on_pushButton_login_clicked()
 
     QString username = ui->lineEdit_username_2->text().trimmed();
     QString password = ui->lineEdit_password_2->text().trimmed();
+    QString admincheck = ui->lineEdit_admincheck_2->text().trimmed();
 
     bool validpasskey = false;
+    if (admincheck == "#ADMIN#2025")
+    {
+        validpasskey = true;
+    }
+
     bool success = SignInFun(username.toStdString(), password.toStdString(), validpasskey);
 
-    if (success) {
+    if (success && admincheck=="") {
         QMessageBox::information(this, "Login", "Login Successful");
         emit switchToMainWindow();
     }
+    else if (success && validpasskey)
+    {
+        QMessageBox::information(this, "Login", "Login Successful");
+        emit windowadmin();
+       
+    }
+
     else {
         QMessageBox::warning(this, "Login", "Incorrect username or password");
     }
