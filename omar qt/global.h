@@ -2,7 +2,7 @@
 
 #include "dependence.h"
 #include <QString>
-
+string getCurrentDate();
 constexpr int usersnum = 1000;
 constexpr int Size = 10000;
 constexpr int MAX_rides = 10000;

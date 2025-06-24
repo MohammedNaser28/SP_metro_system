@@ -171,3 +171,46 @@ string findShortestPath(int start, int end) {
 
     return path_string;
 }
+// my add to history station 
+int not_fixed(int station_num) {
+    int fare = 0;
+    int zone = 0;
+
+    // Determine the zone based on station count
+    if (station_num <= 9)
+        zone = 1;
+    else if (station_num <= 16)
+        zone = 2;
+    else if (station_num <= 23)
+        zone = 3;
+    else
+        zone = 4;
+
+    // Find matching subscription type and deduct balance
+    for (int i = 0; i < num_of_subsc; i++) {
+        if (arr_users[indexofuser].sub.subscription_type == arr_subscription[i].plan_name) {
+            int price = arr_subscription[i].wallet_sub.zonesPrice[zone - 1];
+            arr_users[indexofuser].sub.balancew -= price;
+            fare = price;
+
+            // Show balance update (optional QMessageBox or QLabel update)
+            qDebug() << "New wallet balance:" << arr_users[indexofuser].sub.balancew;
+            break; // No need to continue after match
+        }
+    }
+
+    return fare;
+}
+string getCurrentDate() {
+    QDate currentDate = QDate::currentDate();
+    QString dateString = currentDate.toString("dd/MM/yyyy");  // Qt format
+    return dateString.toStdString();  // Convert to std::string
+}
+float calculated_fare(int zone) {
+    float tripsBefore = arr_users[indexofuser].sub.remaining_trips;
+    arr_users[indexofuser].sub.remaining_trips -= 1;
+
+    qDebug() << "Your current trips are:" << arr_users[indexofuser].sub.remaining_trips;
+
+    return tripsBefore - 1;
+}
