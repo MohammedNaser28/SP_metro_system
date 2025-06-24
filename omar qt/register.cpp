@@ -13,6 +13,8 @@ Register::~Register()
     delete ui;
 }
 
+
+
 bool Register::SignInFun(const string& username, const string& userpass, bool& validpasskey)
 {
     name = username;
@@ -93,7 +95,7 @@ void Register::on_pushButton_sign_clicked()
 
 void Register::on_pushButton_login_clicked()
 {
-
+   
     QString username = ui->lineEdit_username_2->text().trimmed();
     QString password = ui->lineEdit_password_2->text().trimmed();
     QString admincheck = ui->lineEdit_admincheck_2->text().trimmed();
@@ -120,6 +122,13 @@ void Register::on_pushButton_login_clicked()
     else {
         QMessageBox::warning(this, "Login", "Incorrect username or password");
     }
+     ui->lineEdit_password_2->clear();
+    ui->lineEdit_username_2->clear();
 }
 
+void Register::setPage(int index)
+{
+    ui->stackedWidget->setCurrentIndex(index); 
+
+}
 

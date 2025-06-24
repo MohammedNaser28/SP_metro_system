@@ -13,6 +13,7 @@ class Register : public QDialog
 public:
     Register(QWidget *parent = nullptr);
     ~Register();
+    void setPage(int index);
 
 private:
     Ui::Register *ui;

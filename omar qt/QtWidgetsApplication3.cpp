@@ -1,5 +1,4 @@
-﻿
-#include "QtWidgetsApplication3.h"
+﻿#include "QtWidgetsApplication3.h"
 #include "ui_QtWidgetsApplication3.h"  // Include the generated UI class
 #include"dependence.h"
 #include"global.h"
@@ -9,6 +8,7 @@
 #include <QTableWidget>
 
 
+#include"register.h"
 int chosenSubscriptionIndex = -1;
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
@@ -291,6 +291,11 @@ void QtWidgetsApplication3::on_exit8_clicked() {
 
 
 
+
+
+void QtWidgetsApplication3::on_logout_clicked() {
+    emit switchToDialog();
+}
 
 
 
