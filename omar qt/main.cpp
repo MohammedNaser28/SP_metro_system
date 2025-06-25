@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
         
 
         w.show();
-        w.switchToPage();
+        /*w.switchToPage();*/
         });
 
     QObject::connect(&x, &Register::windowadmin, &x, [&x, &w]() {
