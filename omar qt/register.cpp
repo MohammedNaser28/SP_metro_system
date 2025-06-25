@@ -83,10 +83,14 @@ void Register::on_pushButton_sign_clicked()
 
     bool success = newaccount(username.toStdString(), password.toStdString(), email.toStdString());
 
-    if (success) {
+    if (success) 
+    {
         saveusersinfo();
         QMessageBox::information(this, "Sign Up", "Account created successfully!");
         emit switchToMainWindow();
+
+        ///-------------------------///
+
     }
     else {
         QMessageBox::warning(this, "Sign Up", "Username or email already exists.");
@@ -124,6 +128,9 @@ void Register::on_pushButton_login_clicked()
     }
      ui->lineEdit_password_2->clear();
     ui->lineEdit_username_2->clear();
+
+
+
 }
 
 void Register::setPage(int index)
