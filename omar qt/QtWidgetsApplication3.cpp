@@ -121,9 +121,13 @@ void  QtWidgetsApplication3::on_personal_details_clicked() {
     ui->username_label->setText(QString::fromStdString(arr_users[indexofuser].username));
     ui->stackedWidget->setCurrentWidget(ui->current_data);
 }
+
+
 void  QtWidgetsApplication3::on_rides_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->rides_2);
 }
+
+
 void  QtWidgetsApplication3::on_sub_settings_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->manage_plan);
 }
@@ -184,6 +188,58 @@ void QtWidgetsApplication3::on_pushButton_7_clicked() {
     }
 
     ui->textEdit_rideHistory->setText(output);  // Replace with your QTextEdit or QLabel name
+
+
+
+
+
+
+
+
+
+
+
+    //void QtWidgetsApplication3::on_pushButton_AdminRideHistory_clicked() {
+    //    ui->stackedWidget->setCurrentWidget(ui->admin_rides_history);
+
+    //    QString output;
+    //    output += "\n--- Ride History for ADMIN name : " + QString::fromStdString(arr_users[indexofuser].username) + " ---\n";
+    //    bool found = false;
+    //    int cntride = 1;
+
+    //    for (int i = 0; i < MAX_rides; i++) {
+    //        if (rides[i].entryStation != "") {
+    //            output += "\nTrip number " + QString::number(cntride) + "\n";
+    //            output += " User ID : " + QString::number(rides[i].id) + "\n";
+    //            output += " Entry station : " + QString::fromStdString(rides[i].entryStation) + "\n";
+    //            output += " Exit station : " + QString::fromStdString(rides[i].ExitStation) + "\n";
+    //            output += " Fare : " + QString::number(rides[i].RideFare) + "\n";
+    //            output += " Date of trip : " + rides[i].Date + "\n";
+    //            output += "____________________________________________________________\n";
+
+    //            found = true;
+    //            cntride++;
+    //        }
+    //    }
+
+    //    if (!found) {
+    //        output += "No rides found.\n";
+    //    }
+
+    //    ui->textEdit_AdminRideHistory->setText(output); // QTextEdit name in admin UI
+    //}
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 void  QtWidgetsApplication3::on_pushButton_8_clicked() {
