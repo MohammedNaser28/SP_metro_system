@@ -5,7 +5,7 @@
 #include <QApplication>
 #include <QPushButton>
 #include<QString>
-
+#include"choose sub.cpp"
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
@@ -15,6 +15,7 @@ public:
     ~QtWidgetsApplication3();
     void gotoadmin();
     void setPage(int index);
+    void start_up();
 private slots:
    /* void on_pushButton_23_clicked();*/
     void on_personal_details_clicked();
@@ -67,7 +68,8 @@ private slots:
     void on_exit8_clicked();
     void on_pushButton_confirm_clicked();
     void on_logout_clicked();
-    void switchToPage();
+    void choose_sub();
+   
     /*ride stations */
    
 
