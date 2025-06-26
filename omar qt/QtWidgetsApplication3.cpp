@@ -183,8 +183,107 @@ void QtWidgetsApplication3::on_pushButton_7_clicked() {
 void  QtWidgetsApplication3::on_pushButton_8_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->view_sub);
 }
+
+void  QtWidgetsApplication3::on_pushButton_15_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->user_settings);
+}
+
+void  QtWidgetsApplication3::on_pushButton_17_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
+
+
+    ui->tableWidget_users->setRowCount(0);
+    ui->tableWidget_users->setColumnCount(5);
+    QStringList headers;
+    headers << "Name" << "Complaints" << "Email" << "Balance" << "Subscription Type";
+    ui->tableWidget_users->setHorizontalHeaderLabels(headers);
+
+    int row = 0;
+    for (int i = 0; i < number_of_users_in_array; ++i) {
+        if (arr_users[i].admin_role == 0) {
+            ui->tableWidget_users->insertRow(row);
+
+            ui->tableWidget_users->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(arr_users[i].username)));
+
+
+            QString complaintText = QString::fromStdString(arr_users[i].complaints);
+            QString shortenedText = complaintText.left(30);
+            if (complaintText.length() > 30)
+                shortenedText += "...";
+
+            QTableWidgetItem* item = new QTableWidgetItem(shortenedText);
+            item->setToolTip(complaintText);
+            ui->tableWidget_users->setItem(row, 1, item);
+
+            ui->tableWidget_users->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(arr_users[i].contactdet.email)));
+            ui->tableWidget_users->setItem(row, 3, new QTableWidgetItem(QString::number(arr_users[i].balance)));
+            ui->tableWidget_users->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(arr_users[i].sub.subscription_type)));
+
+            row++;
+        }
+        /* ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
+
+         ui->tableWidget_users->setRowCount(0);
+         ui->tableWidget_users->setColumnCount(5);
+         QStringList headers;
+         headers << "Name" << "Complaints" << "Email" << "Balance" << "Subscription Type";
+         ui->tableWidget_users->setHorizontalHeaderLabels(headers);
+
+         int row = 0;
+         for (int i = 0; i < number_of_users_in_array; ++i) {
+             if (arr_users[i].admin_role == 0) {
+                 ui->tableWidget_users->insertRow(row);
+
+                 ui->tableWidget_users->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(arr_users[i].username)));
+
+
+                 QString complaintText = QString::fromStdString(arr_users[i].complaints);
+                 QString shortenedText = complaintText.left(30);
+                 if (complaintText.length() > 30)
+                     shortenedText += "...";
+
+                 QTableWidgetItem* item = new QTableWidgetItem(shortenedText);
+                 item->setToolTip(complaintText);
+                 ui->tableWidget_users->setItem(row, 1, item);
+
+                 ui->tableWidget_users->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(arr_users[i].contactdet.email)));
+                 ui->tableWidget_users->setItem(row, 3, new QTableWidgetItem(QString::number(arr_users[i].balance)));
+                 ui->tableWidget_users->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(arr_users[i].sub.subscription_type)));
+
+                 row++;
+             }
+         }*/
+
+    }
+}
+
+
+
 void  QtWidgetsApplication3::on_pushButton_9_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->renew_sub);
+}
+
+void  QtWidgetsApplication3::on_delete_users_clicked()
+{
+    QString theindex = ui->NumOfUser->text().trimmed();
+    chosen_user = theindex.toStdString();
+    int admin_chosen_index = stoi(chosen_user);
+
+    ui->stackedWidget->setCurrentWidget(ui->admin); /// !!! change "admin" with the name of the widget of maher
+}
+
+void  QtWidgetsApplication3::on_change_users_clicked()
+{
+   QString theindex= ui->NumOfUser->text().trimmed();
+   chosen_user = theindex.toStdString();
+   int admin_chosen_index = stoi(chosen_user);
+
+   ui->stackedWidget->setCurrentWidget(ui->admin); /// !!! change "admin" with the name of the widget of ali
+}
+
+void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
 }
 
 
@@ -249,17 +348,6 @@ void QtWidgetsApplication3::on_pushButton_10_clicked() {
                 details += "   • Zone " + QString::number(k + 1) + ": "
                     + QString::number(arr_subscription[i].wallet_sub.zonesPrice[k]) + " LE\n";
             }
-        }
-
-        if (!arr_subscription[i].notes.empty()) {
-            details += "\n📝 Notes:\n" + QString::fromStdString(arr_subscription[i].notes);
-        }
-
-        ui->label_subscription_details->setPlainText(details);  // For QTextEdit
-        });
-}
-
-/// for try run 
 //void  QtWidgetsApplication3::on_pushButton_15_clicked() {
 //   /* ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
 //
@@ -319,6 +407,17 @@ void QtWidgetsApplication3::on_pushButton_10_clicked() {
 //    }
 //    
 //}
+        }
+
+        if (!arr_subscription[i].notes.empty()) {
+            details += "\n📝 Notes:\n" + QString::fromStdString(arr_subscription[i].notes);
+        }
+
+        ui->label_subscription_details->setPlainText(details);  // For QTextEdit
+        });
+}
+
+/// for try run 
 
 void QtWidgetsApplication3::gotoadmin() {
     ui->stackedWidget->setCurrentWidget(ui->admin);  
