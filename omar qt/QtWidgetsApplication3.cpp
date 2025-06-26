@@ -266,18 +266,32 @@ void  QtWidgetsApplication3::on_pushButton_9_clicked() {
 void  QtWidgetsApplication3::on_delete_users_clicked()
 {
     QString theindex = ui->NumOfUser->text().trimmed();
-    chosen_user = theindex.toStdString();
-    int admin_chosen_index = stoi(chosen_user);
+    bool ok;
+    int admin_chosen_index = theindex.toInt(&ok);
 
+    if (!ok ||admin_chosen_index<=0 || admin_chosen_index>number_of_users_in_array) {
+        QMessageBox::warning(this, "Invalid Input", "Please enter a valid number.");
+        return;
+    }
+    admin_chosen_index--;
+    /// admin_chosen_index is the index use it 
     ui->stackedWidget->setCurrentWidget(ui->admin); /// !!! change "admin" with the name of the widget of maher
 }
 
 void  QtWidgetsApplication3::on_change_users_clicked()
 {
-   QString theindex= ui->NumOfUser->text().trimmed();
-   chosen_user = theindex.toStdString();
-   int admin_chosen_index = stoi(chosen_user);
+    QString theindex = ui->NumOfUser->text().trimmed();
+    bool ok;
+    int admin_chosen_index = theindex.toInt(&ok);
 
+    if (!ok || admin_chosen_index <= 0 || admin_chosen_index > number_of_users_in_array) {
+        QMessageBox::warning(this, "Invalid Input", "Please enter a valid number.");
+        return;
+    }
+
+    admin_chosen_index--;
+
+    /// admin_chosen_index is the index use it 
    ui->stackedWidget->setCurrentWidget(ui->admin); /// !!! change "admin" with the name of the widget of ali
 }
 

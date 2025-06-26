@@ -33,4 +33,4 @@ extern bool realadmin_by_keypass;
 extern string name;
 extern string password;
 extern string current_user_id;
-extern string chosen_user;
+

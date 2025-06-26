@@ -91,7 +91,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="choose sub.cpp" />
     <ClCompile Include="data.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="register.cpp" />
@@ -106,7 +105,6 @@
     <QtUic Include="register.ui" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="choose sub.h" />
     <ClInclude Include="data.h" />
     <ClInclude Include="dependence.h" />
     <ClInclude Include="global.h" />

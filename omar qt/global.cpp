@@ -26,4 +26,4 @@ bool realadmin_by_keypass = false;
 string name = "";
 string password = "";
 string current_user_id = "";
-string chosen_user = "";
+
