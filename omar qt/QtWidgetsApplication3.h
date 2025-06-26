@@ -29,6 +29,10 @@ private slots:
     void on_pushButton_10_clicked();
     void on_pushButton_15_clicked();
     void on_confirmride_clicked();
+    void on_pushButton_18_clicked();//modify but #admin
+    void on_pushButton_12_clicked();//charge balance #admin
+    void on_pushButton_23_clicked();//change subsc #admin 
+
    /* void on_pushButton_13_clicked();
     void on_pushButton_sign_clicked();*/
     void on_back1_clicked();

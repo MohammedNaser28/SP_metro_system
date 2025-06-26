@@ -60,6 +60,7 @@ void  QtWidgetsApplication3::on_pushButton_6_clicked() {
         }
     }
 }
+
 void QtWidgetsApplication3::on_pushButton_7_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->rides_history);
 
@@ -240,6 +241,74 @@ void  QtWidgetsApplication3::on_pushButton_15_clicked() {
 void QtWidgetsApplication3::gotoadmin() {
     ui->stackedWidget->setCurrentWidget(ui->admin);  
 }
+//modify #admin
+
+void QtWidgetsApplication3::on_pushButton_18_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->modify_user);
+
+
+
+
+}
+
+//charge balance #admin
+
+void QtWidgetsApplication3::on_pushButton_12_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->charge_balance);
+    // should put the index that moaz will give me 
+    ui->admin_change_balance->setText(QString::number(arr_users[indexofuser].balance));
+    ui->admin_change_balance->clear();
+
+}
+//moazz put in the index of array the index that you will give us please 
+void QtWidgetsApplication3::on_pushButton_24_clicked()
+{
+        bool ok;
+        int chargeAmount = ui->new_balance->text().toInt(&ok);
+
+        if (!ok || chargeAmount <= 0) {
+            QMessageBox::warning(this, "Invalid Input", "Please enter a valid positive number.");
+            return;
+        }
+
+        // Update user balance
+        arr_users[indexofuser].balance += chargeAmount;
+
+        // Update the Text Browser to show old balance (before recharge)
+        ui->admin_change_balance->setText(QString::number(arr_users[indexofuser].balance));
+
+        // Update the Line Edit to show the new balance (after recharge)
+        ui->new_balance->setText(QString::number(arr_users[indexofuser].balance));
+
+        // Show success message
+        QMessageBox::information(this, "Success", "Recharge successful!");
+
+        // Optionally move to the admin page
+        ui->stackedWidget->setCurrentWidget(ui->admin);
+  
+
+}
+
+void QtWidgetsApplication3::on_pushButton_25_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->modify_user);
+
+}
+
+
+
+//change subsc #admin 
+
+
+
+
+
+void QtWidgetsApplication3::on_pushButton_23_clicked() {
+
+    ui->stackedWidget->setCurrentWidget(ui->admin);//should change to the subscription changed by admin 
+
+
+
+}
 
 
 
@@ -312,7 +381,7 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
                 //    int ret = msgBox.exec();
 
                 //    if (ret == QMessageBox::Yes) {
-                //        renew_time(arr_users[indexofuser].sub);
+                //       /* renew_time(arr_users[indexofuser].sub);*/
                 //    }
                 //    else {
                 //        return;
