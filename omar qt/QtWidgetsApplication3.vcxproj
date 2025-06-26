@@ -38,6 +38,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
+    <QtInstall>6.8.3_msvc2022_64</QtInstall>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>6.9.0_mingw_64</QtInstall>
@@ -106,7 +107,6 @@
     <QtUic Include="register.ui" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="choose sub.h" />
     <ClInclude Include="data.h" />
     <ClInclude Include="dependence.h" />
     <ClInclude Include="global.h" />
