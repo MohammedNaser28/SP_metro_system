@@ -7,6 +7,16 @@
 #include "view users.h"
 #include <QTableWidget>
 
+int month_index = 0;
+int year_index = 0;
+//
+//extern user_subscriptions subs[MAX];
+//extern int num_of_subsc;
+//extern int chosenSubscriptionIndex;
+// plan subs[100];
+// int num_of_subsc;
+// int chosenSubscriptionIndex;
+//
 
 #include"register.h"
 int chosenSubscriptionIndex = -1;
@@ -16,6 +26,32 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
 {
     ui->setupUi(this);  // Set up the UI components
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
+    // Month: zone spinbox controls row count in table
+connect(ui->spinBox_month_zones, QOverload<int>::of(&QSpinBox::valueChanged),
+        this, &QtWidgetsApplication3::on_spinBox_month_zones_valueChanged);
+
+// Year: zone spinbox controls row count in table
+connect(ui->spinBox_year_zones, QOverload<int>::of(&QSpinBox::valueChanged),
+        this, &QtWidgetsApplication3::on_spinBox_year_zones_valueChanged);
+
+// Month: OK and Cancel buttons
+connect(ui->dialogButtonBox_month, &QDialogButtonBox::accepted,
+        this, &QtWidgetsApplication3::on_dialogButtonBox_month_accepted);
+connect(ui->dialogButtonBox_month, &QDialogButtonBox::rejected,
+        this, &QtWidgetsApplication3::on_dialogButtonBox_month_rejected);
+
+// Year: OK and Cancel buttons
+connect(ui->dialogButtonBox_year, &QDialogButtonBox::accepted,
+        this, &QtWidgetsApplication3::on_dialogButtonBox_year_accepted);
+connect(ui->dialogButtonBox_year, &QDialogButtonBox::rejected,
+        this, &QtWidgetsApplication3::on_dialogButtonBox_year_rejected);
+
+// Show/hide based on plan type selection
+connect(ui->radioButton_fixed, &QRadioButton::clicked,
+        this, &QtWidgetsApplication3::on_radioButton_fixed_clicked);
+connect(ui->radioButton_wallet, &QRadioButton::clicked,
+        this, &QtWidgetsApplication3::on_radioButton_wallet_clicked);
+
 
 }
 
@@ -256,6 +292,180 @@ void QtWidgetsApplication3::on_pushButton_confirm_clicked() {
 }
 
 
+void QtWidgetsApplication3::on_addsub_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->add_sub);
+    ui->stackedWidget_2->setCurrentIndex(0); // Show neutral/empty page first
+
+    ui->groupBox_monthly->hide();
+    ui->groupBox_yearly->hide();
+    ui->groupBox_fixed->hide(); // Hide fixed options initially
+
+    // Reset spin boxes with valid ranges
+    ui->spinBox_month_duration->setRange(1, 1000);
+    ui->spinBox_month_trips->setRange(1, 1000);
+    ui->spinBox_month_zones->setRange(0, 30);
+
+    ui->spinBox_year_duration->setRange(1, 1000);
+    ui->spinBox_year_trips->setRange(1, 1000);
+    ui->spinBox_year_zones->setRange(0, 30);
+
+    ui->spinBox_cardBalance->setRange(0, 100000);
+    ui->spinBox->setRange(1, 1000); // fund multiple
+
+    month_index = 0;
+    year_index = 0;
+}
+
+void QtWidgetsApplication3::on_radioButton_fixed_clicked()
+{
+    ui->stackedWidget_2->setCurrentWidget(ui->page); // Show fixed page
+    ui->groupBox_fixed->show(); // Show fixed options
+}
+
+void QtWidgetsApplication3::on_radioButton_wallet_clicked()
+{
+    ui->stackedWidget_2->setCurrentWidget(ui->page_2); // Show wallet page
+    ui->groupBox_fixed->hide(); // Hide fixed options
+}
+
+void QtWidgetsApplication3::on_pushButton_addMonth_clicked()
+{
+    ui->groupBox_monthly->show();
+    ui->spinBox_month_zones->setValue(0);
+    ui->tableWidget_month_zonePrices->setRowCount(0);
+    ui->tableWidget_month_zonePrices->setColumnCount(1); // Ensure single column
+    ui->stackedWidget_2->setCurrentWidget(ui->page_4); // Monthly form
+}
+
+void QtWidgetsApplication3::on_spinBox_month_zones_valueChanged(int value)
+{
+    ui->tableWidget_month_zonePrices->setRowCount(value);
+    ui->tableWidget_month_zonePrices->setColumnCount(1);
+    for (int i = 0; i < value; ++i) {
+        ui->tableWidget_month_zonePrices->setItem(i, 0, new QTableWidgetItem());
+    }
+}
+
+void QtWidgetsApplication3::on_dialogButtonBox_month_accepted()
+{
+    auto& m = arr_subscription[num_of_subsc].month_sub[month_index];
+    m.duration = ui->spinBox_month_duration->value();
+    m.no_of_trips = ui->spinBox_month_trips->value();
+    m.zone_num = ui->spinBox_month_zones->value();
+
+    for (int i = 0; i < m.zone_num; ++i) {
+        QTableWidgetItem* item = ui->tableWidget_month_zonePrices->item(i, 0);
+        m.zonesPrice[i] = item ? item->text().toInt() : 0;
+    }
+
+    month_index++;
+    ui->groupBox_monthly->hide();
+    ui->stackedWidget_2->setCurrentWidget(ui->page); // Return to fixed page
+}
+
+void QtWidgetsApplication3::on_dialogButtonBox_month_rejected()
+{
+    ui->groupBox_monthly->hide();
+    ui->stackedWidget_2->setCurrentWidget(ui->page);
+}
+
+void QtWidgetsApplication3::on_pushButton_13_clicked() // Add yearly button
+{
+    ui->groupBox_yearly->show();
+    ui->spinBox_year_zones->setValue(0);
+    ui->tableWidget_year_zonePrices->setRowCount(0);
+    ui->tableWidget_year_zonePrices->setColumnCount(1); // Ensure single column
+    ui->stackedWidget_2->setCurrentWidget(ui->page_3); // Yearly form
+}
+
+void QtWidgetsApplication3::on_spinBox_year_zones_valueChanged(int value)
+{
+    ui->tableWidget_year_zonePrices->setRowCount(value);
+    ui->tableWidget_year_zonePrices->setColumnCount(1);
+    for (int i = 0; i < value; ++i) {
+        ui->tableWidget_year_zonePrices->setItem(i, 0, new QTableWidgetItem());
+    }
+}
+
+void QtWidgetsApplication3::on_dialogButtonBox_year_accepted()
+{
+    auto& y = arr_subscription[num_of_subsc].year_sub[year_index];
+    y.duration = ui->spinBox_year_duration->value();
+    y.no_of_trips = ui->spinBox_year_trips->value();
+    y.zone_num = ui->spinBox_year_zones->value();
+
+    for (int i = 0; i < y.zone_num; ++i) {
+        QTableWidgetItem* item = ui->tableWidget_year_zonePrices->item(i, 0);
+        y.zonesPrice[i] = item ? item->text().toInt() : 0;
+    }
+
+    year_index++;
+    ui->groupBox_yearly->hide();
+    ui->stackedWidget_2->setCurrentWidget(ui->page); // Back to fixed page
+}
+
+void QtWidgetsApplication3::on_dialogButtonBox_year_rejected()
+{
+    ui->groupBox_yearly->hide();
+    ui->stackedWidget_2->setCurrentWidget(ui->page);
+}
+
+void QtWidgetsApplication3::on_pushButton_submit_clicked()
+{
+    int i = num_of_subsc;
+    arr_subscription[i].plan_name = ui->lineEdit_7->text().trimmed().toStdString();
+
+    if (arr_subscription[i].plan_name.empty()) {
+        QMessageBox::warning(this, "Missing", "Please enter a plan name.");
+        return;
+    }
+
+    if (ui->radioButton_fixed->isChecked()) {
+        arr_subscription[i].fixed = 'y';
+        arr_subscription[i].month_count = month_index;
+        arr_subscription[i].year_count = year_index;
+    }
+    else if (ui->radioButton_wallet->isChecked()) {
+        arr_subscription[i].fixed = 'n';
+        arr_subscription[i].wallet_sub.card_balance = ui->spinBox_cardBalance->value();
+        arr_subscription[i].wallet_sub.fund_multiple = ui->spinBox->value();
+
+        int rowCount = ui->tableWidget_walletZones->rowCount();
+        arr_subscription[i].wallet_sub.zone_num = rowCount;
+        ui->tableWidget_walletZones->setColumnCount(1);
+        for (int j = 0; j < rowCount; ++j) {
+            if (!ui->tableWidget_walletZones->item(j, 0)) {
+                ui->tableWidget_walletZones->setItem(j, 0, new QTableWidgetItem());
+            }
+            QTableWidgetItem* item = ui->tableWidget_walletZones->item(j, 0);
+            arr_subscription[i].wallet_sub.zonesPrice[j] = item ? item->text().toInt() : 0;
+        }
+    }
+
+    arr_subscription[i].notes = ui->textEdit->toPlainText().toStdString();
+    num_of_subsc++;
+    save_subsc_data();
+
+    QMessageBox::information(this, "Saved", "Subscription added successfully.");
+
+    // Reset form
+    ui->lineEdit_7->clear();
+    ui->textEdit->clear();
+    month_index = 0;
+    year_index = 0;
+
+    ui->radioButton_fixed->setAutoExclusive(false);
+    ui->radioButton_fixed->setChecked(false);
+    ui->radioButton_fixed->setAutoExclusive(true);
+    ui->radioButton_wallet->setAutoExclusive(false);
+    ui->radioButton_wallet->setChecked(false);
+    ui->radioButton_wallet->setAutoExclusive(true);
+
+    ui->stackedWidget_2->setCurrentIndex(0); // back to empty page
+    ui->groupBox_fixed->hide(); // hide again after adding
+}
+
 void  QtWidgetsApplication3::on_confirmride_clicked()
 {
 
@@ -379,6 +589,213 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
 
 
 }
+void QtWidgetsApplication3::on_pushButton_16_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->ride_settings);
+}
+
+void QtWidgetsApplication3::on_pushButton_22_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->allRideHistory);
+    //aly ekteb hena el function 
+}
+void QtWidgetsApplication3::on_pushButton_14_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
+}
+
+
+
+// COMPLETE FIXED & WALLET PLAN EDITING CODE BASED ON YOUR STRUCT
+//extern plan arr_subscription[20];
+//int chosenSubscriptionIndex = -1;
+
+void QtWidgetsApplication3::on_editsub_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->edit_subscription);
+    ui->listWidget_subscriptions_2->clear();
+    ui->stackedWidget_editType->setCurrentWidget(ui->page_edit_fixed);
+
+    load_subsc_data();
+
+    for (int i = 0; i < num_of_subsc; ++i) {
+        ui->listWidget_subscriptions_2->addItem(QString::fromStdString(arr_subscription[i].plan_name));
+    }
+}
+
+void QtWidgetsApplication3::on_pushButton_select_sub_clicked() {
+    int index = ui->listWidget_subscriptions_2->currentRow();
+    if (index < 0 || index >= num_of_subsc) return;
+
+    chosenSubscriptionIndex = index;
+    plan& s = arr_subscription[index];
+
+    if (s.fixed == 'n') { // wallet plan
+        ui->stackedWidget_editType->setCurrentWidget(ui->page_edit_wallet);
+        ui->lineEdit_planName_wallet->setText(QString::fromStdString(s.plan_name));
+        ui->spinBox_cardBalance_2->setValue(s.wallet_sub.card_balance);
+        ui->spinBox_fundMultiple->setValue(s.wallet_sub.fund_multiple);
+        ui->spinBox_zoneNum->setValue(s.wallet_sub.zone_num);
+        ui->textEdit_notes_wallet->setText(QString::fromStdString(s.notes));
+        ui->label_currentEditedPlanWallet->setText("Editing: " + QString::fromStdString(s.plan_name));
+
+        // clear old layout
+        QLayout* oldLayout = ui->zonePricesWidget->layout();
+        if (oldLayout) {
+            QLayoutItem* child;
+            while ((child = oldLayout->takeAt(0)) != nullptr) delete child->widget();
+            delete oldLayout;
+        }
+
+        QVBoxLayout* layout = new QVBoxLayout();
+        for (int i = 0; i < s.wallet_sub.zone_num; ++i) {
+            QHBoxLayout* row = new QHBoxLayout;
+            QLabel* label = new QLabel(QString("Zone %1 Price:").arg(i + 1));
+            QSpinBox* spin = new QSpinBox;
+            spin->setMinimum(0);
+            spin->setMaximum(999);
+            spin->setValue(s.wallet_sub.zonesPrice[i]);
+            spin->setObjectName("wallet_zone_" + QString::number(i));
+            row->addWidget(label);
+            row->addWidget(spin);
+            layout->addLayout(row);
+        }
+        ui->zonePricesWidget->setLayout(layout);
+    }
+    else { // fixed plan
+        ui->stackedWidget_editType->setCurrentWidget(ui->page_edit_fixed);
+        ui->lineEdit_planName_fixed->setText(QString::fromStdString(s.plan_name));
+        ui->textEdit_notes_fixed->setText(QString::fromStdString(s.notes));
+        ui->label_currentEditedPlanFixed->setText("Editing: " + QString::fromStdString(s.plan_name));
+    }
+}
+
+void QtWidgetsApplication3::on_pushButton_save_changes_clicked() {
+    if (chosenSubscriptionIndex < 0) return;
+    plan& s = arr_subscription[chosenSubscriptionIndex];
+    if (s.fixed != 'y') return;
+
+    s.plan_name = ui->lineEdit_planName_fixed->text().toStdString();
+    s.notes = ui->textEdit_notes_fixed->toPlainText().toStdString();
+
+    QMessageBox::information(this, "Saved", "Fixed plan changes saved.");
+    save_subsc_data();
+}
+
+void QtWidgetsApplication3::on_pushButton_save_changes_2_clicked() {
+    if (chosenSubscriptionIndex < 0) return;
+    plan& s = arr_subscription[chosenSubscriptionIndex];
+    if (s.fixed != 'n') return;
+
+    s.plan_name = ui->lineEdit_planName_wallet->text().toStdString();
+    s.wallet_sub.card_balance = ui->spinBox_cardBalance_2->value();
+    s.wallet_sub.fund_multiple = ui->spinBox_fundMultiple->value();
+    s.wallet_sub.zone_num = ui->spinBox_zoneNum->value();
+    s.notes = ui->textEdit_notes_wallet->toPlainText().toStdString();
+
+    for (int i = 0; i < s.wallet_sub.zone_num; ++i) {
+        QSpinBox* spin = ui->zonePricesWidget->findChild<QSpinBox*>("wallet_zone_" + QString::number(i));
+        if (spin) s.wallet_sub.zonesPrice[i] = spin->value();
+    }
+
+    QMessageBox::information(this, "Saved", "Wallet plan changes saved.");
+    save_subsc_data();
+}
+
+void QtWidgetsApplication3::on_pushButton_12_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->page_edit_monthly);
+    ui->label_currentEditedPlanMonthly->setText(ui->label_currentEditedPlanFixed->text());
+
+    plan& s = arr_subscription[chosenSubscriptionIndex];
+    ui->tableWidget_monthly->clearContents();
+    ui->tableWidget_monthly->setRowCount(s.month_count);
+    ui->tableWidget_monthly->setColumnCount(3);
+    QStringList headers;
+    headers << "Duration" << "Trips" << "Zones";
+    ui->tableWidget_monthly->setHorizontalHeaderLabels(headers);
+
+    for (int i = 0; i < s.month_count; ++i) {
+        ui->tableWidget_monthly->setItem(i, 0, new QTableWidgetItem(QString::number(s.month_sub[i].duration)));
+        ui->tableWidget_monthly->setItem(i, 1, new QTableWidgetItem(QString::number(s.month_sub[i].no_of_trips)));
+        ui->tableWidget_monthly->setItem(i, 2, new QTableWidgetItem(QString::number(s.month_sub[i].zone_num)));
+    }
+}
+
+void QtWidgetsApplication3::on_pushButton_editMonthSave_clicked() {
+    int row = ui->tableWidget_monthly->currentRow();
+    if (row < 0) return;
+
+    plan& s = arr_subscription[chosenSubscriptionIndex];
+    s.month_sub[row].duration = ui->spinBox_monthDuration->value();
+    s.month_sub[row].no_of_trips = ui->spinBox_monthTrips->value();
+    s.month_sub[row].zone_num = ui->spinBox_monthZones->value();
+
+    for (int i = 0; i < s.month_sub[row].zone_num; ++i) {
+        QSpinBox* spin = ui->zonePricesWidgetMonth->findChild<QSpinBox*>("monthly_zone_" + QString::number(i));
+        if (spin) s.month_sub[row].zonesPrice[i] = spin->value();
+    }
+
+    save_subsc_data();
+    QMessageBox::information(this, "Saved", "Monthly plan edited.");
+    on_pushButton_12_clicked();
+}
+
+void QtWidgetsApplication3::on_pushButton_23_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->page_edit_yearly);
+    ui->label_currentEditedPlanYearly->setText(ui->label_currentEditedPlanFixed->text());
+
+    plan& s = arr_subscription[chosenSubscriptionIndex];
+    ui->tableWidget_yearly->clearContents();
+    ui->tableWidget_yearly->setRowCount(s.year_count);
+    ui->tableWidget_yearly->setColumnCount(3);
+    QStringList headers;
+    headers << "Duration" << "Trips" << "Zones";
+    ui->tableWidget_yearly->setHorizontalHeaderLabels(headers);
+
+    for (int i = 0; i < s.year_count; ++i) {
+        ui->tableWidget_yearly->setItem(i, 0, new QTableWidgetItem(QString::number(s.year_sub[i].duration)));
+        ui->tableWidget_yearly->setItem(i, 1, new QTableWidgetItem(QString::number(s.year_sub[i].no_of_trips)));
+        ui->tableWidget_yearly->setItem(i, 2, new QTableWidgetItem(QString::number(s.year_sub[i].zone_num)));
+    }
+}
+
+void QtWidgetsApplication3::on_pushButton_editYearSave_clicked() {
+    int row = ui->tableWidget_yearly->currentRow();
+    if (row < 0) return;
+
+    plan& s = arr_subscription[chosenSubscriptionIndex];
+    s.year_sub[row].duration = ui->spinBox_yearDuration->value();
+    s.year_sub[row].no_of_trips = ui->spinBox_yearTrips->value();
+    s.year_sub[row].zone_num = ui->spinBox_yearZones->value();
+
+    for (int i = 0; i < s.year_sub[row].zone_num; ++i) {
+        QSpinBox* spin = ui->zonePricesWidgetYear->findChild<QSpinBox*>("yearly_zone_" + QString::number(i));
+        if (spin) s.year_sub[row].zonesPrice[i] = spin->value();
+    }
+
+    save_subsc_data();
+    QMessageBox::information(this, "Saved", "Yearly plan edited.");
+    on_pushButton_23_clicked();
+}
+void QtWidgetsApplication3::on_pushButton_cancel_changes_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->edit_subscription);
+}
+
+void QtWidgetsApplication3::on_pushButton_cancel_changes_2_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->edit_subscription);
+}
+
+void QtWidgetsApplication3::on_pushButton_backFromFixed_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->edit_subscription);
+}
+
+void QtWidgetsApplication3::on_pushButton_backFromWallet_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->edit_subscription);
+}
+
+void QtWidgetsApplication3::on_pushButton_addYear_clicked() {
+    ui->stackedWidget_2->setCurrentWidget(ui->page_3);
+    ui->spinBox_year_zones->setValue(0);
+    ui->tableWidget_year_zonePrices->setRowCount(0);
+}
+
+
 
 void QtWidgetsApplication3::on_back1_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
@@ -403,6 +820,18 @@ void QtWidgetsApplication3::on_back7_clicked() {
 }
 void QtWidgetsApplication3::on_back8_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->manage_plan);
+}
+void QtWidgetsApplication3::on_back9_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
+}
+void QtWidgetsApplication3::on_back10_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
+}
+void QtWidgetsApplication3::on_back11_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
+}
+void QtWidgetsApplication3::on_back12_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->admin);
 }
 void QtWidgetsApplication3::on_exit1_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);

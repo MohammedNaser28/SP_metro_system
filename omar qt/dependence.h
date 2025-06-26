@@ -16,4 +16,13 @@
 #include<QMessageBox>
 #include<QDebug>
 #include <QDate>
+#include <QInputDialog>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QSpinBox>
+#include <QLineEdit>
+#include <QTextEdit>
+#include <QTableWidgetItem>
+#include <QPushButton>
+
 using namespace std;

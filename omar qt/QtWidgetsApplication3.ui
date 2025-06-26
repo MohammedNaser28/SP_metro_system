@@ -23,8 +23,8 @@
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>-50</x>
-      <y>-40</y>
+      <x>0</x>
+      <y>-30</y>
       <width>800</width>
       <height>800</height>
      </rect>
@@ -134,6 +134,871 @@
       </property>
       <property name="readOnly">
        <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="subscription_settings">
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>80</y>
+        <width>321</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 700 italic 12pt &quot;Times New Roman&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Subscription Settings</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addsub">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>210</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="editsub">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>280</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="deletesub">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>360</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="back12">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>580</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="edit_subscription">
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>10</y>
+        <width>291</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 700 italic 22pt &quot;Times New Roman&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Edit subscription</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="back11">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>570</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Done editing</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_select_sub">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>70</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select a subscription to edit :</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listWidget_subscriptions_2">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>100</y>
+        <width>256</width>
+        <height>51</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_select_sub">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>160</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Edit selected</string>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget_editType">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>210</y>
+        <width>451</width>
+        <height>421</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_edit_fixed">
+       <widget class="QLabel" name="label_plan_name_fixed">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Plan name :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_planName_fixed">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>40</y>
+          <width>113</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_12">
+        <property name="geometry">
+         <rect>
+          <x>19</x>
+          <y>70</y>
+          <width>111</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit Monthly Plans</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_23">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>70</y>
+          <width>111</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit Yearly Plans</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_notes_fixed">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>120</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Notes :</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_notes_fixed">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>120</y>
+          <width>321</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_save_changes">
+        <property name="geometry">
+         <rect>
+          <x>49</x>
+          <y>160</y>
+          <width>91</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save Changes</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_cancel_changes">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>160</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_backFromFixed">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>330</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_currentEditedPlanFixed">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>20</y>
+          <width>221</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_edit_wallet">
+       <widget class="QLabel" name="label_22">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Wallet name :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_planName_wallet">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>30</y>
+          <width>113</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_42">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Max Card Balance :</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_cardBalance_2">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>60</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_43">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>90</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Fund Multiple :</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_fundMultiple">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>90</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_44">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>120</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Number of zones : </string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_zoneNum">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>120</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_45">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>160</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Zone Prices : </string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollArea_zonePrices">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>180</y>
+          <width>231</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="zonePricesWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>229</width>
+           <height>89</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="label_notes_wallet">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>280</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Notes : </string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_notes_wallet">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>280</y>
+          <width>271</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_save_changes_2">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>320</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save Changes</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_cancel_changes_2">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>320</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_backFromWallet">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>360</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_currentEditedPlanWallet">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>211</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_edit_monthly">
+       <widget class="QLabel" name="label_47">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>10</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit Monthly Plans</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget_monthly">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>70</y>
+          <width>256</width>
+          <height>101</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_48">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>50</y>
+          <width>231</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Click on the monthly plan you want to edit </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_49">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>190</y>
+          <width>121</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Duration (in months) :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_50">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>220</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Number of trips :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_51">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>250</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Number of zones :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_52">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>280</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Zone prices :</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollArea_monthZones">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>300</y>
+          <width>301</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="zonePricesWidgetMonth">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>299</width>
+           <height>59</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_editMonthSave">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>370</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_monthDuration">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>180</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_monthTrips">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>220</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_monthZones">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>250</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_currentEditedPlanMonthly">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>30</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_edit_yearly">
+       <widget class="QLabel" name="label_64">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>0</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Edit Yearly Plans</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_65">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>50</y>
+          <width>231</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Click on the yearly plan you want to edit </string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget_yearly">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>70</y>
+          <width>256</width>
+          <height>101</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_66">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>190</y>
+          <width>121</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Duration (in years) :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_67">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>210</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Number of trips :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_68">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>250</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Number of zones :</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_yearDuration">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>180</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_yearTrips">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>210</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox_yearZones">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>240</y>
+          <width>42</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_69">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>280</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Zone prices :</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="scrollArea_yearZones">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>300</y>
+          <width>301</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="zonePricesWidgetYear">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>299</width>
+           <height>59</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton_editYearSave">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>370</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_currentEditedPlanYearly">
+        <property name="geometry">
+         <rect>
+          <x>128</x>
+          <y>20</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="delete_subscription">
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>60</y>
+        <width>271</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 700 italic 22pt &quot;Times New Roman&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Delete Subscription</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="back10">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>570</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
       </property>
      </widget>
     </widget>
@@ -1088,6 +1953,37 @@ background-position: center;
       </widget>
      </widget>
     </widget>
+    <widget class="QWidget" name="allRideHistory">
+     <widget class="QLabel" name="label_46">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>70</y>
+        <width>391</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 700 italic 24pt &quot;Times New Roman&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Ride History For All Users</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="textEdit_allRideHistory">
+      <property name="geometry">
+       <rect>
+        <x>73</x>
+        <y>129</y>
+        <width>571</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="sub">
      <widget class="QWidget" name="widget_2" native="true">
       <property name="geometry">
@@ -1293,8 +2189,8 @@ border:1px solid white;</string>
      <widget class="QLabel" name="label_18">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>70</y>
+        <x>140</x>
+        <y>30</y>
         <width>411</width>
         <height>81</height>
        </rect>
@@ -1309,8 +2205,8 @@ border:1px solid white;</string>
      <widget class="QLabel" name="label_19">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>150</y>
+        <x>120</x>
+        <y>90</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -1325,8 +2221,8 @@ border:1px solid white;</string>
      <widget class="QLabel" name="label_20">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>200</y>
+        <x>140</x>
+        <y>140</y>
         <width>101</width>
         <height>16</height>
        </rect>
@@ -1341,8 +2237,8 @@ border:1px solid white;</string>
      <widget class="QRadioButton" name="radioButton_fixed">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>200</y>
+        <x>230</x>
+        <y>140</y>
         <width>91</width>
         <height>22</height>
        </rect>
@@ -1354,8 +2250,8 @@ border:1px solid white;</string>
      <widget class="QRadioButton" name="radioButton_wallet">
       <property name="geometry">
        <rect>
-        <x>370</x>
-        <y>200</y>
+        <x>320</x>
+        <y>140</y>
         <width>91</width>
         <height>22</height>
        </rect>
@@ -1367,8 +2263,8 @@ border:1px solid white;</string>
      <widget class="QLineEdit" name="lineEdit_7">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>150</y>
+        <x>260</x>
+        <y>90</y>
         <width>141</width>
         <height>24</height>
        </rect>
@@ -1382,8 +2278,8 @@ border:1px solid white;</string>
      <widget class="QWidget" name="widget_16" native="true">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>30</y>
+        <x>520</x>
+        <y>20</y>
         <width>241</width>
         <height>611</height>
        </rect>
@@ -1394,112 +2290,17 @@ background-position: center;
     background-repeat: no-repeat;
 </string>
       </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>230</y>
-        <width>281</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Fixed Options </string>
-      </property>
-      <widget class="QPushButton" name="pushButton_addMonth">
+      <widget class="QPushButton" name="back9">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>111</width>
+         <x>90</x>
+         <y>530</y>
+         <width>80</width>
          <height>24</height>
         </rect>
        </property>
        <property name="text">
-        <string>Add Monthly Plan</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_13">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>30</y>
-         <width>91</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Add Yearly Plan</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_walletOptions">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>290</y>
-        <width>301</width>
-        <height>201</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Wallet Options</string>
-      </property>
-      <widget class="QSpinBox" name="spinBox_cardBalance">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>40</y>
-         <width>42</width>
-         <height>25</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_9">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>81</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Card Balance :</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_10">
-       <property name="geometry">
-        <rect>
-         <x>160</x>
-         <y>50</y>
-         <width>91</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Fund Multiple :</string>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="spinBox">
-       <property name="geometry">
-        <rect>
-         <x>250</x>
-         <y>40</y>
-         <width>42</width>
-         <height>25</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QTableWidget" name="tableWidget_walletZones">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>80</y>
-         <width>256</width>
-         <height>121</height>
-        </rect>
+        <string>Back</string>
        </property>
       </widget>
      </widget>
@@ -1507,7 +2308,7 @@ background-position: center;
       <property name="geometry">
        <rect>
         <x>150</x>
-        <y>510</y>
+        <y>540</y>
         <width>49</width>
         <height>16</height>
        </rect>
@@ -1520,7 +2321,7 @@ background-position: center;
       <property name="geometry">
        <rect>
         <x>210</x>
-        <y>500</y>
+        <y>530</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1551,6 +2352,371 @@ background-position: center;
       <property name="text">
        <string>Submit</string>
       </property>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>170</y>
+        <width>401</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <widget class="QGroupBox" name="groupBox_fixed">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>281</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Fixed Options </string>
+        </property>
+        <widget class="QPushButton" name="pushButton_addMonth">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>111</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Monthly Plan</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_13">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>30</y>
+           <width>91</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Yearly Plan</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <widget class="QGroupBox" name="groupBox_walletOptions">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>301</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Wallet Options</string>
+        </property>
+        <widget class="QSpinBox" name="spinBox_cardBalance">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>40</y>
+           <width>42</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_9">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>50</y>
+           <width>81</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Card Balance :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_10">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>50</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Fund Multiple :</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>40</y>
+           <width>42</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTableWidget" name="tableWidget_walletZones">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>80</y>
+           <width>256</width>
+           <height>121</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <widget class="QGroupBox" name="groupBox_yearly">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>20</y>
+          <width>311</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Add Yearly Plan</string>
+        </property>
+        <widget class="QSpinBox" name="spinBox_year_trips">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>70</y>
+           <width>42</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QDialogButtonBox" name="dialogButtonBox_year">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>290</y>
+           <width>166</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="standardButtons">
+          <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_year_duration">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>30</y>
+           <width>42</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_23">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>40</y>
+           <width>71</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Duration :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_36">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>120</y>
+           <width>111</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Number of zones :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_40">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>80</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Number of trips: </string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_41">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>160</y>
+           <width>81</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Zones prices: </string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_year_zones">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>110</y>
+           <width>42</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTableWidget" name="tableWidget_year_zonePrices">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>190</y>
+           <width>256</width>
+           <height>61</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <widget class="QGroupBox" name="groupBox_monthly">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>20</y>
+          <width>321</width>
+          <height>331</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Add Monthly Plan</string>
+        </property>
+        <widget class="QLabel" name="label_15">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>80</y>
+           <width>71</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Duration :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_16">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>120</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Number of trips: </string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_17">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>160</y>
+           <width>111</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Number of zones :</string>
+         </property>
+        </widget>
+        <widget class="QTableWidget" name="tableWidget_month_zonePrices">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>210</y>
+           <width>256</width>
+           <height>71</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_month_zones">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>160</y>
+           <width>42</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_21">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>190</y>
+           <width>81</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Zones prices: </string>
+         </property>
+        </widget>
+        <widget class="QDialogButtonBox" name="dialogButtonBox_month">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>290</y>
+           <width>166</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="standardButtons">
+          <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_month_trips">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>120</y>
+           <width>42</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_month_duration">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>70</y>
+           <width>42</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="manage_plan">
