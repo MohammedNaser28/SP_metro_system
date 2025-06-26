@@ -20,7 +20,10 @@ int main(int argc, char* argv[])
 
     QObject::connect(&x, &Register::switchToMainWindow, &x, [&x, &w]() {
         x.hide();
+        
+
         w.show();
+        w.switchToPage();
         });
 
     QObject::connect(&x, &Register::windowadmin, &x, [&x, &w]() {

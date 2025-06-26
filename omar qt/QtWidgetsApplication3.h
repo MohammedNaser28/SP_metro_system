@@ -14,7 +14,7 @@ public:
     explicit QtWidgetsApplication3(QWidget* parent = nullptr);
     ~QtWidgetsApplication3();
     void gotoadmin();
-
+    void setPage(int index);
 private slots:
    /* void on_pushButton_23_clicked();*/
     void on_personal_details_clicked();
@@ -27,7 +27,7 @@ private slots:
     void on_pushButton_8_clicked();
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
-    void on_pushButton_15_clicked();
+   /* void on_pushButton_15_clicked();*/
     void on_confirmride_clicked();
     void on_pushButton_18_clicked();//modify but #admin
     void on_pushButton_12_clicked();//charge balance #admin
@@ -55,6 +55,7 @@ private slots:
     void on_exit8_clicked();
     void on_pushButton_confirm_clicked();
     void on_logout_clicked();
+    void switchToPage();
     /*ride stations */
    
 
