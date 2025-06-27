@@ -63,9 +63,6 @@
     <ClCompile Include="view users.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="choose sub.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="structures.h">

@@ -35,7 +35,11 @@ private slots:
     void on_pushButton_8_clicked();
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
-   /* void on_pushButton_15_clicked();*/
+    void on_pushButton_15_clicked();
+    //void on_pushButton_17_clicked();
+    void on_delete_users_clicked();
+    void on_change_users_clicked();
+    void on_admin_mainmenu_clicked();
     void on_confirmride_clicked();
 
     //modify but #admin

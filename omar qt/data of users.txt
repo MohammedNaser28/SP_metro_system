@@ -1,5 +1,5 @@
 information of person is in this sequence:(name --> id --> role --> balance --> password --> email)
-7
+16
 
 omar ID1 0 50 12345678 omar@gmail.com
 alol ID2 0 0 123456789 aly@gmail.com
