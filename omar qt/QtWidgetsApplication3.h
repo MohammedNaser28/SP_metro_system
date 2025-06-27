@@ -5,6 +5,12 @@
 #include <QApplication>
 #include <QPushButton>
 #include<QString>
+#include"global.h"
+#include"dependence.h"
+#include"structures.h"
+#include"stations.h"
+#include "view users.h"
+
 #include"choose sub.cpp"
 #include"dependence.h"
 #include"global.h"
@@ -23,6 +29,8 @@ public:
     void gotoadmin();
     void setPage(int index);
     void start_up();
+   
+    
 private slots:
    /* void on_pushButton_23_clicked();*/
     void on_personal_details_clicked();
@@ -77,7 +85,14 @@ private slots:
     void on_pushButton_confirm_clicked();
     void on_logout_clicked();
     void choose_sub();
-   
+    string getCurrentDate();
+    string saveExpiry();
+    void on_change_sub_clicked();
+    void on_renew_button_clicked();
+    string check_expiry(st_of_users person[]);
+    void on_confirm_renew_clicked();
+    void on_cancel_renew_clicked();
+    void on_recharge_button_clicked();
     /*ride stations */
    
 

@@ -74,9 +74,11 @@ void QtWidgetsApplication3::choose_sub()
 void  QtWidgetsApplication3::on_sub_settings_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->manage_plan);
 }
+
 void  QtWidgetsApplication3::on_pushButton_8_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->view_sub);
 }
+
 void  QtWidgetsApplication3::on_pushButton_9_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->renew_sub);
 }

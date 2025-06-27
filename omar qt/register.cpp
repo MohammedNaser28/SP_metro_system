@@ -89,8 +89,6 @@ void Register::on_pushButton_sign_clicked()
         QMessageBox::information(this, "Sign Up", "Account created successfully!");
         emit switchToMainWindow();
 
-        
-
     }
     else {
         QMessageBox::warning(this, "Sign Up", "Username or email already exists.");

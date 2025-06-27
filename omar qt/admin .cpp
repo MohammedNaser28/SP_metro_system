@@ -207,9 +207,6 @@ void QtWidgetsApplication3::on_pushButton_25_clicked() {
 //change subsc #admin 
 
 
-
-
-
 void QtWidgetsApplication3::on_pushButton_23_clicked() {
 
     ui->stackedWidget->setCurrentWidget(ui->admin);//should change to the subscription changed by admin 
@@ -218,3 +215,4 @@ void QtWidgetsApplication3::on_pushButton_23_clicked() {
 
 }
 
+ 

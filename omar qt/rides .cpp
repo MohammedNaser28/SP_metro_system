@@ -2,8 +2,6 @@
 
 
 
-
-
 void  QtWidgetsApplication3::on_rides_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->rides_2);
 }

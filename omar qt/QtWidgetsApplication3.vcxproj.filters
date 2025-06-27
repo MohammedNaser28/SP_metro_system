@@ -63,7 +63,7 @@
     <ClCompile Include="view users.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="kaboria .cpp">
+    <ClCompile Include="subscription .cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="admin .cpp">
