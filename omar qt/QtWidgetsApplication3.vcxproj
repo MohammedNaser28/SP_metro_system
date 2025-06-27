@@ -92,11 +92,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="admin .cpp" />
     <ClCompile Include="data.cpp" />
     <ClCompile Include="global.cpp" />
+    <ClCompile Include="kaboria .cpp" />
     <ClCompile Include="register.cpp" />
+    <ClCompile Include="rides .cpp" />
     <ClCompile Include="stations.cpp" />
     <ClCompile Include="structures.cpp" />
+    <ClCompile Include="user personal details .cpp" />
     <ClCompile Include="view users.cpp" />
     <QtRcc Include="QtWidgetsApplication3.qrc" />
     <QtMoc Include="QtWidgetsApplication3.h" />

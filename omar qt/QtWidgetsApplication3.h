@@ -6,6 +6,13 @@
 #include <QPushButton>
 #include<QString>
 #include"choose sub.cpp"
+#include"dependence.h"
+#include"global.h"
+#include"structures.h"
+#include"stations.h"
+#include "view users.h"
+#include <QTableWidget>
+#include"register.h"
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
@@ -23,6 +30,7 @@ private slots:
     void on_sub_settings_clicked();
    /* void on_logout_clicked();
     void on_pushButton_12_clicked();*/
+    /*void on_pushButton_12_clicked();*/
     void on_pushButton_6_clicked();
     void on_pushButton_7_clicked();
     void on_pushButton_8_clicked();
@@ -39,7 +47,7 @@ private slots:
 
     void on_pushButton_18_clicked();
     //charge balance #admin
-    void on_pushButton_12_clicked();
+    void on_Chargeing_admin_balance_clicked();
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
 

@@ -1,0 +1,93 @@
+﻿#include"QtWidgetsApplication3.h"
+
+
+void QtWidgetsApplication3::choose_sub()
+{
+
+    if (num_of_subsc == 0) {
+        ui->listWidget_subscriptions->addItem("No available subscriptions");
+        return;
+    }
+
+    for (int i = 0; i < num_of_subsc; i++) {
+        QString planName = QString::fromStdString(arr_subscription[i].plan_name);
+        QListWidgetItem* item = new QListWidgetItem(QString::number(i + 1) + " - " + planName);
+        item->setData(Qt::UserRole, i);
+        ui->listWidget_subscriptions->addItem(item);
+    }
+
+    connect(ui->listWidget_subscriptions, &QListWidget::itemClicked, this, [=](QListWidgetItem* item) {
+        int i = item->data(Qt::UserRole).toInt();
+        chosenSubscriptionIndex = i;
+
+        QString details;
+        details += "📦 Plan Name: " + QString::fromStdString(arr_subscription[i].plan_name) + "\n";
+
+        if (arr_subscription[i].fixed == 'y') {
+            details += "\n🟦 Fixed Subscription:\n";
+
+            if (arr_subscription[i].month_count > 0) {
+                details += "\n📅 Monthly Plans:\n";
+                for (int j = 0; j < arr_subscription[i].month_count; j++) {
+                    details += "➤ " + QString::number(arr_subscription[i].month_sub[j].duration) + " month(s), "
+                        + QString::number(arr_subscription[i].month_sub[j].no_of_trips) + " trips\n";
+                    for (int k = 0; k < arr_subscription[i].month_sub[j].zone_num; k++) {
+                        details += "   • Zone " + QString::number(k + 1) + ": "
+                            + QString::number(arr_subscription[i].month_sub[j].zonesPrice[k]) + " LE\n";
+                    }
+                }
+            }
+
+            if (arr_subscription[i].year_count > 0) {
+                details += "\n📅 Yearly Plans:\n";
+                for (int j = 0; j < arr_subscription[i].year_count; j++) {
+                    details += "➤ " + QString::number(arr_subscription[i].year_sub[j].duration) + " year(s), "
+                        + QString::number(arr_subscription[i].year_sub[j].no_of_trips) + " trips\n";
+                    for (int k = 0; k < arr_subscription[i].year_sub[j].zone_num; k++) {
+                        details += "   • Zone " + QString::number(k + 1) + ": "
+                            + QString::number(arr_subscription[i].year_sub[j].zonesPrice[k]) + " LE\n";
+                    }
+                }
+            }
+        }
+        else {
+            details += "\n🟨 Wallet Subscription:\n";
+            details += "• Add balance in multiples of: " + QString::number(arr_subscription[i].wallet_sub.fund_multiple) + " LE\n";
+            details += "• Maximum card balance: " + QString::number(arr_subscription[i].wallet_sub.card_balance) + " LE\n";
+            details += "• Zones and Prices:\n";
+            for (int k = 0; k < arr_subscription[i].wallet_sub.zone_num; k++) {
+                details += "   • Zone " + QString::number(k + 1) + ": "
+                    + QString::number(arr_subscription[i].wallet_sub.zonesPrice[k]) + " LE\n";
+            }
+        }
+
+        if (!arr_subscription[i].notes.empty()) {
+            details += "\n📝 Notes:\n" + QString::fromStdString(arr_subscription[i].notes);
+        }
+
+        ui->label_subscription_details->setPlainText(details);  // For QTextEdit
+        });
+
+
+}
+
+void  QtWidgetsApplication3::on_sub_settings_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->manage_plan);
+}
+void  QtWidgetsApplication3::on_pushButton_8_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->view_sub);
+}
+void  QtWidgetsApplication3::on_pushButton_9_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->renew_sub);
+}
+
+void QtWidgetsApplication3::on_pushButton_confirm_clicked() {
+    if (chosenSubscriptionIndex == -1)
+    {
+        QMessageBox::warning(this, "No Selection", "Please choose a subscription first.");
+        return;
+    }
+
+    QString selectedPlan = QString::fromStdString(arr_subscription[chosenSubscriptionIndex].plan_name);
+    QMessageBox::information(this, "Subscribed!", "You selected: " + selectedPlan);
+}

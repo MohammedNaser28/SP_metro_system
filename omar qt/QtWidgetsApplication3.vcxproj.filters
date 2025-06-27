@@ -63,6 +63,18 @@
     <ClCompile Include="view users.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="kaboria .cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin .cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rides .cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="user personal details .cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="structures.h">

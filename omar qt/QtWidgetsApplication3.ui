@@ -225,7 +225,7 @@
      </widget>
     </widget>
     <widget class="QWidget" name="modify_user">
-     <widget class="QPushButton" name="pushButton_12">
+     <widget class="QPushButton" name="Chargeing_admin_balance">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -461,7 +461,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_12">
+      <widget class="QPushButton" name="confirmride">
        <property name="geometry">
         <rect>
          <x>230</x>
