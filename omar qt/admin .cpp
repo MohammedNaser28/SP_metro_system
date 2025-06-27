@@ -84,7 +84,6 @@ void  QtWidgetsApplication3::on_change_users_clicked()
 
 
 
-/// for try run 
 
 void QtWidgetsApplication3::gotoadmin() {
     ui->stackedWidget->setCurrentWidget(ui->admin);
