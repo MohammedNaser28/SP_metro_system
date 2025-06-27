@@ -10,14 +10,8 @@
 #include"structures.h"
 #include"stations.h"
 #include "view users.h"
-
-#include"choose sub.cpp"
-#include"dependence.h"
-#include"global.h"
-#include"structures.h"
-#include"stations.h"
-#include "view users.h"
 #include <QTableWidget>
+#include"choose sub.cpp"
 #include"register.h"
 class QtWidgetsApplication3 : public QMainWindow
 {
@@ -50,7 +44,8 @@ private slots:
     void on_change_users_clicked();
     void on_admin_mainmenu_clicked();
     void on_confirmride_clicked();
-
+    void on_submit_balance_clicked();
+    void on_back_from_balance_clicked();
     //modify but #admin
 
     void on_pushButton_18_clicked();

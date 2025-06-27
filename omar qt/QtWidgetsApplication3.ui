@@ -874,6 +874,93 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="charge_user_balance_page">
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>49</y>
+        <width>491</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;charge your balance &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>350</y>
+        <width>291</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Put your new balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="user_input_balance">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>340</y>
+        <width>191</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="submit_balance">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>480</y>
+        <width>83</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>submit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="back_from_balance">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>480</y>
+        <width>83</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>230</y>
+        <width>231</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>your old balance</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="old_user_balance">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>220</y>
+        <width>331</width>
+        <height>51</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="welcome2">
      <property name="minimumSize">
       <size>
