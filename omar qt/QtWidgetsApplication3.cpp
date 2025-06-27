@@ -1,10 +1,7 @@
 ﻿#include "QtWidgetsApplication3.h"
 #include "ui_QtWidgetsApplication3.h"  // Include the generated UI class
-#include"dependence.h"
-#include"global.h"
-#include"structures.h"
-#include"stations.h"
-#include "view users.h"
+
+
 #include <QTableWidget>
 
 
@@ -106,6 +103,141 @@ void QtWidgetsApplication3::choose_sub()
 
 }
 
+std::string QtWidgetsApplication3::getCurrentDate()
+{
+   
+        auto now = chrono::system_clock::now();
+        time_t now_time = chrono::system_clock::to_time_t(now);
+
+        struct tm timeinfo;
+        localtime_s(&timeinfo, &now_time);
+
+        char buffer[80];
+        strftime(buffer, sizeof(buffer), "%d/%m/%Y", &timeinfo);
+        return string(buffer);
+    
+}
+
+std::string QtWidgetsApplication3::saveExpiry()
+{
+    time_t now = time(NULL);
+    tm localTime;
+    localtime_s(&localTime, &now);
+    string exp_date;
+    if (arr_users[indexofuser].sub.fixed == 'y') {
+        if (arr_users[indexofuser].sub.plan_type == "month") {
+            localTime.tm_mon += arr_users[indexofuser].sub.duriation_plan_type;
+        }
+        else if (arr_users[indexofuser].sub.plan_type == "year") {
+            localTime.tm_year += arr_users[indexofuser].sub.duriation_plan_type;
+        }
+        mktime(&localTime);
+        int day = localTime.tm_mday;
+        int month = localTime.tm_mon + 1;
+        int year = localTime.tm_year + 1900;
+         exp_date = arr_users[indexofuser].sub.expiry = to_string(day) + "/" + to_string(month) + "/" + to_string(year);
+    }
+    else if (arr_users[indexofuser].sub.fixed == 'n') {
+         exp_date = arr_users[indexofuser].sub.expiry = "0";
+
+    }
+
+    return exp_date;
+}
+
+void QtWidgetsApplication3::on_change_sub_clicked()
+{
+    choose_sub();
+    ui->stackedWidget->setCurrentWidget(ui->subscriptions);
+
+}
+
+void QtWidgetsApplication3::on_renew_button_clicked()
+{
+
+    ui->stackedWidget->setCurrentWidget(ui->renew_page);
+    ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+    ui->rem_trips->setText(QString::fromStdString(to_string(arr_users[indexofuser].sub.remaining_trips)));
+}
+
+string QtWidgetsApplication3::check_expiry(st_of_users person[])
+{
+
+    string status;
+
+    time_t now = time(NULL);
+    tm localTime;
+    localtime_s(&localTime, &now);
+    int day = localTime.tm_mday;
+    int month = localTime.tm_mon + 1;
+    int year = localTime.tm_year + 1900;
+    localTime.tm_hour = 0;
+    localTime.tm_min = 0;
+    localTime.tm_sec = 0;
+    now = mktime(&localTime);//setting time to midnight to compare dates
+
+    //cout << "Current date: " << day << "/" << month << "/" << year << endl;
+    //to get expiry date
+    string datestring = person[indexofuser].sub.expiry;
+    tm expiryTime = {};
+    stringstream ss(datestring);
+    ss >> get_time(&expiryTime, "%d/%m/%Y");
+    time_t expiry = mktime(&expiryTime);
+    /*cout << "Expiry date: " << datestring << endl;*/
+    //to get their differecnce 
+    time_t final = expiry - now;
+    final = final / (60 * 60 * 24);
+    if (final == 0) { status+= "It's time to renew your subscription !" ; }
+    else if (final < 0) { status += "Your subscription has expired !" ; }
+    else if (final == 1) { status += "Renew is in 1 Day " ; }
+    else if (final > 0) { status += ("Renew is in " + to_string(final) + " Days") ; }
+    return status;
+
+}
+
+void QtWidgetsApplication3::on_confirm_renew_clicked()
+{
+
+    
+
+     if ((arr_users[indexofuser].balance - arr_users[indexofuser].sub.zonePrice) < 0)
+     {
+        
+        QMessageBox::warning(this, "Not enough balnace.", "Please Recharge Your Balance.");
+        return;
+    }
+
+   
+
+    // Update the Text Browser to show old balance (before recharge)
+    ui->admin_change_balance->setText(QString::number(arr_users[indexofuser].balance));
+
+    // Update the Line Edit to show the new balance (after recharge)
+    ui->new_balance->setText(QString::number(arr_users[indexofuser].balance));
+
+    // Show success message
+    QMessageBox::information(this, "Success", "Recharge successful!");
+
+    
+}
+
+void QtWidgetsApplication3::on_cancel_renew_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
+
+}
+
+void QtWidgetsApplication3::on_recharge_button_clicked()
+{
+    /*ui->user_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+    
+    bool ok;
+    int chargeAmount = ui->new_balance->text().toInt(&ok);
+    arr_users[indexofuser].balance += chargeAmount;
+    ui->stackedWidget->setCurrentWidget(ui->renew_page);*/
+}
+
+
 void QtWidgetsApplication3::start_up()
 {
 
@@ -191,75 +323,25 @@ void  QtWidgetsApplication3::on_pushButton_8_clicked() {
 }
 void  QtWidgetsApplication3::on_pushButton_9_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->renew_sub);
+
+    QString current_date = QString::fromStdString(getCurrentDate());
+    ui->cur_date->setText(current_date);
+
+    QString expiry_date = QString::fromStdString(saveExpiry());
+    ui->exp_date->setText(expiry_date);
+
+    QString status= QString::fromStdString(check_expiry(arr_users));
+    ui->sub_status->setText(status);
+
 }
 
 
 void QtWidgetsApplication3::on_pushButton_10_clicked() {
   
-
+    ui->stackedWidget->setCurrentWidget(ui->subscriptions);
     choose_sub();
 }
 
-/// for try run 
-//void  QtWidgetsApplication3::on_pushButton_15_clicked() {
-//   /* ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
-//
-//
-//        ui->tableWidget_users->setRowCount(0);
-//        ui->tableWidget_users->setColumnCount(5);
-//        QStringList headers;
-//        headers << "Name"<<"Complaints" << "Email" << "Balance" << "Subscription Type";
-//        ui->tableWidget_users->setHorizontalHeaderLabels(headers);
-//
-//        int row = 0;
-//        for (int i = 0; i < number_of_users_in_array; ++i) {
-//            if (arr_users[i].admin_role == 0) {
-//                ui->tableWidget_users->insertRow(row);
-//
-//                ui->tableWidget_users->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(arr_users[i].username)));
-//                ui->tableWidget_users->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(arr_users[i].complaints)));
-//                ui->tableWidget_users->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(arr_users[i].contactdet.email)));
-//                ui->tableWidget_users->setItem(row, 3, new QTableWidgetItem(QString::number(arr_users[i].balance)));
-//                ui->tableWidget_users->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(arr_users[i].sub.subscription_type)));
-//           
-//
-//                row++;
-//            }
-//        }*/
-//    ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
-//
-//    ui->tableWidget_users->setRowCount(0);
-//    ui->tableWidget_users->setColumnCount(5);
-//    QStringList headers;
-//    headers << "Name" << "Complaints" << "Email" << "Balance" << "Subscription Type";
-//    ui->tableWidget_users->setHorizontalHeaderLabels(headers);
-//
-//    int row = 0;
-//    for (int i = 0; i < number_of_users_in_array; ++i) {
-//        if (arr_users[i].admin_role == 0) {
-//            ui->tableWidget_users->insertRow(row);
-//
-//            ui->tableWidget_users->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(arr_users[i].username)));
-//
-//
-//            QString complaintText = QString::fromStdString(arr_users[i].complaints);
-//            QString shortenedText = complaintText.left(30);
-//            if (complaintText.length() > 30)
-//                shortenedText += "...";
-//
-//            QTableWidgetItem* item = new QTableWidgetItem(shortenedText);
-//            item->setToolTip(complaintText);
-//            ui->tableWidget_users->setItem(row, 1, item);
-//
-//            ui->tableWidget_users->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(arr_users[i].contactdet.email)));
-//            ui->tableWidget_users->setItem(row, 3, new QTableWidgetItem(QString::number(arr_users[i].balance)));
-//            ui->tableWidget_users->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(arr_users[i].sub.subscription_type)));
-//
-//            row++;
-//        }
-//    }
-//    
-//}
 
 void QtWidgetsApplication3::gotoadmin() {
     ui->stackedWidget->setCurrentWidget(ui->admin);  

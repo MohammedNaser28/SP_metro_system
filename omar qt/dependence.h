@@ -13,6 +13,7 @@
 #include <utility>
 #include <sstream>
 #include<QString>
+#include<string>
 #include<QMessageBox>
 #include<QDebug>
 #include <QDate>
