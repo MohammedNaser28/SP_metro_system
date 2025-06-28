@@ -11,7 +11,8 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want
     ui->user_input_balance->setRange(0.0, 10000.0);     // sets both min and max
     ui->user_input_balance->setSingleStep(0.5);       // how much it increases/decreases per step
-      
+
+  
 }
 
 QtWidgetsApplication3::~QtWidgetsApplication3()

@@ -222,6 +222,8 @@ void saveusersinfo() {
 //    file.close();
 //}
 //
+
+
 void load_subsc_data() {
     QFile file("subsc data.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -652,6 +654,11 @@ void load_user_subsc() {
 
     file.close();
 }
+
+
+
+
+
 //
 ////history rides 
 //
