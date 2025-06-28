@@ -279,9 +279,25 @@ void  QtWidgetsApplication3::on_delete_users_clicked()
         QMessageBox::warning(this, "Invalid Input", "Please enter a valid number.");
         return;
     }
+
+
+
     admin_chosen_index--;
-    /// admin_chosen_index is the index use it 
-    ui->stackedWidget->setCurrentWidget(ui->admin); /// !!! change "admin" with the name of the widget of maher
+    
+    for (int i = admin_chosen_index; i < number_of_users_in_array - 1; ++i) {
+        arr_users[i] = arr_users[i + 1];
+    }
+
+    number_of_users_in_array--;
+
+    // Show success message
+    QMessageBox::information(this, "Deleted", "User has been deleted successfully.");
+
+
+
+
+
+
 }
 
 void  QtWidgetsApplication3::on_change_users_clicked()
@@ -635,6 +651,73 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
 
 }
 
+
+void QtWidgetsApplication3::on_TOEDIT_clicked() {
+  //  on_pushButton_editInfo_clicked();
+    ui->stackedWidget->setCurrentWidget(ui->changeinfo);
+}
+
+//void QtWidgetsApplication3::on_pushButton_editInfo_clicked() {
+//    ui->stackedWidget->setCurrentWidget(ui->changeinfo);
+//
+//    ui->username_label->setText(QString::fromStdString(arr_users[indexofuser].username));
+//    ui->email_label->setText(QString::fromStdString(arr_users[indexofuser].contactdet.email));
+//    ui->pass_label->setText(QString::fromStdString(arr_users[indexofuser].pass));
+//}
+
+
+void QtWidgetsApplication3::on_saveUsername_clicked() {
+    QString newName = ui->nameuser->text().trimmed();
+    //qDebug() << "Save Username clicked with name:" << newName;
+
+    if (newName.isEmpty() ){
+        QMessageBox::warning(this, "Error", "Username cannot be empty.");
+        return;
+    }
+
+    arr_users[indexofuser].username = newName.toStdString();
+
+
+   // ui->nameuser->setText(newName);
+
+    QMessageBox::information(this, "Success", "Username updated successfully.");
+}
+
+
+
+
+void QtWidgetsApplication3::on_saveEmail_clicked() {
+    QString newEmail = ui->emaillabel->text();
+    if (!newEmail.contains("@") || !newEmail.contains(".")) {
+        QMessageBox::warning(this, "Error", "Invalid email format.");
+        return;
+    }
+    arr_users[indexofuser].contactdet.email = newEmail.toStdString();
+    QMessageBox::information(this, "Success", "Email updated successfully.");
+}
+
+
+void QtWidgetsApplication3::on_savePassword_clicked() {
+    QString newPass = ui->passlabel->text();
+    if (newPass.length() < 8) {
+        QMessageBox::warning(this, "Error", "Password must be at least 8 characters.");
+        return;
+    }
+    arr_users[indexofuser].pass = newPass.toStdString();
+    QMessageBox::information(this, "Success", "Password updated successfully.");
+}
+
+
+
+
+
+
+
+
+
+
+
+
 void QtWidgetsApplication3::on_back1_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
@@ -659,6 +742,11 @@ void QtWidgetsApplication3::on_back7_clicked() {
 void QtWidgetsApplication3::on_back8_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->manage_plan);
 }
+
+void QtWidgetsApplication3::on_back12_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->current_data);
+}
+
 void QtWidgetsApplication3::on_exit1_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 }
@@ -671,7 +759,10 @@ void QtWidgetsApplication3::on_exit3_clicked() {
 
 void QtWidgetsApplication3::on_exit02_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
+
 }
+
+
 void QtWidgetsApplication3::on_exit4_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 }
