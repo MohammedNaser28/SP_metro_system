@@ -131,9 +131,6 @@ void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
 
 
 
-
-
-
 void QtWidgetsApplication3::on_TOEDIT_clicked() {
   //  on_pushButton_editInfo_clicked();
     ui->stackedWidget->setCurrentWidget(ui->changeinfo);
