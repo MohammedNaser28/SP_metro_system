@@ -81,29 +81,16 @@ void  QtWidgetsApplication3::on_pushButton_8_clicked() {
 
 void  QtWidgetsApplication3::on_pushButton_9_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->renew_sub);
-
+    
 
     QString current_date = QString::fromStdString(getCurrentDate());
     ui->cur_date->setText(current_date);
-   
-    if (arr_users[indexofuser].sub.fixed == 'y') {
-        QString expiry_date = QString::fromStdString(saveExpiry());
-        ui->exp_date->setText(expiry_date);
 
-        QString status = QString::fromStdString(check_expiry(arr_users));
-        ui->sub_status->setText(status);
-    }
+    QString expiry_date = QString::fromStdString(saveExpiry());
+    ui->exp_date->setText(expiry_date);
 
-
-    else {
-       
-        ui->exp_date->setText("this subscription doesn't have an expiry date");
-
-        
-        ui->sub_status->setText("doesn't have remaining days ");
-
-
-    }
+    QString status = QString::fromStdString(check_expiry(arr_users));
+    ui->sub_status->setText(status);
 
 }
 
@@ -130,22 +117,9 @@ void QtWidgetsApplication3::on_renew_button_clicked()
 {
 
     ui->stackedWidget->setCurrentWidget(ui->renew_page);
-   
-    
-    if (arr_users[indexofuser].sub.fixed == 'y') {
-        ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
-        ui->rem_trips->setText(QString::fromStdString(to_string(arr_users[indexofuser].sub.remaining_trips)));
-
-    }
-
-    else {
-        ui->cur_balance->setText("in the wallet "+(QString::fromStdString(to_string(arr_users[indexofuser].balance))));
-
-        ui->rem_trips->setText("you doesn't have trips in this subscription ");
-
-    }
-
-
+    ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+    ui->rem_trips->setText(QString::fromStdString(to_string(arr_users[indexofuser].sub.remaining_trips)));
+    //should update remaining trips 
 }
 
 string QtWidgetsApplication3::check_expiry(st_of_users person[])
@@ -183,121 +157,32 @@ string QtWidgetsApplication3::check_expiry(st_of_users person[])
 
 }
 
-
 void QtWidgetsApplication3::on_confirm_renew_clicked()
 {
 
-    /// aly will fix it or i will kill him(); 
-    if (arr_users[indexofuser].sub.fixed == 'n')
+    /// aly will fix it or i will kill him();
+
+    if ((arr_users[indexofuser].balance - arr_users[indexofuser].sub.zonePrice) < 0)
     {
-        ui->stackedWidget->setCurrentWidget(ui->renew_in_wallet_subsc);
-        ui->old_wallet_balance->setText(QString::number(arr_users[indexofuser].sub.balancew));
-      
 
-    } 
-
-    if (arr_users[indexofuser].sub.fixed == 'y') {
-      
-   
-        if ((arr_users[indexofuser].balance - arr_users[indexofuser].sub.zonePrice) < 0)
-        {
-
-            QMessageBox::warning(this, "Not enough balnace.", "Please Recharge Your Balance.");
-            return;
-        }
-
-        arr_users[indexofuser].balance -= arr_users[indexofuser].sub.zonePrice;
-        arr_users[indexofuser].sub.remaining_trips = arr_users[indexofuser].sub.Num_trips;
-
-        // Update the Text Browser to show old balance (before recharge)
-        ui->cur_balance->setText(QString::number(arr_users[indexofuser].balance));
-
-        // Update the Line Edit to show the new balance (after recharge)
-        ui->new_balance->setText(QString::number(arr_users[indexofuser].balance));
-
-        // Show success message
-        QMessageBox::information(this, "Success", "Recharge successful!");
-    }
-   
-
-}
-
-void QtWidgetsApplication3::on_confirm_wallet_balance_clicked()
-{
-
-
-
-    bool ok;
-    int wallet_recharge = ui->wallet_new_balance->text().toInt(&ok);
-    if (!ok) {
-        QMessageBox::warning(this, "Input Error", "Please enter a valid number.");
+        QMessageBox::warning(this, "Not enough balnace.", "Please Recharge Your Balance.");
         return;
     }
 
+    arr_users[indexofuser].balance -= arr_users[indexofuser].sub.zonePrice;
+    arr_users[indexofuser].sub.remaining_trips = arr_users[indexofuser].sub.Num_trips;
 
-    for (int i = 0;i < num_of_subsc;i++) {
+    // Update the Text Browser to show old balance (before recharge)
+    ui->cur_balance->setText(QString::number(arr_users[indexofuser].balance));
 
-        if (arr_subscription[i].plan_name == arr_users[indexofuser].sub.subscription_type)
-        {
+    // Update the Line Edit to show the new balance (after recharge)
+    ui->new_balance->setText(QString::number(arr_users[indexofuser].balance));
 
-            if (arr_subscription[i].wallet_sub.card_balance < wallet_recharge)
-            {
-                why_grater = true;
+    // Show success message
+    QMessageBox::information(this, "Success", "Recharge successful!");
 
-                if (arr_subscription[i].wallet_sub.fund_multiple % wallet_recharge == 0) {
-                    why = true;
-
-                    if (arr_users[indexofuser].balance >= wallet_recharge) {
-
-                        arr_users[indexofuser].sub.balancew += wallet_recharge;
-                        arr_users[indexofuser].balance -= wallet_recharge;
-
-                        QMessageBox::information(this, "Success", "Recharged successful!");
-
-
-                    }
-
-                    else {
-
-                        QMessageBox::warning(this, "Dont have enough balnace. your balance is " + arr_users[indexofuser].balance, "Please Recharge Your Balance.");
-                    }
-                }
-                if (!why) {
-
-                    QMessageBox::warning(
-                        this,
-                        "Invalid Balance",
-                        "Wallet balance must be in multiple of: " + QString::number(arr_subscription[i].wallet_sub.fund_multiple)
-                    );
-
-
-                }
-                if (!why_grater) {
-                    QMessageBox::warning(this,
-                        "Invalid Balance", 
-                        "Put a num less than this balance : " + QString::number(arr_subscription[i].wallet_sub.card_balance)
-                    );
-                }
-            }
-        }
-    }
-
-   
-    ui->old_wallet_balance->setText(QString::number(arr_users[indexofuser].sub.balancew));
 
 }
-
-void QtWidgetsApplication3::on_back_to_renew_page_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->renew_page);
-   
-}
-
-void QtWidgetsApplication3::on_recharge_main_bala_in_wallet_clicked() {
-
- ui->stackedWidget->setCurrentWidget(ui->charge_user_balance_page);
-
-}
-
 
 
 void QtWidgetsApplication3::on_cancel_renew_clicked()
@@ -312,4 +197,25 @@ void QtWidgetsApplication3::on_change_sub_clicked()
     choose_sub();
     ui->stackedWidget->setCurrentWidget(ui->subscriptions);
 
+}
+
+
+
+void QtWidgetsApplication3::on_recharge_button_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->charge_user_balance_page);
+    ui->old_user_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+
+}
+
+
+void QtWidgetsApplication3::on_submit_balance_clicked()
+{
+    double value = ui->user_input_balance->value();
+
+    arr_users[indexofuser].balance += value;
+    QMessageBox::information(this, "Success", "Your balance has charged correctly !");
+    //update balance 
+    ui->old_user_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+    ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
 }
