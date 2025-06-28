@@ -19,16 +19,30 @@ int main(int argc, char* argv[])
     QtWidgetsApplication3 w;
 
     QObject::connect(&x, &Register::switchToMainWindow, &x, [&x, &w]() {
+        
+
         x.hide();
-        /*w.start_up();*/
         w.show();
+        w.start_up();
+
+        });
+
+    QObject::connect(&x, &Register::switchTosubWindow, &x, [&x, &w]() {
+
+
+        x.hide();
+        w.show();
+        w.setPage(0);
+        w.choose_sub();
 
         });
 
     QObject::connect(&x, &Register::windowadmin, &x, [&x, &w]() {
+       
         x.hide();
         w.show();
         w.gotoadmin();
+
         });
 
     QObject::connect(&w, &QtWidgetsApplication3::switchToDialog, &w, [&x, &w]() {

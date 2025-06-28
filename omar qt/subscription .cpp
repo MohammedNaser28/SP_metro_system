@@ -3,7 +3,7 @@
 
 void QtWidgetsApplication3::choose_sub()
 {
-
+    ui->listWidget_subscriptions->clear();
     if (num_of_subsc == 0) {
         ui->listWidget_subscriptions->addItem("No available subscriptions");
         return;
@@ -97,59 +97,8 @@ void  QtWidgetsApplication3::on_pushButton_9_clicked() {
 
 void QtWidgetsApplication3::on_pushButton_10_clicked() {
 
-
-    connect(ui->listWidget_subscriptions, &QListWidget::itemClicked, this, [=](QListWidgetItem* item) {
-        int i = item->data(Qt::UserRole).toInt();
-        chosenSubscriptionIndex = i;
-
-        QString details;
-        details += "📦 Plan Name: " + QString::fromStdString(arr_subscription[i].plan_name) + "\n";
-
-        if (arr_subscription[i].fixed == 'y') {
-            details += "\n🟦 Fixed Subscription:\n";
-
-            if (arr_subscription[i].month_count > 0) {
-                details += "\n📅 Monthly Plans:\n";
-                for (int j = 0; j < arr_subscription[i].month_count; j++) {
-                    details += "➤ " + QString::number(arr_subscription[i].month_sub[j].duration) + " month(s), "
-                        + QString::number(arr_subscription[i].month_sub[j].no_of_trips) + " trips\n";
-                    for (int k = 0; k < arr_subscription[i].month_sub[j].zone_num; k++) {
-                        details += "   • Zone " + QString::number(k + 1) + ": "
-                            + QString::number(arr_subscription[i].month_sub[j].zonesPrice[k]) + " LE\n";
-                    }
-                }
-            }
-
-            if (arr_subscription[i].year_count > 0) {
-                details += "\n📅 Yearly Plans:\n";
-                for (int j = 0; j < arr_subscription[i].year_count; j++) {
-                    details += "➤ " + QString::number(arr_subscription[i].year_sub[j].duration) + " year(s), "
-                        + QString::number(arr_subscription[i].year_sub[j].no_of_trips) + " trips\n";
-                    for (int k = 0; k < arr_subscription[i].year_sub[j].zone_num; k++) {
-                        details += "   • Zone " + QString::number(k + 1) + ": "
-                            + QString::number(arr_subscription[i].year_sub[j].zonesPrice[k]) + " LE\n";
-                    }
-                }
-            }
-        }
-        else {
-            details += "\n🟨 Wallet Subscription:\n";
-            details += "• Add balance in multiples of: " + QString::number(arr_subscription[i].wallet_sub.fund_multiple) + " LE\n";
-            details += "• Maximum card balance: " + QString::number(arr_subscription[i].wallet_sub.card_balance) + " LE\n";
-            details += "• Zones and Prices:\n";
-            for (int k = 0; k < arr_subscription[i].wallet_sub.zone_num; k++) {
-                details += "   • Zone " + QString::number(k + 1) + ": "
-                    + QString::number(arr_subscription[i].wallet_sub.zonesPrice[k]) + " LE\n";
-            }
-
-        }
-
-        if (!arr_subscription[i].notes.empty()) {
-            details += "\n📝 Notes:\n" + QString::fromStdString(arr_subscription[i].notes);
-        }
-
-        ui->label_subscription_details->setPlainText(details);  // For QTextEdit
-        });
+    ui->stackedWidget->setCurrentWidget(ui->subscriptions);
+    
 }
 
 void QtWidgetsApplication3::on_pushButton_confirm_clicked() {
@@ -211,7 +160,7 @@ string QtWidgetsApplication3::check_expiry(st_of_users person[])
 void QtWidgetsApplication3::on_confirm_renew_clicked()
 {
 
-
+    /// aly will fix it or i will kill him();
 
     if ((arr_users[indexofuser].balance - arr_users[indexofuser].sub.zonePrice) < 0)
     {
@@ -220,10 +169,11 @@ void QtWidgetsApplication3::on_confirm_renew_clicked()
         return;
     }
 
-
+    arr_users[indexofuser].balance -= arr_users[indexofuser].sub.zonePrice;
+    arr_users[indexofuser].sub.remaining_trips = arr_users[indexofuser].sub.Num_trips;
 
     // Update the Text Browser to show old balance (before recharge)
-    ui->admin_change_balance->setText(QString::number(arr_users[indexofuser].balance));
+    ui->cur_balance->setText(QString::number(arr_users[indexofuser].balance));
 
     // Update the Line Edit to show the new balance (after recharge)
     ui->new_balance->setText(QString::number(arr_users[indexofuser].balance));

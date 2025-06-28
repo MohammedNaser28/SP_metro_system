@@ -10,7 +10,6 @@ void  QtWidgetsApplication3::on_rides_clicked() {
 void  QtWidgetsApplication3::on_pushButton_6_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->new_rides);
 
-    ///--------           FILL STATIONS COMBOBOX            ----------///
 
     for (int i = 0; i < NUM_LINES; i++)
     {

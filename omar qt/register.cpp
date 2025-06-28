@@ -38,7 +38,7 @@ bool Register::SignInFun(const string& username, const string& userpass, bool& v
     return IsFound;
 }
 
-bool Register::newaccount(const string& username, const string& userpass, const string& email)
+bool Register::newaccount(const string& username, const string& userpass, const string& email,const double& balance)
 {
     for (int i = 0; i < number_of_users_in_array; i++) {
         if (arr_users[i].username == username || arr_users[i].contactdet.email == email)
@@ -47,6 +47,7 @@ bool Register::newaccount(const string& username, const string& userpass, const 
     arr_users[number_of_users_in_array].username = username;
     arr_users[number_of_users_in_array].pass = userpass;
     arr_users[number_of_users_in_array].contactdet.email = email;
+    arr_users[number_of_users_in_array].balance = balance;
     arr_users[number_of_users_in_array].admin_role = false;
     arr_users[number_of_users_in_array].id = "ID" + to_string(number_of_users_in_array + 1); // simple ID
     indexofuser = number_of_users_in_array; 
@@ -81,14 +82,14 @@ void Register::on_pushButton_sign_clicked()
     QString email = ui->lineEdit_email->text().trimmed();
     QString balance = ui->lineEdit_balance->text().trimmed();
 
-    bool success = newaccount(username.toStdString(), password.toStdString(), email.toStdString());
+    bool success = newaccount(username.toStdString(), password.toStdString(), email.toStdString(),balance.toDouble());
 
     if (success) 
     {
         saveusersinfo();
         QMessageBox::information(this, "Sign Up", "Account created successfully!");
-        emit switchToMainWindow();
-
+        emit switchTosubWindow();
+        
     }
     else {
         QMessageBox::warning(this, "Sign Up", "Username or email already exists.");
@@ -113,6 +114,7 @@ void Register::on_pushButton_login_clicked()
     if (success && admincheck=="") {
         QMessageBox::information(this, "Login", "Login Successful");
         emit switchToMainWindow();
+        
     }
     else if (success && validpasskey)
     {
