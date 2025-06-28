@@ -5,7 +5,14 @@
 #include <QApplication>
 #include <QPushButton>
 #include<QString>
+#include"global.h"
+#include"dependence.h"
+#include"structures.h"
+#include"stations.h"
+#include "view users.h"
+#include <QTableWidget>
 #include"choose sub.cpp"
+#include"register.h"
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
@@ -16,6 +23,9 @@ public:
     void gotoadmin();
     void setPage(int index);
     void start_up();
+    void choose_sub();
+   
+    
 private slots:
    /* void on_pushButton_23_clicked();*/
     void on_personal_details_clicked();
@@ -23,14 +33,14 @@ private slots:
     void on_sub_settings_clicked();
    /* void on_logout_clicked();
     void on_pushButton_12_clicked();*/
+    /*void on_pushButton_12_clicked();*/
     void on_pushButton_6_clicked();
     void on_pushButton_7_clicked();
     void on_pushButton_8_clicked();
     void on_pushButton_9_clicked();
     void on_pushButton_10_clicked();
     void on_pushButton_15_clicked();
-    void on_pushButton_17_clicked();
-
+    //void on_pushButton_17_clicked();
     void on_delete_users_clicked();
     void on_change_users_clicked();
     void on_admin_mainmenu_clicked();
@@ -48,7 +58,7 @@ private slots:
 
     void on_pushButton_18_clicked();
     //charge balance #admin
-    void on_pushButton_12_clicked();
+    void on_Chargeing_admin_balance_clicked();
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
 
@@ -81,8 +91,15 @@ private slots:
     void on_exit8_clicked();
     void on_pushButton_confirm_clicked();
     void on_logout_clicked();
-    void choose_sub();
    
+    string getCurrentDate();
+    string saveExpiry();
+    void on_change_sub_clicked();
+    void on_renew_button_clicked();
+    string check_expiry(st_of_users person[]);
+    void on_confirm_renew_clicked();
+    void on_cancel_renew_clicked();
+    void on_recharge_button_clicked();
     /*ride stations */
    
 

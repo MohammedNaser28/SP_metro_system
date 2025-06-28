@@ -21,7 +21,8 @@ extern int num_of_subsc;
 extern int kit_kat_index;
 extern int switching_index;
 extern int arr_sub_insights[1000];
-
+extern int admin_chosen_user;
+extern int chosenSubscriptionIndex ;
 extern short indexofuser;
 extern short number_of_users_in_array;
 extern short hist_rides;

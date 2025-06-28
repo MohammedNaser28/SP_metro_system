@@ -2,3 +2,6 @@ ID1     Abbassia.     El-Ahram.     8     06/05/2025
 ID1     Ring_Road.     Cairo_University.     10     06/05/2025
 ID2     Wadi_Hof.     Kotsika.     8     24/06/2025
 ID2     Helwan_University.     Saad_Zaghloul.     8     25/06/2025
+ID2     Helwan.     El-Zahraa.     8     27/06/2025
+ID2     Helwan.     El-Ma'sara.     8     27/06/2025
+ID3     Torah_El-Balad.     Helwan.     727     27/06/2025

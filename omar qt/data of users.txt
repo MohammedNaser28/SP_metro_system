@@ -1,20 +1,10 @@
 information of person is in this sequence:(name --> id --> role --> balance --> password --> email)
-17
+7
 
-omar1 ID1 0 0 12345678 omar@gmail.com
-0 0 1 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 0 0 0 0
-0 0 1 0 0 0
-0 0 0 0 0 0
-0 0 0 0 5555 ID15
-0 0 1 0 5555 ID15
-5555 ID15 1 0 8888 ID16
-8888 ID16 0 0 maher ID17
-maher ID17 1 0 maher22 ID18
-maher22 ID18 1 0 mahor ID19
-mahor ID19 1 0  
+omar ID1 0 50 12345678 omar@gmail.com
+alol ID2 0 500000 123456789 aly@gmail.com
+alol2 ID3 0 2906 12345678 alol@gmail.com
+omar2 ID4 0 5584 987654321 omar2@gmail.com
+omoamoa ID5 0 9999999 8888888888888 oooma@gmail.com
+ppppp ID6 0 10007 8888888888888 ldldl@gmail.com
+888888 ID7 0 666 44444444444 aa@gmail.com
