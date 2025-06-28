@@ -37,7 +37,7 @@ void  QtWidgetsApplication3::on_pushButton_15_clicked() {
         }
     }
 }
-
+ //?TODO: maher put the function hint the func is loop and the index and make it clear and please push it correctly becuse we are done 
 void  QtWidgetsApplication3::on_delete_users_clicked()
 {
     QString theindex = ui->NumOfUser->text().trimmed();
@@ -49,11 +49,19 @@ void  QtWidgetsApplication3::on_delete_users_clicked()
         return;
     }
     admin_chosen_index--;
-    admin_chosen_user = admin_chosen_index;
+   
 
-    /// admin_chosen_index is the index use it 
-    ui->stackedWidget->setCurrentWidget(ui->admin); /// !!! change "admin" with the name of the widget of maher
+    for (int i = admin_chosen_index; i < number_of_users_in_array - 1; ++i) {
+        arr_users[i] = arr_users[i + 1];
+    }
+
+    number_of_users_in_array--;
+
+    // Show success message
+    QMessageBox::information(this, "Deleted", "User has been deleted successfully.");
 }
+
+
 
 void  QtWidgetsApplication3::on_change_users_clicked()
 {
@@ -67,22 +75,19 @@ void  QtWidgetsApplication3::on_change_users_clicked()
     }
 
     admin_chosen_index--;
-    admin_chosen_user = admin_chosen_index;
-
-    /// admin_chosen_index is the index use it 
-    ui->stackedWidget->setCurrentWidget(ui->modify_user); /// !!! change "admin" with the name of the widget of ali
 
 
+    for (int i = admin_chosen_index; i < number_of_users_in_array - 1; ++i) {
+        arr_users[i] = arr_users[i + 1];
+    }
 
+    number_of_users_in_array--;
 
-
-
+    // Show success message
+    QMessageBox::information(this, "Deleted", "User has been deleted successfully.");
 
 
 }
-
-
-
 
 
 void QtWidgetsApplication3::gotoadmin() {

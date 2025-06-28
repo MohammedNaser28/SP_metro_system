@@ -121,6 +121,7 @@ void QtWidgetsApplication3::on_renew_button_clicked()
     ui->stackedWidget->setCurrentWidget(ui->renew_page);
     ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
     ui->rem_trips->setText(QString::fromStdString(to_string(arr_users[indexofuser].sub.remaining_trips)));
+    //should update remaining trips 
 }
 
 string QtWidgetsApplication3::check_expiry(st_of_users person[])
@@ -198,6 +199,27 @@ void QtWidgetsApplication3::on_change_sub_clicked()
     choose_sub();
     ui->stackedWidget->setCurrentWidget(ui->subscriptions);
 
+}
+
+
+
+void QtWidgetsApplication3::on_recharge_button_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->charge_user_balance_page);
+    ui->old_user_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+
+}
+
+
+void QtWidgetsApplication3::on_submit_balance_clicked()
+{
+    double value = ui->user_input_balance->value();
+
+    arr_users[indexofuser].balance += value;
+    QMessageBox::information(this, "Success", "Your balance has charged correctly !");
+    //update balance 
+    ui->old_user_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+    ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
 }
 void QtWidgetsApplication3::view_subscription() {
 
