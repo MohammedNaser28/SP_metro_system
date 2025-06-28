@@ -23,15 +23,14 @@ extern int switching_index;
 extern int arr_sub_insights[1000];
 extern int admin_chosen_user;
 extern int chosenSubscriptionIndex ;
-extern int wallet_recharge;
 extern short indexofuser;
 extern short number_of_users_in_array;
 extern short hist_rides;
+
 extern bool DesireToCreateAcc;
 extern bool sign;
 extern bool realadmin_by_keypass;
-extern bool why;
-extern bool why_grater;
+
 extern string name;
 extern string password;
 extern string current_user_id;
