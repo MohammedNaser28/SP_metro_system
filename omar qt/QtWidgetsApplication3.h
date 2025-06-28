@@ -13,6 +13,7 @@
 #include <QTableWidget>
 #include"choose sub.cpp"
 #include"register.h"
+
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
@@ -45,6 +46,15 @@ private slots:
     void on_change_users_clicked();
     void on_admin_mainmenu_clicked();
     void on_confirmride_clicked();
+
+    //user information change
+
+    void on_TOEDIT_clicked();
+    //void on_pushButton_editInfo_clicked();
+    void on_saveUsername_clicked();
+    void on_saveEmail_clicked();
+    void on_savePassword_clicked();
+
     void on_submit_balance_clicked();
     void on_back_from_balance_clicked();
     void on_back_to_renew_page_clicked();
@@ -62,6 +72,9 @@ private slots:
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
 
+  
+
+
     //change subsc #admin 
     void on_pushButton_23_clicked();
 
@@ -75,6 +88,7 @@ private slots:
     void on_back6_clicked();
     void on_back7_clicked();
     void on_back8_clicked();
+    void on_back12_clicked();
     void on_exit1_clicked();
     void on_exit2_clicked();
     void on_exit3_clicked();
