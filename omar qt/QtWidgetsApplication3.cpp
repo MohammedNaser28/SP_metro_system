@@ -144,7 +144,7 @@ void QtWidgetsApplication3::on_back7_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->manage_plan);
 }
 void QtWidgetsApplication3::on_back8_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->manage_plan);
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
 void QtWidgetsApplication3::on_exit1_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);

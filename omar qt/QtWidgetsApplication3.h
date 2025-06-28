@@ -89,6 +89,7 @@ private slots:
     void on_confirm_renew_clicked();
     void on_cancel_renew_clicked();
     void on_recharge_button_clicked();
+void view_subscription();
     /*ride stations */
    
 

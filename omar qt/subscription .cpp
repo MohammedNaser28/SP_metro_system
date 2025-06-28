@@ -76,7 +76,9 @@ void  QtWidgetsApplication3::on_sub_settings_clicked() {
 }
 
 void  QtWidgetsApplication3::on_pushButton_8_clicked() {
+    view_subscription();
     ui->stackedWidget->setCurrentWidget(ui->view_sub);
+    
 }
 
 void  QtWidgetsApplication3::on_pushButton_9_clicked() {
@@ -195,5 +197,40 @@ void QtWidgetsApplication3::on_change_sub_clicked()
 {
     choose_sub();
     ui->stackedWidget->setCurrentWidget(ui->subscriptions);
+
+}
+void QtWidgetsApplication3::view_subscription() {
+
+
+    ui->name_in_sub->setText(QString::fromStdString(arr_users[indexofuser].username));
+    ui->cur_bl_in_view->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
+    ui->sub_name->setText(QString::fromStdString(arr_users[indexofuser].sub.subscription_type));
+    ui->actv_dt->setText(QString::fromStdString(arr_users[indexofuser].sub.activation));
+
+
+    
+
+    if (arr_users[indexofuser].sub.fixed == 'y') {
+
+        ui->nonfixed_sub_balnce_lb->setVisible(false);
+        
+
+
+         ui->mixed->setText(QString::fromStdString(arr_users[indexofuser].sub.plan_type));
+         ui->exp_dt->setText(QString::fromStdString(arr_users[indexofuser].sub.expiry)) ;
+         ui->rm_tr->setText(QString::fromStdString(to_string(arr_users[indexofuser].sub.remaining_trips )));
+    }
+
+    else if (arr_users[indexofuser].sub.fixed == 'n') {
+
+        ui->rm_tr_lb->setVisible(false);
+        ui->rm_tr->setVisible(false);
+        ui->nonfixed_sub_balnce_lb->setVisible(false);
+        
+       
+        ui->exp_dt->setText("There is no expiry Date for this subscription" );
+        ui->plan_type_lb->setText( "<b>Balance in " + QString::fromStdString( arr_users[indexofuser].sub.subscription_type) + " plan:</b>");
+        ui->mixed->setText(QString::fromStdString(to_string(arr_users[indexofuser].sub.balancew))) ;
+    }
 
 }
