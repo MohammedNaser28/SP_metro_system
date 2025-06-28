@@ -13,6 +13,7 @@
 #include <QTableWidget>
 #include"choose sub.cpp"
 #include"register.h"
+
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
