@@ -170,6 +170,7 @@ void QtWidgetsApplication3::on_renew_button_clicked()
     ui->stackedWidget->setCurrentWidget(ui->renew_page);
     ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
     ui->rem_trips->setText(QString::fromStdString(to_string(arr_users[indexofuser].sub.remaining_trips)));
+    //should update remaining trips 
 }
 
 string QtWidgetsApplication3::check_expiry(st_of_users person[])
