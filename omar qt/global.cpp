@@ -13,7 +13,6 @@ int switching_index = 0;
 int arr_sub_insights[1000] = { 0 };
 int admin_chosen_user;
 int chosenSubscriptionIndex = -1;
-int wallet_recharge;
 // Short integers
 short indexofuser = 0;
 short number_of_users_in_array = 0;
@@ -23,8 +22,7 @@ short hist_rides = 0;
 bool DesireToCreateAcc = true;
 bool sign = false;
 bool realadmin_by_keypass = false;
-bool why=false;
-bool why_grater = false;
+
 // User session strings
 string name = "";
 string password = "";
