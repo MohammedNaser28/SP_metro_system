@@ -24,7 +24,7 @@
     <property name="geometry">
      <rect>
       <x>-10</x>
-      <y>-10</y>
+      <y>40</y>
       <width>800</width>
       <height>800</height>
      </rect>
@@ -40,6 +40,9 @@
       <width>800</width>
       <height>800</height>
      </size>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(100, 147, 154);</string>
@@ -1237,8 +1240,8 @@ background-position: center;
      <widget class="QWidget" name="widget" native="true">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>70</y>
+        <x>70</x>
+        <y>100</y>
         <width>581</width>
         <height>451</height>
        </rect>
@@ -1404,6 +1407,22 @@ background-position: center;
         <string>TextLabel</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="TOEDIT">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>180</y>
+         <width>171</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;EDIT&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string> EDIT INFORMATION</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QPushButton" name="back1">
       <property name="geometry">
@@ -1429,6 +1448,145 @@ background-position: center;
       </property>
       <property name="text">
        <string>Exit program</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="changeinfo">
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>401</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;Edit personal details&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>100</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>NEW NAME</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>210</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>NEW PASSWORD</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>310</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>NEW E-MAIL</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="nameuser">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>150</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="passlabel">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>260</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="emaillabel">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>360</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveUsername">
+      <property name="geometry">
+       <rect>
+        <x>489</x>
+        <y>150</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>SUBMINT</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="savePassword">
+      <property name="geometry">
+       <rect>
+        <x>489</x>
+        <y>253</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>SUBMINT</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveEmail">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>360</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>SUBMINT</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="back12">
+      <property name="geometry">
+       <rect>
+        <x>589</x>
+        <y>583</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>BACK</string>
       </property>
      </widget>
     </widget>

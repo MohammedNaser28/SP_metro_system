@@ -13,6 +13,7 @@
 #include <QTableWidget>
 #include"choose sub.cpp"
 #include"register.h"
+
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
@@ -62,6 +63,9 @@ private slots:
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
 
+  
+
+
     //change subsc #admin 
     void on_pushButton_23_clicked();
 
@@ -75,6 +79,7 @@ private slots:
     void on_back6_clicked();
     void on_back7_clicked();
     void on_back8_clicked();
+    void on_back12_clicked();
     void on_exit1_clicked();
     void on_exit2_clicked();
     void on_exit3_clicked();
