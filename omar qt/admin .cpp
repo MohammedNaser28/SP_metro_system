@@ -49,15 +49,10 @@ void  QtWidgetsApplication3::on_delete_users_clicked()
         return;
     }
     admin_chosen_index--;
-  
-    for (int i = admin_chosen_index; i < number_of_users_in_array - 1; ++i) {
-        arr_users[i] = arr_users[i + 1];
-    }
+    admin_chosen_user = admin_chosen_index;
 
-    number_of_users_in_array--;
-
-    // Show success message
-    QMessageBox::information(this, "Deleted", "User has been deleted successfully.");
+    /// admin_chosen_index is the index use it 
+    ui->stackedWidget->setCurrentWidget(ui->admin); /// !!! change "admin" with the name of the widget of maher
 }
 
 void  QtWidgetsApplication3::on_change_users_clicked()

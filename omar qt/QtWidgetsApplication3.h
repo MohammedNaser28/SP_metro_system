@@ -46,8 +46,7 @@ private slots:
     void on_change_users_clicked();
     void on_admin_mainmenu_clicked();
     void on_confirmride_clicked();
-    void on_submit_balance_clicked();
-    void on_back_from_balance_clicked();
+
     //user information change
 
     void on_TOEDIT_clicked();

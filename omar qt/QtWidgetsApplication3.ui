@@ -657,8 +657,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <rect>
          <x>58</x>
          <y>180</y>
-         <width>101</width>
-         <height>20</height>
+         <width>121</width>
+         <height>31</height>
         </rect>
        </property>
        <property name="text">
@@ -670,8 +670,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <rect>
          <x>58</x>
          <y>220</y>
-         <width>91</width>
-         <height>20</height>
+         <width>121</width>
+         <height>31</height>
         </rect>
        </property>
        <property name="text">
@@ -681,9 +681,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <widget class="QLabel" name="cur_date">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>184</y>
-         <width>71</width>
+         <x>200</x>
+         <y>190</y>
+         <width>301</width>
          <height>16</height>
         </rect>
        </property>
@@ -694,9 +694,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <widget class="QLabel" name="exp_date">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>221</y>
-         <width>71</width>
+         <x>190</x>
+         <y>230</y>
+         <width>291</width>
          <height>16</height>
         </rect>
        </property>
@@ -733,14 +733,27 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <widget class="QLabel" name="sub_status">
        <property name="geometry">
         <rect>
-         <x>70</x>
-         <y>300</y>
-         <width>271</width>
+         <x>230</x>
+         <y>270</y>
+         <width>251</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
         <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_43">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>260</y>
+         <width>161</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;remaining days : &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </widget>
@@ -803,7 +816,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <rect>
         <x>70</x>
         <y>220</y>
-        <width>121</width>
+        <width>161</width>
         <height>16</height>
        </rect>
       </property>
@@ -827,9 +840,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <widget class="QLabel" name="cur_balance">
       <property name="geometry">
        <rect>
-        <x>200</x>
+        <x>270</x>
         <y>220</y>
-        <width>49</width>
+        <width>501</width>
         <height>16</height>
        </rect>
       </property>
@@ -842,7 +855,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <rect>
         <x>200</x>
         <y>270</y>
-        <width>49</width>
+        <width>501</width>
         <height>16</height>
        </rect>
       </property>
@@ -874,6 +887,109 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </property>
       <property name="text">
        <string>Cancel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="renew_in_wallet_subsc">
+     <widget class="QPushButton" name="confirm_wallet_balance">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>520</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>submit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="back_to_renew_page">
+      <property name="geometry">
+       <rect>
+        <x>362</x>
+        <y>520</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>back</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="recharge_main_bala_in_wallet">
+      <property name="geometry">
+       <rect>
+        <x>552</x>
+        <y>520</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>recahrge balance</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="old_wallet_balance">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>239</y>
+        <width>281</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>80</y>
+        <width>421</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Charge your wallet balance&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>240</y>
+        <width>251</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Your wallet balance &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_40">
+      <property name="geometry">
+       <rect>
+        <x>32</x>
+        <y>329</y>
+        <width>301</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;the new wallet balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="wallet_new_balance">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>327</y>
+        <width>241</width>
+        <height>61</height>
+       </rect>
       </property>
      </widget>
     </widget>
