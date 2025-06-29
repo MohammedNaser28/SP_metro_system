@@ -1,5 +1,17 @@
 ﻿#include "QtWidgetsApplication3.h"
 
+//DONT PLAY IN SUBSCRIPTION .CPP FILE I WILL KILL YOU 
+
+
+// DOOOONT PUT RECHARGE  OR SUBMIT BALANCE IN THIS FILE 
+//DONT DO THAT I WILL KILL YOU 
+//THEY ARE IN SUBSCRBITION .CPP  DONT PUT IT HERE 
+//DONT PUT RECHARGE BUTTON OR SUBMIT BALANCE OR BACK FROM BALANCE LEAVE THEM ALONE 
+//DANGEROUS 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
+
+//IF YOU PUT IT IT WILL BE A BIG MISTAKE
+
 
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
@@ -7,8 +19,12 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
 {
     ui->setupUi(this);  // Set up the UI components
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
-   
 
+    ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want
+    ui->user_input_balance->setRange(0.0, 10000.0);     // sets both min and max
+    ui->user_input_balance->setSingleStep(0.5);       // how much it increases/decreases per step
+
+  
 }
 
 QtWidgetsApplication3::~QtWidgetsApplication3()
@@ -72,14 +88,19 @@ std::string QtWidgetsApplication3::saveExpiry()
 }
 
 
-void QtWidgetsApplication3::on_back_from_balance_clicked()
-
-{
-  
-    ui->stackedWidget->setCurrentWidget(ui->renew_page);
 
 
-}
+
+// DOOOONT PUT RECHARGE HERE OR SUBMIT BALANCE 
+//DONT DO THAT I WILL KILL YOU 
+//THEY ARE IN SUBSCRBITION .CPP  DONT PUT IT HERE 
+//DONT PUT RECHARGE BUTTON OR SUBMIT BALANCE OR BACK FROM BALANCE LEAVE THEM ALONE 
+//DANGEROUS 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
+
+//IF YOU PUT IT IT WILL BE A BIG MISTAKE
+
 
 void QtWidgetsApplication3::start_up()
 {
@@ -90,27 +111,17 @@ void QtWidgetsApplication3::start_up()
 
 
 
-
-
-
-
-
 void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->admin);
 }
 
 
-
-
-
-
-
-
-
-
-
-
+//DONT PUT THE USERNAME SVE OR EMAIL SAVE OR TOEDIT HERE 
+//THEY ARE IN THE PERSONAL DETAILS .CPP DONT PUT IT HERE AGAIN 
+//SEEE THAT COMMENT 
+//I WILL KILL THE PERSON WHO WILL PUT IT HERE 
+//I 
 
 
 
@@ -137,7 +148,7 @@ void QtWidgetsApplication3::on_back7_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->manage_plan);
 }
 void QtWidgetsApplication3::on_back8_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->manage_plan);
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
 
 void QtWidgetsApplication3::on_back12_clicked() {

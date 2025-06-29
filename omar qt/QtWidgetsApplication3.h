@@ -46,8 +46,7 @@ private slots:
     void on_change_users_clicked();
     void on_admin_mainmenu_clicked();
     void on_confirmride_clicked();
-    void on_submit_balance_clicked();
-    void on_back_from_balance_clicked();
+
     //user information change
 
     void on_TOEDIT_clicked();
@@ -55,6 +54,15 @@ private slots:
     void on_saveUsername_clicked();
     void on_saveEmail_clicked();
     void on_savePassword_clicked();
+
+    void on_submit_balance_clicked();
+    void on_back_from_balance_clicked();
+    void on_back_to_renew_page_clicked();
+    void on_confirm_wallet_balance_clicked();
+    void on_recharge_main_bala_in_wallet_clicked();
+
+
+
 
     //modify but #admin
 
@@ -102,6 +110,7 @@ private slots:
     void on_confirm_renew_clicked();
     void on_cancel_renew_clicked();
     void on_recharge_button_clicked();
+void view_subscription();
     /*ride stations */
    
 

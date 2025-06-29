@@ -37,7 +37,7 @@ void  QtWidgetsApplication3::on_pushButton_15_clicked() {
         }
     }
 }
-
+ //?TODO: maher put the function hint the func is loop and the index and make it clear and please push it correctly becuse we are done 
 void  QtWidgetsApplication3::on_delete_users_clicked()
 {
     QString theindex = ui->NumOfUser->text().trimmed();
@@ -49,7 +49,9 @@ void  QtWidgetsApplication3::on_delete_users_clicked()
         return;
     }
     admin_chosen_index--;
+
   
+
     for (int i = admin_chosen_index; i < number_of_users_in_array - 1; ++i) {
         arr_users[i] = arr_users[i + 1];
     }
@@ -60,8 +62,11 @@ void  QtWidgetsApplication3::on_delete_users_clicked()
     QMessageBox::information(this, "Deleted", "User has been deleted successfully.");
 }
 
+//THIS IS THE CORRECT FUNCTION DONT CHANGE IT 
+
 void  QtWidgetsApplication3::on_change_users_clicked()
 {
+
     QString theindex = ui->NumOfUser->text().trimmed();
     bool ok;
     int admin_chosen_index = theindex.toInt(&ok);
@@ -70,24 +75,14 @@ void  QtWidgetsApplication3::on_change_users_clicked()
         QMessageBox::warning(this, "Invalid Input", "Please enter a valid number.");
         return;
     }
-
     admin_chosen_index--;
+
     admin_chosen_user = admin_chosen_index;
 
-    /// admin_chosen_index is the index use it 
-    ui->stackedWidget->setCurrentWidget(ui->modify_user); /// !!! change "admin" with the name of the widget of ali
 
-
-
-
-
-
-
-
+   ui->stackedWidget->setCurrentWidget(ui->modify_user);//DONT GHANGE IT I WILL KILL YOU 
+   //DONT CHANGE IT IMP IMP IMP IMP IMP IMP IMP IMP IMP 
 }
-
-
-
 
 
 void QtWidgetsApplication3::gotoadmin() {
@@ -160,3 +155,14 @@ void QtWidgetsApplication3::on_pushButton_23_clicked() {
 }
 
  
+
+
+
+
+
+
+
+
+
+
+

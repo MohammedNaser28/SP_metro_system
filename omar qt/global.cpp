@@ -22,7 +22,8 @@ short hist_rides = 0;
 bool DesireToCreateAcc = true;
 bool sign = false;
 bool realadmin_by_keypass = false;
-
+bool why=false;
+bool why_grater=false;
 // User session strings
 string name = "";
 string password = "";

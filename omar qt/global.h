@@ -30,6 +30,8 @@ extern short hist_rides;
 extern bool DesireToCreateAcc;
 extern bool sign;
 extern bool realadmin_by_keypass;
+extern bool why;
+extern bool why_grater;
 
 extern string name;
 extern string password;
