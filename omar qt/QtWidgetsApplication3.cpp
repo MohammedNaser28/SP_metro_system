@@ -1,5 +1,17 @@
 ﻿#include "QtWidgetsApplication3.h"
 
+//DONT PLAY IN SUBSCRIPTION .CPP FILE I WILL KILL YOU 
+
+
+// DOOOONT PUT RECHARGE  OR SUBMIT BALANCE IN THIS FILE 
+//DONT DO THAT I WILL KILL YOU 
+//THEY ARE IN SUBSCRBITION .CPP  DONT PUT IT HERE 
+//DONT PUT RECHARGE BUTTON OR SUBMIT BALANCE OR BACK FROM BALANCE LEAVE THEM ALONE 
+//DANGEROUS 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
+
+//IF YOU PUT IT IT WILL BE A BIG MISTAKE
+
 
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
@@ -76,33 +88,19 @@ std::string QtWidgetsApplication3::saveExpiry()
 }
 
 
-void QtWidgetsApplication3::on_recharge_button_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->charge_user_balance_page);
-    ui->old_user_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
-  
-}
 
 
-void QtWidgetsApplication3::on_submit_balance_clicked()
-{
-    double value = ui->user_input_balance->value();
 
-    arr_users[indexofuser].balance += value;
-    QMessageBox::information(this, "Success", "Your balance has charged correctly !");
-    //update balance 
-    ui->old_user_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
-    ui->cur_balance->setText(QString::fromStdString(to_string(arr_users[indexofuser].balance)));
-}
+// DOOOONT PUT RECHARGE HERE OR SUBMIT BALANCE 
+//DONT DO THAT I WILL KILL YOU 
+//THEY ARE IN SUBSCRBITION .CPP  DONT PUT IT HERE 
+//DONT PUT RECHARGE BUTTON OR SUBMIT BALANCE OR BACK FROM BALANCE LEAVE THEM ALONE 
+//DANGEROUS 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
 
-void QtWidgetsApplication3::on_back_from_balance_clicked()
+//IF YOU PUT IT IT WILL BE A BIG MISTAKE
 
-{
-  
-    ui->stackedWidget->setCurrentWidget(ui->renew_page);
-
-
-}
 
 void QtWidgetsApplication3::start_up()
 {
