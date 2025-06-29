@@ -229,6 +229,8 @@ void QtWidgetsApplication3::on_confirm_renew_clicked()
 
 }
 
+
+
 void QtWidgetsApplication3::on_confirm_wallet_balance_clicked()
 {
 
