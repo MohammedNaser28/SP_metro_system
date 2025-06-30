@@ -9,6 +9,7 @@ Register::Register(QWidget* parent)
     QPixmap pix(":/QtWidgetsApplication3/metro_logo_cropped.png");  // Or use "images/background.jpg" if from file system
     ui->label_6->setPixmap(pix.scaled(ui->label_6->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
     ui->label_6->setScaledContents(true);  // Optional, auto-scales content to label size
+  
 }
 
 Register::~Register()

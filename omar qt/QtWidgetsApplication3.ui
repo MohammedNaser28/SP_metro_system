@@ -6,538 +6,172 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>800</height>
+    <width>1514</width>
+    <height>2538</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>800</width>
-    <height>800</height>
+    <width>9999</width>
+    <height>9999</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QWidget" name="welcome2_2" native="true">
     <property name="geometry">
      <rect>
-      <x>-20</x>
-      <y>-40</y>
-      <width>800</width>
-      <height>800</height>
+      <x>-30</x>
+      <y>160</y>
+      <width>1492</width>
+      <height>1920</height>
      </rect>
     </property>
-    <property name="minimumSize">
-     <size>
-      <width>800</width>
-      <height>800</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>800</width>
-      <height>800</height>
-     </size>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 147, 154);</string>
-    </property>
-    <widget class="QWidget" name="subscriptions">
-     <widget class="QLabel" name="label_35">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>100</y>
-        <width>231</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 28pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Subscriptions</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="back3">
-      <property name="geometry">
-       <rect>
-        <x>620</x>
-        <y>580</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="exit3">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>580</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>exit program</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>170</y>
-        <width>291</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>There are many options, choose what suits you</string>
-      </property>
-     </widget>
-     <widget class="QListWidget" name="listWidget_subscriptions">
-      <property name="geometry">
-       <rect>
-        <x>65</x>
-        <y>221</y>
-        <width>251</width>
-        <height>301</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_11">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>530</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Confirm</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="label_subscription_details">
-      <property name="geometry">
-       <rect>
-        <x>333</x>
-        <y>219</y>
-        <width>351</width>
-        <height>301</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>50</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 7pt &quot;Wingdings&quot;;
+</string>
+     </property>
+     <property name="text">
+      <string>Welcome</string>
+     </property>
     </widget>
-    <widget class="QWidget" name="view_users_toadmin">
-     <widget class="QLabel" name="address">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>60</y>
-        <width>261</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:22pt;&quot;&gt;All users accounts &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QTableWidget" name="tableWidget_users">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>140</y>
-        <width>601</width>
-        <height>241</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="delete_users">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>540</y>
-        <width>201</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TO DELETE </string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="admin_mainmenu">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>630</y>
-        <width>211</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>BACK TO MAIN MENU</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="change_users">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>540</y>
-        <width>201</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TO CHANGE INFO</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_16">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>440</y>
-        <width>411</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;choose the number of user (to delete or change info) :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="NumOfUser">
-      <property name="geometry">
-       <rect>
-        <x>500</x>
-        <y>440</y>
-        <width>71</width>
-        <height>24</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="modify_user">
-     <widget class="QPushButton" name="Chargeing_admin_balance">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>230</y>
-        <width>161</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>charge balance</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_12">
-      <property name="geometry">
-       <rect>
-        <x>120</x>
-        <y>70</y>
-        <width>561</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Simplified Arabic Fixed</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Change in the users Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_23">
-      <property name="geometry">
-       <rect>
-        <x>292</x>
-        <y>328</y>
-        <width>161</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>change subscription </string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="charge_balance">
-     <widget class="QLabel" name="label_13">
-      <property name="geometry">
-       <rect>
-        <x>112</x>
-        <y>110</y>
-        <width>541</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;charge balance &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="admin_change_balance">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>230</y>
-        <width>361</width>
-        <height>81</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_14">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>240</y>
-        <width>191</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;user balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_15">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>410</y>
-        <width>271</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Enter the new balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="new_balance">
-      <property name="geometry">
-       <rect>
-        <x>312</x>
-        <y>417</y>
-        <width>431</width>
-        <height>71</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_24">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>560</y>
-        <width>83</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>OK</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_25">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>560</y>
-        <width>83</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Back</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="new_rides">
-     <widget class="QWidget" name="widget_20" native="true">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>80</y>
-        <width>591</width>
-        <height>451</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="newridelable">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>-140</y>
+       <width>1440</width>
+       <height>1028</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>9999</width>
+       <height>9999</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(43, 82, 136);
+
+
+background-repeat:no repeat;
+</string>
+     </property>
+     <property name="currentIndex">
+      <number>8</number>
+     </property>
+     <widget class="QWidget" name="subscriptions">
+      <widget class="QLabel" name="label_35">
        <property name="geometry">
         <rect>
-         <x>200</x>
-         <y>30</y>
+         <x>250</x>
+         <y>100</y>
          <width>231</width>
-         <height>61</height>
+         <height>81</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
+        <string notr="true">font: 700 28pt &quot;Times New Roman&quot;;</string>
        </property>
        <property name="text">
-        <string>New Rides</string>
+        <string>Subscriptions</string>
        </property>
       </widget>
-      <widget class="QComboBox" name="startstation">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
+      <widget class="QPushButton" name="back3">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>160</y>
-         <width>141</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="editable">
-        <bool>true</bool>
-       </property>
-       <property name="currentText">
-        <string/>
-       </property>
-       <property name="maxVisibleItems">
-        <number>10</number>
-       </property>
-       <property name="insertPolicy">
-        <enum>QComboBox::InsertPolicy::InsertAfterCurrent</enum>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="endstation">
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>160</y>
-         <width>141</width>
-         <height>24</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="start_label">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>140</y>
-         <width>91</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Entry station:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="end_lable">
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>140</y>
-         <width>71</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Exit station</string>
-       </property>
-      </widget>
-      <widget class="QTextBrowser" name="viewride">
-       <property name="geometry">
-        <rect>
-         <x>25</x>
-         <y>240</y>
-         <width>471</width>
-         <height>192</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="confirmride">
-       <property name="geometry">
-        <rect>
-         <x>230</x>
-         <y>190</y>
+         <x>620</x>
+         <y>580</y>
          <width>80</width>
          <height>24</height>
         </rect>
        </property>
        <property name="text">
-        <string>GO</string>
+        <string>back</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QPushButton" name="back4">
-      <property name="geometry">
-       <rect>
-        <x>670</x>
-        <y>610</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="exit4">
-      <property name="geometry">
-       <rect>
-        <x>570</x>
-        <y>610</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>exit program</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="rides_history">
-     <widget class="QWidget" name="widget_21" native="true">
-      <property name="geometry">
-       <rect>
-        <x>89</x>
-        <y>79</y>
-        <width>511</width>
-        <height>471</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_37">
+      <widget class="QPushButton" name="exit3">
        <property name="geometry">
         <rect>
-         <x>140</x>
-         <y>50</y>
-         <width>221</width>
-         <height>51</height>
+         <x>520</x>
+         <y>580</y>
+         <width>80</width>
+         <height>24</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
-       </property>
        <property name="text">
-        <string>Rides History</string>
+        <string>exit program</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_rideHistory">
+      <widget class="QLabel" name="label_8">
        <property name="geometry">
         <rect>
-         <x>63</x>
-         <y>99</y>
-         <width>411</width>
-         <height>361</height>
+         <x>240</x>
+         <y>170</y>
+         <width>291</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>There are many options, choose what suits you</string>
+       </property>
+      </widget>
+      <widget class="QListWidget" name="listWidget_subscriptions">
+       <property name="geometry">
+        <rect>
+         <x>65</x>
+         <y>221</y>
+         <width>251</width>
+         <height>301</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>530</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="label_subscription_details">
+       <property name="geometry">
+        <rect>
+         <x>333</x>
+         <y>219</y>
+         <width>351</width>
+         <height>301</height>
         </rect>
        </property>
        <property name="readOnly">
@@ -545,365 +179,846 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="back5">
-      <property name="geometry">
-       <rect>
-        <x>680</x>
-        <y>630</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="exit5">
-      <property name="geometry">
-       <rect>
-        <x>590</x>
-        <y>630</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>exit program</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="view_sub">
-     <widget class="QWidget" name="widget_22" native="true">
-      <property name="geometry">
-       <rect>
-        <x>35</x>
-        <y>10</y>
-        <width>521</width>
-        <height>541</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_38">
+     <widget class="QWidget" name="view_users_toadmin"/>
+     <widget class="QWidget" name="modify_user">
+      <widget class="QPushButton" name="Chargeing_admin_balance">
        <property name="geometry">
         <rect>
-         <x>110</x>
-         <y>10</y>
-         <width>311</width>
-         <height>121</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>View Subscription</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="cur_bal_in_view_lb">
-       <property name="geometry">
-        <rect>
-         <x>35</x>
-         <y>150</y>
-         <width>111</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;current balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="sub_name_lb">
-       <property name="geometry">
-        <rect>
-         <x>35</x>
-         <y>190</y>
-         <width>131</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Subscription Name :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="plan_type_lb">
-       <property name="geometry">
-        <rect>
-         <x>35</x>
-         <y>270</y>
-         <width>171</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Plan Type :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="actv_dt_lb">
-       <property name="geometry">
-        <rect>
-         <x>35</x>
+         <x>290</x>
          <y>230</y>
-         <width>111</width>
-         <height>20</height>
+         <width>161</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Activation Date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>charge balance</string>
        </property>
       </widget>
-      <widget class="QLabel" name="exp_dt_lb">
+      <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
-         <x>35</x>
-         <y>310</y>
-         <width>81</width>
-         <height>16</height>
+         <x>120</x>
+         <y>70</y>
+         <width>561</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Simplified Arabic Fixed</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Change in the users Info&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_23">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>328</y>
+         <width>161</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Expiry Date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>change subscription </string>
        </property>
       </widget>
-      <widget class="QLabel" name="rm_tr_lb">
+     </widget>
+     <widget class="QWidget" name="charge_balance">
+      <widget class="QLabel" name="label_13">
        <property name="geometry">
         <rect>
-         <x>35</x>
-         <y>350</y>
-         <width>91</width>
-         <height>16</height>
+         <x>112</x>
+         <y>110</y>
+         <width>541</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Remaining Trips :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;charge balance &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="nonfixed_sub_balnce_lb">
+      <widget class="QTextBrowser" name="admin_change_balance">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>270</y>
-         <width>141</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Expiry Date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="cur_bl_in_view">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>150</y>
-         <width>49</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="sub_name">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>190</y>
-         <width>111</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="actv_dt">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
+         <x>260</x>
          <y>230</y>
-         <width>81</width>
-         <height>16</height>
+         <width>361</width>
+         <height>81</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>240</y>
+         <width>191</width>
+         <height>61</height>
         </rect>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;user balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="mixed">
+      <widget class="QLabel" name="label_15">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>270</y>
-         <width>281</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="exp_dt">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>310</y>
+         <x>10</x>
+         <y>410</y>
          <width>271</width>
-         <height>16</height>
+         <height>81</height>
         </rect>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Enter the new balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="rm_tr">
+      <widget class="QLineEdit" name="new_balance">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>350</y>
-         <width>49</width>
-         <height>16</height>
+         <x>312</x>
+         <y>417</y>
+         <width>431</width>
+         <height>71</height>
         </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
        </property>
       </widget>
-      <widget class="QLabel" name="name_in_sub_lb">
+      <widget class="QPushButton" name="pushButton_24">
        <property name="geometry">
         <rect>
-         <x>35</x>
-         <y>120</y>
-         <width>81</width>
-         <height>20</height>
+         <x>370</x>
+         <y>560</y>
+         <width>83</width>
+         <height>29</height>
         </rect>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;User Name :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>OK</string>
        </property>
       </widget>
-      <widget class="QLabel" name="name_in_sub">
+      <widget class="QPushButton" name="pushButton_25">
        <property name="geometry">
         <rect>
-         <x>210</x>
-         <y>120</y>
-         <width>49</width>
-         <height>16</height>
+         <x>640</x>
+         <y>560</y>
+         <width>83</width>
+         <height>29</height>
         </rect>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Back</string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="back6">
-      <property name="geometry">
-       <rect>
-        <x>690</x>
-        <y>630</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="exit6">
-      <property name="geometry">
-       <rect>
-        <x>590</x>
-        <y>630</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>exit program</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="renew_sub">
-     <widget class="QWidget" name="widget_23" native="true">
-      <property name="geometry">
-       <rect>
-        <x>79</x>
-        <y>69</y>
-        <width>541</width>
-        <height>561</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_39">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>50</y>
-         <width>321</width>
-         <height>111</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Renew Subscription</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="cur_date_lb">
-       <property name="geometry">
-        <rect>
-         <x>58</x>
-         <y>180</y>
-         <width>101</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Current date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="exp_date_lb">
-       <property name="geometry">
-        <rect>
-         <x>58</x>
-         <y>220</y>
-         <width>91</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Expiry date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="cur_date">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>184</y>
-         <width>71</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="exp_date">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>221</y>
-         <width>71</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="renew_button">
+     <widget class="QWidget" name="new_rides">
+      <widget class="QWidget" name="widget_20" native="true">
        <property name="geometry">
         <rect>
          <x>60</x>
-         <y>380</y>
+         <y>80</y>
+         <width>591</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="newridelable">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>30</y>
+          <width>231</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>New Rides</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="startstation">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>160</y>
+          <width>141</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <property name="currentText">
+         <string/>
+        </property>
+        <property name="maxVisibleItems">
+         <number>10</number>
+        </property>
+        <property name="insertPolicy">
+         <enum>QComboBox::InsertPolicy::InsertAfterCurrent</enum>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="endstation">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>160</y>
+          <width>141</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="start_label">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>140</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Entry station:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="end_lable">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>140</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Exit station</string>
+        </property>
+       </widget>
+       <widget class="QTextBrowser" name="viewride">
+        <property name="geometry">
+         <rect>
+          <x>25</x>
+          <y>240</y>
+          <width>471</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="confirmride">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>190</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>GO</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="widget_24" native="true">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>140</y>
+          <width>591</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="newridelable_2">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>30</y>
+           <width>231</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
+         </property>
+         <property name="text">
+          <string>New Rides</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="startstation_2">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>160</y>
+           <width>141</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <property name="currentText">
+          <string/>
+         </property>
+         <property name="maxVisibleItems">
+          <number>10</number>
+         </property>
+         <property name="insertPolicy">
+          <enum>QComboBox::InsertPolicy::InsertAfterCurrent</enum>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="endstation_2">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>160</y>
+           <width>141</width>
+           <height>24</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="start_label_2">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>140</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Entry station:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="end_lable_2">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>140</y>
+           <width>71</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Exit station</string>
+         </property>
+        </widget>
+        <widget class="QTextBrowser" name="viewride_2">
+         <property name="geometry">
+          <rect>
+           <x>25</x>
+           <y>240</y>
+           <width>471</width>
+           <height>192</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="confirmride_2">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>190</y>
+           <width>80</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>GO</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="back4">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>610</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exit4">
+       <property name="geometry">
+        <rect>
+         <x>570</x>
+         <y>610</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>exit program</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="rides_history">
+      <widget class="QWidget" name="widget_21" native="true">
+       <property name="geometry">
+        <rect>
+         <x>89</x>
+         <y>79</y>
+         <width>511</width>
+         <height>471</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_37">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>50</y>
+          <width>221</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Rides History</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_rideHistory">
+        <property name="geometry">
+         <rect>
+          <x>63</x>
+          <y>99</y>
+          <width>411</width>
+          <height>361</height>
+         </rect>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="back5">
+       <property name="geometry">
+        <rect>
+         <x>680</x>
+         <y>630</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exit5">
+       <property name="geometry">
+        <rect>
+         <x>590</x>
+         <y>630</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>exit program</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="view_sub">
+      <widget class="QWidget" name="widget_22" native="true">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>10</y>
+         <width>521</width>
+         <height>541</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="cur_bal_in_view_lb">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>150</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;current balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sub_name_lb">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>190</y>
+          <width>131</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Subscription Name :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="plan_type_lb">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>270</y>
+          <width>171</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Plan Type :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="actv_dt_lb">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>230</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Activation Date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="exp_dt_lb">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>310</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Expiry Date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="rm_tr_lb">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>350</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Remaining Trips :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="nonfixed_sub_balnce_lb">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>270</y>
+          <width>141</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;Expiry Date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cur_bl_in_view">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>150</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sub_name">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>190</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="actv_dt">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>230</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="mixed">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>270</y>
+          <width>281</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="exp_dt">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>310</y>
+          <width>271</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="rm_tr">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>350</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="name_in_sub_lb">
+        <property name="geometry">
+         <rect>
+          <x>35</x>
+          <y>120</y>
+          <width>81</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:700;&quot;&gt;User Name :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="name_in_sub">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>120</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="back6">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>630</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exit6">
+       <property name="geometry">
+        <rect>
+         <x>590</x>
+         <y>630</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>exit program</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="renew_sub">
+      <widget class="QWidget" name="widget_23" native="true">
+       <property name="geometry">
+        <rect>
+         <x>79</x>
+         <y>69</y>
+         <width>541</width>
+         <height>561</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_39">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>50</y>
+          <width>321</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 26pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Renew Subscription</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cur_date_lb">
+        <property name="geometry">
+         <rect>
+          <x>58</x>
+          <y>180</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Current date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="exp_date_lb">
+        <property name="geometry">
+         <rect>
+          <x>58</x>
+          <y>220</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;Expiry date :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="cur_date">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>184</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="exp_date">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>221</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="renew_button">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>380</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Renew</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="change_sub">
+        <property name="geometry">
+         <rect>
+          <x>209</x>
+          <y>380</y>
+          <width>111</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Choose Another</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="sub_status">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>300</y>
+          <width>271</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="back7">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>630</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exit7">
+       <property name="geometry">
+        <rect>
+         <x>600</x>
+         <y>630</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>exit program</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="renew_page">
+      <widget class="QPushButton" name="confirm_renew">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>430</y>
          <width>80</width>
          <height>24</height>
         </rect>
@@ -912,606 +1027,50 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <string>Renew</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="change_sub">
+      <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>209</x>
-         <y>380</y>
-         <width>111</width>
-         <height>24</height>
+         <x>148</x>
+         <y>120</y>
+         <width>231</width>
+         <height>31</height>
         </rect>
        </property>
        <property name="text">
-        <string>Choose Another</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;RENEW PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
-      <widget class="QLabel" name="sub_status">
+      <widget class="QLabel" name="label_17">
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>300</y>
-         <width>271</width>
+         <y>220</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Your Current Balance :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>270</y>
+         <width>121</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Your Remaining Trips :</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QPushButton" name="back7">
-      <property name="geometry">
-       <rect>
-        <x>690</x>
-        <y>630</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="exit7">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>630</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>exit program</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="renew_page">
-     <widget class="QPushButton" name="confirm_renew">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>430</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Renew</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_16">
-      <property name="geometry">
-       <rect>
-        <x>148</x>
-        <y>120</y>
-        <width>231</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;RENEW PAGE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_17">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>220</y>
-        <width>121</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Your Current Balance :</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_21">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>270</y>
-        <width>121</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Your Remaining Trips :</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="cur_balance">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>220</y>
-        <width>49</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="rem_trips">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>270</y>
-        <width>49</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="recharge_button">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>430</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Recharge</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="cancel_renew">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>430</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Cancel</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="charge_user_balance_page">
-     <widget class="QLabel" name="label_22">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>49</y>
-        <width>491</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;charge your balance &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_23">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>350</y>
-        <width>291</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Put your new balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QDoubleSpinBox" name="user_input_balance">
-      <property name="geometry">
-       <rect>
-        <x>430</x>
-        <y>340</y>
-        <width>191</width>
-        <height>61</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="submit_balance">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>480</y>
-        <width>83</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>submit</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="back_from_balance">
-      <property name="geometry">
-       <rect>
-        <x>500</x>
-        <y>480</y>
-        <width>83</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_36">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>230</y>
-        <width>231</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>your old balance</string>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="old_user_balance">
-      <property name="geometry">
-       <rect>
-        <x>340</x>
-        <y>220</y>
-        <width>331</width>
-        <height>51</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="welcome2">
-     <property name="minimumSize">
-      <size>
-       <width>800</width>
-       <height>800</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>800</width>
-       <height>800</height>
-      </size>
-     </property>
-     <widget class="QWidget" name="welcome2_2" native="true">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>80</y>
-        <width>491</width>
-        <height>431</height>
-       </rect>
-      </property>
-      <widget class="QPushButton" name="personal_details">
+      <widget class="QLabel" name="cur_balance">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>113</y>
-         <width>251</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string> For personal details</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="rides">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>150</y>
-         <width>251</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>For New Ride or Rides History</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="sub_settings">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>193</y>
-         <width>251</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>For subscriptions settings</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="logout">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>240</y>
-         <width>251</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>To Logout </string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>0</y>
-         <width>281</width>
-         <height>61</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 italic 24pt &quot;Calibri&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Welcome</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_3">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>50</y>
-         <width>71</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 7pt &quot;Wingdings&quot;;
-</string>
-       </property>
-       <property name="text">
-        <string>Welcome</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="widget_6" native="true">
-      <property name="geometry">
-       <rect>
-        <x>540</x>
-        <y>-10</y>
-        <width>251</width>
-        <height>511</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/QtWidgetsApplication3/download-removebg-preview.png);
-background-position: center;
-    background-repeat: no-repeat;
-</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="exit02">
-      <property name="geometry">
-       <rect>
-        <x>680</x>
-        <y>530</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Exit program</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="renew_in_wallet_subsc">
-     <widget class="QPushButton" name="back_to_renew_page">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>480</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_41">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>70</y>
-        <width>421</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Charge your wallet balance&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="confirm_wallet_balance">
-      <property name="geometry">
-       <rect>
-        <x>140</x>
-        <y>480</y>
-        <width>121</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>submit</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_40">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>310</y>
-        <width>301</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;the new wallet balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_42">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>210</y>
-        <width>251</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Your wallet balance &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="old_wallet_balance">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>210</y>
-        <width>281</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="wallet_new_balance">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>310</y>
-        <width>241</width>
-        <height>61</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="recharge_main_bala_in_wallet">
-      <property name="geometry">
-       <rect>
-        <x>480</x>
-        <y>480</y>
-        <width>151</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>recahrge balance</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="current_data">
-     <widget class="QWidget" name="widget" native="true">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>100</y>
-        <width>581</width>
-        <height>451</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_30">
-       <property name="geometry">
-        <rect>
-         <x>9</x>
-         <y>9</y>
-         <width>310</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 28pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Your Current Data </string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_31">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>110</y>
-         <width>40</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>ID :</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_32">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>180</y>
-         <width>119</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Passsword :</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_33">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
+         <x>200</x>
          <y>220</y>
-         <width>72</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Email :</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_34">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>270</y>
-         <width>92</width>
-         <height>26</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Balance :</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="id_label">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>120</y>
          <width>49</width>
          <height>16</height>
         </rect>
@@ -1520,12 +1079,12 @@ background-position: center;
         <string>TextLabel</string>
        </property>
       </widget>
-      <widget class="QLabel" name="pass_label">
+      <widget class="QLabel" name="rem_trips">
        <property name="geometry">
         <rect>
-         <x>140</x>
-         <y>190</y>
-         <width>201</width>
+         <x>200</x>
+         <y>270</y>
+         <width>49</width>
          <height>16</height>
         </rect>
        </property>
@@ -1533,563 +1092,1623 @@ background-position: center;
         <string>TextLabel</string>
        </property>
       </widget>
-      <widget class="QLabel" name="email_label">
+      <widget class="QPushButton" name="recharge_button">
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>230</y>
-         <width>301</width>
-         <height>16</height>
+         <x>230</x>
+         <y>430</y>
+         <width>80</width>
+         <height>24</height>
         </rect>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Recharge</string>
        </property>
       </widget>
-      <widget class="QLabel" name="balance_label">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>280</y>
-         <width>161</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_7">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>150</y>
-         <width>111</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Username:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="username_label">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>150</y>
-         <width>181</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="TOEDIT">
+      <widget class="QPushButton" name="cancel_renew">
        <property name="geometry">
         <rect>
          <x>370</x>
-         <y>180</y>
-         <width>171</width>
-         <height>71</height>
+         <y>430</y>
+         <width>80</width>
+         <height>24</height>
         </rect>
        </property>
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;EDIT&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
        <property name="text">
-        <string> EDIT INFORMATION</string>
+        <string>Cancel</string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="back1">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>570</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Back</string>
-      </property>
+     <widget class="QWidget" name="charge_user_balance_page">
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>49</y>
+         <width>491</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700;&quot;&gt;charge your balance &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>350</y>
+         <width>291</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Put your new balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="user_input_balance">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>340</y>
+         <width>191</width>
+         <height>61</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="submit_balance">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>480</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>submit</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="back_from_balance">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>480</y>
+         <width>83</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>back</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_36">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>230</y>
+         <width>231</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>your old balance</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="old_user_balance">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>220</y>
+         <width>331</width>
+         <height>51</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
-     <widget class="QPushButton" name="exit1">
-      <property name="geometry">
-       <rect>
-        <x>510</x>
-        <y>570</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
+     <widget class="QWidget" name="welcome2">
+      <property name="minimumSize">
+       <size>
+        <width>800</width>
+        <height>800</height>
+       </size>
       </property>
-      <property name="text">
-       <string>Exit program</string>
+      <property name="maximumSize">
+       <size>
+        <width>800</width>
+        <height>800</height>
+       </size>
       </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="changeinfo">
-     <widget class="QLabel" name="label_17">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>20</y>
-        <width>401</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;Edit personal details&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_21">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>100</y>
-        <width>131</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>NEW NAME</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_22">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>210</y>
-        <width>131</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>NEW PASSWORD</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_23">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>310</y>
-        <width>151</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>NEW E-MAIL</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="nameuser">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>150</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="passlabel">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>260</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="emaillabel">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>360</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="saveUsername">
-      <property name="geometry">
-       <rect>
-        <x>489</x>
-        <y>150</y>
-        <width>91</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>SUBMINT</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="savePassword">
-      <property name="geometry">
-       <rect>
-        <x>489</x>
-        <y>253</y>
-        <width>91</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>SUBMINT</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="saveEmail">
-      <property name="geometry">
-       <rect>
-        <x>490</x>
-        <y>360</y>
-        <width>91</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>SUBMINT</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="back12">
-      <property name="geometry">
-       <rect>
-        <x>589</x>
-        <y>583</y>
-        <width>111</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>BACK</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="user_settings">
-     <widget class="QLabel" name="label_25">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>90</y>
-        <width>331</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 28pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>User Settings</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_17">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>190</y>
-        <width>221</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-      </property>
-      <property name="text">
-       <string> View profiles of users</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_18">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>273</y>
-        <width>221</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-      </property>
-      <property name="text">
-       <string>Modify users profiles</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_19">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>353</y>
-        <width>221</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;
-</string>
-      </property>
-      <property name="text">
-       <string>Delete profiles</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="ride_settings">
-     <widget class="QLabel" name="label_26">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>80</y>
-        <width>361</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 36pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Rides Setting </string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_20">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>193</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-      </property>
-      <property name="text">
-       <string>Add station</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_21">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>290</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-      </property>
-      <property name="text">
-       <string>Delete station</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_22">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>380</y>
-        <width>191</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-      </property>
-      <property name="text">
-       <string>Ride history for all user</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widget_19" native="true">
-      <property name="geometry">
-       <rect>
-        <x>550</x>
-        <y>30</y>
-        <width>241</width>
-        <height>611</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/QtWidgetsApplication3/download-removebg-preview.png);
-background-position: center;
-    background-repeat: no-repeat;
-</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="add_station">
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>170</y>
-        <width>113</width>
-        <height>24</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_12">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>170</y>
-        <width>81</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>station name :</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_13">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>240</y>
-        <width>81</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>station line :</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_14">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>300</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>station number :</string>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="comboBox">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>230</y>
-        <width>72</width>
-        <height>24</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>300</y>
-        <width>113</width>
-        <height>24</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="admin">
-     <widget class="QWidget" name="widget_17" native="true">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>80</y>
-        <width>711</width>
-        <height>511</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_24">
+      <widget class="QPushButton" name="exit02">
+       <property name="geometry">
+        <rect>
+         <x>680</x>
+         <y>530</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Exit program</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_44">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>190</y>
+         <width>301</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+background-color:tarnsparent;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_45">
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>-20</y>
+         <y>420</y>
+         <width>121</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_46">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>380</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <zorder>exit02</zorder>
+      <zorder>label_45</zorder>
+      <zorder>label_46</zorder>
+      <zorder>label_44</zorder>
+     </widget>
+     <widget class="QWidget" name="renew_in_wallet_subsc">
+      <widget class="QPushButton" name="back_to_renew_page">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>480</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>back</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_41">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>70</y>
+         <width>421</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Charge your wallet balance&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="confirm_wallet_balance">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>480</y>
+         <width>121</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>submit</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_40">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>310</y>
+         <width>301</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;the new wallet balance :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_42">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>210</y>
+         <width>251</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Your wallet balance &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="old_wallet_balance">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>210</y>
          <width>281</width>
-         <height>141</height>
+         <height>61</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 48pt &quot;Times New Roman&quot;;</string>
-       </property>
        <property name="text">
-        <string>Admin </string>
+        <string>TextLabel</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_14">
+      <widget class="QLineEdit" name="wallet_new_balance">
        <property name="geometry">
         <rect>
-         <x>200</x>
-         <y>120</y>
-         <width>231</width>
-         <height>41</height>
+         <x>370</x>
+         <y>310</y>
+         <width>241</width>
+         <height>61</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>Subscription settings</string>
-       </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_15">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>190</y>
-         <width>231</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>User settings</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_16">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>259</y>
-         <width>231</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>Rides settings</string>
-       </property>
-      </widget>
-      <widget class="QWidget" name="widget_18" native="true">
+      <widget class="QPushButton" name="recharge_main_bala_in_wallet">
        <property name="geometry">
         <rect>
          <x>480</x>
-         <y>-50</y>
+         <y>480</y>
+         <width>151</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>recahrge balance</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="current_data">
+      <widget class="QWidget" name="widget" native="true">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>100</y>
+         <width>581</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_30">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>9</y>
+          <width>310</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 28pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Your Current Data </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_31">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>110</y>
+          <width>40</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>ID :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_32">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>180</y>
+          <width>119</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Passsword :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_33">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>220</y>
+          <width>72</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Email :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_34">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>270</y>
+          <width>92</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Balance :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="id_label">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>120</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="pass_label">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>190</y>
+          <width>201</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="email_label">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>230</y>
+          <width>301</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="balance_label">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>280</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_7">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>150</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 17pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Username:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="username_label">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>150</y>
+          <width>181</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="TOEDIT">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>180</y>
+          <width>171</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;EDIT&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string> EDIT INFORMATION</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="back1">
+       <property name="geometry">
+        <rect>
+         <x>600</x>
+         <y>570</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exit1">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>570</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Exit program</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="changeinfo">
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>20</y>
+         <width>401</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;Edit personal details&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>100</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>NEW NAME</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>210</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>NEW PASSWORD</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>310</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>NEW E-MAIL</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="nameuser">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>150</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="passlabel">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>260</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="emaillabel">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>360</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="saveUsername">
+       <property name="geometry">
+        <rect>
+         <x>489</x>
+         <y>150</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SUBMINT</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="savePassword">
+       <property name="geometry">
+        <rect>
+         <x>489</x>
+         <y>253</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SUBMINT</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="saveEmail">
+       <property name="geometry">
+        <rect>
+         <x>490</x>
+         <y>360</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>SUBMINT</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="back12">
+       <property name="geometry">
+        <rect>
+         <x>589</x>
+         <y>583</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="user_settings">
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>90</y>
+         <width>331</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 28pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>User Settings</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_17">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>190</y>
+         <width>221</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+       </property>
+       <property name="text">
+        <string> View profiles of users</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_18">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>273</y>
+         <width>221</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+       </property>
+       <property name="text">
+        <string>Modify users profiles</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_19">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>353</y>
+         <width>221</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;
+</string>
+       </property>
+       <property name="text">
+        <string>Delete profiles</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="ride_settings">
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>80</y>
+         <width>361</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 36pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Rides Setting </string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_20">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>193</y>
+         <width>191</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+       </property>
+       <property name="text">
+        <string>Add station</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_21">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>290</y>
+         <width>191</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+       </property>
+       <property name="text">
+        <string>Delete station</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_22">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>380</y>
+         <width>191</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+       </property>
+       <property name="text">
+        <string>Ride history for all user</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="add_station">
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>170</y>
+         <width>113</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>170</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>station name :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_38">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>240</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>station line :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>300</y>
+         <width>91</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>station number :</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>230</y>
+         <width>72</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>300</y>
+         <width>113</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="admin">
+      <widget class="QWidget" name="widget_17" native="true">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>80</y>
+         <width>711</width>
+         <height>511</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_24">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>-20</y>
+          <width>281</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 48pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Admin </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_14">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>120</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>Subscription settings</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_15">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>190</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>User settings</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_16">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>259</y>
+          <width>231</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>Rides settings</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="widget_18" native="true">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>-20</y>
+          <width>241</width>
+          <height>611</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-image: url(:/QtWidgetsApplication3/download-removebg-preview.png);
+background-position: center;
+    background-repeat: no-repeat;
+</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="sub">
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>50</y>
+         <width>481</width>
+         <height>381</height>
+        </rect>
+       </property>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>270</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>270</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>270</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>Edit</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>270</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>270</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>View</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>200</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 italic 20pt &quot;Calibri&quot;;
+
+</string>
+        </property>
+        <property name="text">
+         <string>Metro Subscriptions </string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="end">
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>40</y>
+         <width>571</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 30pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Thank You For Using Cairo Ride Program</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>290</y>
+         <width>541</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 12pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Hope You Had A Safe Ride And A Beautiful Experience With Us</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_29">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>340</y>
+         <width>431</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 12pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Please Tell Us Your Feedback So We Can Improve</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_8">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>420</y>
+         <width>361</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_43">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>180</y>
+         <width>761</width>
+         <height>491</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/QtWidgetsApplication3/6e0ccaa1cfe89df69878149c7fe92147.jpg);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_43</zorder>
+      <zorder>label_27</zorder>
+      <zorder>label_28</zorder>
+      <zorder>label_29</zorder>
+      <zorder>lineEdit_8</zorder>
+     </widget>
+     <widget class="QWidget" name="add_sub">
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>70</y>
+         <width>411</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 22pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Add New Subscription Plan</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>150</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 18pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Plan Name : </string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>200</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 700 18pt &quot;Times New Roman&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Fixed : </string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_fixed">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>200</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Yes</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_wallet">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>200</y>
+         <width>91</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>No</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_7">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>150</y>
+         <width>141</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>240</y>
+         <width>281</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Fixed Options </string>
+       </property>
+       <widget class="QPushButton" name="pushButton_addMonth">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>30</y>
+          <width>111</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add Monthly Plan</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_13">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>30</y>
+          <width>91</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add Yearly Plan</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_walletOptions">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>310</y>
+         <width>301</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Wallet Options</string>
+       </property>
+       <widget class="QSpinBox" name="spinBox_cardBalance">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>40</y>
+          <width>88</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Card Balance :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>50</y>
+          <width>91</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Fund Multiple :</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>40</y>
+          <width>88</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget_walletZones">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>80</y>
+          <width>256</width>
+          <height>121</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>510</y>
+         <width>49</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Notes: </string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>510</y>
+         <width>251</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_addAnother">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>580</y>
+         <width>81</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add Another ?</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_submit">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>580</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Submit</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="manage_plan">
+      <widget class="QWidget" name="widget_4" native="true">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>130</y>
+         <width>381</width>
+         <height>341</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>0</y>
+          <width>251</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 14pt &quot;Terminal&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Manage Your Plan </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>83</y>
+          <width>161</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>View subscription</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>140</y>
+          <width>161</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>Renew subscription</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>50</y>
+          <width>311</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>welcome! how do you want to manage your plan?</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_10">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>200</y>
+          <width>161</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;
+</string>
+        </property>
+        <property name="text">
+         <string>Upgrade subscription</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="back8">
+       <property name="geometry">
+        <rect>
+         <x>650</x>
+         <y>640</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="exit8">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>640</y>
+         <width>80</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>exit program</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="rides_2">
+      <property name="minimumSize">
+       <size>
+        <width>800</width>
+        <height>800</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>800</width>
+        <height>800</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="widget_3" native="true">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>210</y>
+         <width>321</width>
+         <height>381</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>20</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 40pt &quot;Times New Roman&quot;;</string>
+        </property>
+        <property name="text">
+         <string>Rides</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>100</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>New Ride</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>200</y>
+          <width>131</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:10px;
+font: 10pt &quot;Segoe UI&quot;;
+border:1px solid white;</string>
+        </property>
+        <property name="text">
+         <string>Rides History</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="widget_7" native="true">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>40</y>
          <width>241</width>
-         <height>611</height>
+         <height>491</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -2099,727 +2718,32 @@ background-position: center;
 </string>
        </property>
       </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="sub">
-     <widget class="QWidget" name="widget_2" native="true">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>50</y>
-        <width>481</width>
-        <height>381</height>
-       </rect>
-      </property>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="back2">
        <property name="geometry">
         <rect>
-         <x>380</x>
-         <y>270</y>
+         <x>620</x>
+         <y>590</y>
          <width>80</width>
          <height>24</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
        <property name="text">
-        <string>Save</string>
+        <string>back</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="exit2">
        <property name="geometry">
         <rect>
-         <x>290</x>
-         <y>270</y>
+         <x>530</x>
+         <y>590</y>
          <width>80</width>
          <height>24</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
        <property name="text">
-        <string>Delete</string>
+        <string>Exit program</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="geometry">
-        <rect>
-         <x>190</x>
-         <y>270</y>
-         <width>80</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>Edit</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>270</y>
-         <width>80</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>Add</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_5">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>270</y>
-         <width>80</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>View</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>200</y>
-         <width>241</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 italic 20pt &quot;Calibri&quot;;
-
-</string>
-       </property>
-       <property name="text">
-        <string>Metro Subscriptions </string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="widget_10" native="true">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>10</y>
-        <width>241</width>
-        <height>611</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/QtWidgetsApplication3/download-removebg-preview.png);
-background-position: center;
-    background-repeat: no-repeat;
-</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="end">
-     <widget class="QLabel" name="label_27">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>80</y>
-        <width>741</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 30pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Thank You For Using Cairo Ride Program</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_28">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>170</y>
-        <width>541</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 12pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Hope You Had A Safe Ride And A Beautiful Experience With Us</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_29">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>280</y>
-        <width>431</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 12pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Please Tell Us Your Feedback So We Can Improve</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_8">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>310</y>
-        <width>361</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="add_sub">
-     <widget class="QLabel" name="label_18">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>70</y>
-        <width>411</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 22pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Add New Subscription Plan</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_19">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>150</y>
-        <width>141</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 18pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Plan Name : </string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_20">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>200</y>
-        <width>101</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 700 18pt &quot;Times New Roman&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Fixed : </string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="radioButton_fixed">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>200</y>
-        <width>91</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Yes</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="radioButton_wallet">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>200</y>
-        <width>91</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>No</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_7">
-      <property name="geometry">
-       <rect>
-        <x>330</x>
-        <y>150</y>
-        <width>141</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widget_16" native="true">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>30</y>
-        <width>241</width>
-        <height>611</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/QtWidgetsApplication3/download-removebg-preview.png);
-background-position: center;
-    background-repeat: no-repeat;
-</string>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>230</y>
-        <width>281</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Fixed Options </string>
-      </property>
-      <widget class="QPushButton" name="pushButton_addMonth">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>111</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Add Monthly Plan</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_13">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>30</y>
-         <width>91</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Add Yearly Plan</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_walletOptions">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>290</y>
-        <width>301</width>
-        <height>201</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Wallet Options</string>
-      </property>
-      <widget class="QSpinBox" name="spinBox_cardBalance">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>40</y>
-         <width>88</width>
-         <height>25</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_9">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>81</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Card Balance :</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_10">
-       <property name="geometry">
-        <rect>
-         <x>160</x>
-         <y>50</y>
-         <width>91</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Fund Multiple :</string>
-       </property>
-      </widget>
-      <widget class="QSpinBox" name="spinBox">
-       <property name="geometry">
-        <rect>
-         <x>250</x>
-         <y>40</y>
-         <width>88</width>
-         <height>25</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QTableWidget" name="tableWidget_walletZones">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>80</y>
-         <width>256</width>
-         <height>121</height>
-        </rect>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QLabel" name="label_11">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>510</y>
-        <width>49</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Notes: </string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="textEdit">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>500</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_addAnother">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>580</y>
-        <width>81</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Add Another ?</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_submit">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>580</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Submit</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="manage_plan">
-     <widget class="QWidget" name="widget_4" native="true">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>130</y>
-        <width>381</width>
-        <height>341</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_5">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>0</y>
-         <width>251</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 14pt &quot;Terminal&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Manage Your Plan </string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_8">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>83</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>View subscription</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_9">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>140</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>Renew subscription</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_6">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>50</y>
-         <width>311</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>welcome! how do you want to manage your plan?</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_10">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>200</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;
-</string>
-       </property>
-       <property name="text">
-        <string>Upgrade subscription</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="widget_5" native="true">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>0</y>
-        <width>241</width>
-        <height>611</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/QtWidgetsApplication3/download-removebg-preview.png);
-background-position: center;
-    background-repeat: no-repeat;
-</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="back8">
-      <property name="geometry">
-       <rect>
-        <x>650</x>
-        <y>640</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="exit8">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>640</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>exit program</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="rides_2">
-     <property name="minimumSize">
-      <size>
-       <width>800</width>
-       <height>800</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>800</width>
-       <height>800</height>
-      </size>
-     </property>
-     <widget class="QWidget" name="widget_3" native="true">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>100</y>
-        <width>321</width>
-        <height>381</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_4">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>20</y>
-         <width>171</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">font: 700 40pt &quot;Times New Roman&quot;;</string>
-       </property>
-       <property name="text">
-        <string>Rides</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_6">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>100</y>
-         <width>131</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>New Ride</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton_7">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>200</y>
-         <width>131</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-radius:10px;
-font: 10pt &quot;Segoe UI&quot;;
-border:1px solid white;</string>
-       </property>
-       <property name="text">
-        <string>Rides History</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QWidget" name="widget_7" native="true">
-      <property name="geometry">
-       <rect>
-        <x>500</x>
-        <y>10</y>
-        <width>241</width>
-        <height>491</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/QtWidgetsApplication3/download-removebg-preview.png);
-background-position: center;
-    background-repeat: no-repeat;
-</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="back2">
-      <property name="geometry">
-       <rect>
-        <x>620</x>
-        <y>590</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>back</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="exit2">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>590</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Exit program</string>
-      </property>
      </widget>
     </widget>
    </widget>
@@ -2829,7 +2753,7 @@ background-position: center;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1514</width>
      <height>21</height>
     </rect>
    </property>

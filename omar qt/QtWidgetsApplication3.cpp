@@ -1,5 +1,11 @@
 ﻿#include "QtWidgetsApplication3.h"
 
+   
+
+    
+
+
+
 //DONT PLAY IN SUBSCRIPTION .CPP FILE I WILL KILL YOU 
 
 
@@ -18,6 +24,10 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     , ui(new Ui::MainWindow)  // Correct link to the UI class generated from the .ui file
 {
     ui->setupUi(this);  // Set up the UI components
+    QPixmap pix("");
+    ui->label_44->setPixmap(pix);              // load full image
+    ui->label_44->setScaledContents(true);     // stretch it to fill QLabel size
+
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 
     ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want

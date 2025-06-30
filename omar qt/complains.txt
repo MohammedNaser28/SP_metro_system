@@ -3,3 +3,5 @@ The sequence of data is (name---> id ----> complaints)
 omar ID1   NO COMPLAINTS
 alol ID2   NO COMPLAINTS
 alol2 ID3 NO COMPLAINTS
+0 0 NO COMPLAINTS
+nn ID5 NO COMPLAINTS

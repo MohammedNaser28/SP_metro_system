@@ -2,5 +2,7 @@
     <qresource prefix="/QtWidgetsApplication3">
         <file>ChatGPT Image Jun 29, 2025, 01_24_25 PM.png</file>
         <file>metro_logo_cropped.png</file>
+        <file>6e0ccaa1cfe89df69878149c7fe92147.jpg</file>
+        <file>people.jpg</file>
     </qresource>
 </RCC>
