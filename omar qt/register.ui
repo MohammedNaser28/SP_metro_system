@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit { color : #1e1e1e } ;</string>
+  </property>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
@@ -209,7 +212,7 @@ border:1px solid  rgb(43, 82, 136);
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>330</y>
+        <y>350</y>
         <width>111</width>
         <height>41</height>
        </rect>
@@ -226,7 +229,7 @@ color:#1E1E1E</string>
       <property name="geometry">
        <rect>
         <x>190</x>
-        <y>390</y>
+        <y>410</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -253,7 +256,7 @@ color:#1E1E1E</string>
        <string notr="true">border-radius:10px;
 font: 10pt &quot;Segoe UI&quot;;
 border:1px solid  rgb(43, 82, 136);
-</string>
+color:#1e1e1e</string>
       </property>
       <property name="text">
        <string>Login</string>
@@ -278,8 +281,8 @@ border:1px solid  rgb(43, 82, 136);
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>450</y>
+        <x>130</x>
+        <y>480</y>
         <width>181</width>
         <height>31</height>
        </rect>
@@ -306,7 +309,7 @@ color:#1E1E1E</string>
        <string notr="true">border-radius:10px;
 font: 10pt &quot;Segoe UI&quot;;
 border:1px solid  rgb(43, 82, 136);
-</string>
+color:#1e1e1e;</string>
       </property>
       <property name="text">
        <string>create a new account</string>
@@ -508,7 +511,7 @@ border:1px solid  rgb(43, 82, 136);
        <string notr="true">border-radius:10px;
 font: 10pt &quot;Segoe UI&quot;;
 border:1px solid  rgb(43, 82, 136);
-</string>
+color:#1e1e1e;</string>
       </property>
       <property name="text">
        <string>Sign in</string>
@@ -545,7 +548,7 @@ font: 700 30pt &quot;Times New Roman&quot;;</string>
        <string notr="true">border-radius:10px;
 font: 10pt &quot;Segoe UI&quot;;
 border:1px solid  rgb(43, 82, 136);
-</string>
+color:#1e1e1e;</string>
       </property>
       <property name="text">
        <string>Login to your account</string>

@@ -23,9 +23,29 @@ QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want
     ui->user_input_balance->setRange(0.0, 10000.0);     // sets both min and max
     ui->user_input_balance->setSingleStep(0.5);       // how much it increases/decreases per step
+    connect(ui->admin_rech_balance_in_subsc, &QPushButton::clicked, this, [=]() {
+        // Navigate to charge balance page
+        ui->stackedWidget->setCurrentWidget(ui->charge_balance);
+        });
+
+
+    connect(ui->a_wallet, &QPushButton::clicked, this, [=]() {
+        bool ok;
+        int amount = ui->wallet_admin_enter_balancew->text().toInt(&ok);
+
+        if (!ok || amount <= 0) {
+            QMessageBox::warning(this, "Invalid Input", "Please enter a valid positive number.");
+            return;
+        }
+
+        // Call handleWalletRecharge to process the recharge
+        handleWalletRecharge();
+        });
+}
+
 
   
-}
+
 
 QtWidgetsApplication3::~QtWidgetsApplication3()
 {
@@ -117,7 +137,7 @@ void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
 }
 
 
-//DONT PUT THE USERNAME SVE OR EMAIL SAVE OR TOEDIT HERE 
+//DONT PUT THE USERNAME SAVE OR EMAIL SAVE OR TOEDIT HERE 
 //THEY ARE IN THE PERSONAL DETAILS .CPP DONT PUT IT HERE AGAIN 
 //SEEE THAT COMMENT 
 //I WILL KILL THE PERSON WHO WILL PUT IT HERE 
