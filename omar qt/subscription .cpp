@@ -571,7 +571,7 @@ void QtWidgetsApplication3::on_cancel_renew_clicked()
 
 void QtWidgetsApplication3::on_change_sub_clicked()
 {
-    choose_sub();
+    //choose_sub();
     ui->stackedWidget->setCurrentWidget(ui->subscriptions);
 
 }

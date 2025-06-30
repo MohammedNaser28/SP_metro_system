@@ -56,9 +56,6 @@ connect(ui->radioButton_wallet, &QRadioButton::clicked,
 connect(ui->tableWidget_monthly, &QTableWidget::cellClicked, this, &QtWidgetsApplication3::handleMonthlyCellClick);
 connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsApplication3::handleYearlyCellClick);
 
-
-
-}
     ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want
     ui->user_input_balance->setRange(0.0, 10000.0);     // sets both min and max
     ui->user_input_balance->setSingleStep(0.5);       // how much it increases/decreases per step
@@ -499,22 +496,6 @@ void QtWidgetsApplication3::on_pushButton_submit_clicked()
     refreshSubscriptionTable();
 }
 
-void  QtWidgetsApplication3::on_confirmride_clicked()
-{
-
-    string start_st, end_st;
-    start_st = ui->startstation->currentText().toStdString();
-    end_st = ui->endstation->currentText().toStdString();
-  
-    
-    
-    buildGraph();
-
-     
-    // Assuming this runs after user chooses start and end station
-    int real_zone = 0;
-
-
 
 
 // DOOOONT PUT RECHARGE HERE OR SUBMIT BALANCE 
@@ -528,8 +509,7 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
 //IF YOU PUT IT IT WILL BE A BIG MISTAKE
 
 
-void QtWidgetsApplication3::start_up()
-{
+void QtWidgetsApplication3::start_up(){
 
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 
@@ -550,7 +530,6 @@ void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
 //I 
 
 
-}
 void QtWidgetsApplication3::on_pushButton_16_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->ride_settings);
 }
@@ -1150,7 +1129,7 @@ void QtWidgetsApplication3::on_back10_clicked() {
 void QtWidgetsApplication3::on_back11_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
 }
-void QtWidgetsApplication3::on_back12_clicked() {
+void QtWidgetsApplication3::on_backtosub_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->admin);
 }
 void QtWidgetsApplication3::on_exit1_clicked() {

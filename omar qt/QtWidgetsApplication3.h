@@ -24,7 +24,7 @@ public:
     void gotoadmin();
     void setPage(int index);
     void start_up();
-    void choose_sub();
+   // void choose_sub();
    
     
 private slots:
@@ -161,7 +161,7 @@ private slots:
     void on_spinBox_wallet_zones_valueChanged(int value);
     void refreshSubscriptionTable();
     void on_deletesub_clicked();
- 
+    void on_backtosub_clicked();
 private:
     Ui::MainWindow* ui;  // Use Ui::MainWindow, not Ui::QtWidgetsApplication3
    

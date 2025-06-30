@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
         x.hide();
         w.show();
         w.setPage(0);
-        w.choose_sub();
+        //w.choose_sub();
 
         });
 
