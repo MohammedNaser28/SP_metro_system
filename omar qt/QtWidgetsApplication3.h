@@ -26,7 +26,9 @@ public:
     void start_up();
    // void choose_sub();
    
-    
+    int numStationsInLine[3];
+    Station allStations[3][MAX_STATIONS_PER_LINE];
+
 private slots:
    /* void on_pushButton_23_clicked();*/
     void on_personal_details_clicked();
@@ -101,8 +103,8 @@ private slots:
     void on_Chargeing_admin_balance_clicked();
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
-
-    void on_pushButton_16_clicked();
+    // ? ERror Here
+    //void on_pushButton_16_clicked();
 
   //admin delete station
     void on_delete55_clicked();
@@ -111,8 +113,6 @@ private slots:
     void shiftStationsUp(int line, int index);
     bool isInterchangeStation(const QString& name);
     void saveStationsToFile();
-    Station allStations[3][MAX_STATIONS_PER_LINE];
-    int numStationsInLine[3];
     void write_stations();
     void read_stations();
 

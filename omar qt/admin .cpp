@@ -4,8 +4,9 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QStringList>
-
-
+#include <QListWidgetItem>
+#include "global.h"
+#include "structures.h"
 
 void  QtWidgetsApplication3::on_pushButton_15_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
@@ -448,6 +449,7 @@ void QtWidgetsApplication3::handleWalletRecharge() {
 
         return;
     }
+}
 
 
 
@@ -603,19 +605,24 @@ void QtWidgetsApplication3::read_stations()
 
 
 void  QtWidgetsApplication3::on_pushButton_27_clicked() {
+
     ui->stackedWidget->setCurrentWidget(ui->ride_settings);
-}
-    // Deduct from main balance and add to wallet
-    mainBalance -= amount;
-    userSub.balancew += amount;
+
+//? ERROR HERE
+    //user_subscriptions& userSub = arr_users[admin_chosen_user].sub;
+    //long long& mainBalance = arr_users[admin_chosen_user].balance;
+
+    //// Deduct from main balance and add to wallet
+    //mainBalance -= amount;
+    //userSub.balancew += amount;
 
     // Notify and update label
-    QMessageBox::information(this, "Success",
-        QString("✅ Successfully added %1 LE to wallet.").arg(amount));
+ /*   QMessageBox::information(this, "Success",
+        QString("✅ Successfully added %1 LE to wallet.").arg(amount));*/
 
     // ✅ Update label to reflect new balance
-    ui->label_current_balance->setText(
-        QString("Current Wallet Balance: %1 LE").arg(userSub.balancew));
+    //ui->label_current_balance->setText(
+    //    QString("Current Wallet Balance: %1 LE").arg(userSub.balancew));
 
     // Clear input field
     ui->wallet_admin_enter_balancew->clear();
