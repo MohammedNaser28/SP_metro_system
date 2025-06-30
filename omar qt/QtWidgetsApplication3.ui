@@ -157,9 +157,9 @@
      <widget class="QPushButton" name="addsub">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>210</y>
-        <width>80</width>
+        <x>419</x>
+        <y>550</y>
+        <width>161</width>
         <height>24</height>
        </rect>
       </property>
@@ -169,14 +169,14 @@ font: 10pt &quot;Segoe UI&quot;;
 border:1px solid white;</string>
       </property>
       <property name="text">
-       <string>Add</string>
+       <string>Add New Subscription ?</string>
       </property>
      </widget>
      <widget class="QPushButton" name="editsub">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>280</y>
+        <x>240</x>
+        <y>450</y>
         <width>80</width>
         <height>24</height>
        </rect>
@@ -193,8 +193,8 @@ border:1px solid white;</string>
      <widget class="QPushButton" name="deletesub">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>360</y>
+        <x>370</x>
+        <y>450</y>
         <width>80</width>
         <height>24</height>
        </rect>
@@ -219,6 +219,22 @@ border:1px solid white;</string>
       </property>
       <property name="text">
        <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_subscriptions">
+      <property name="geometry">
+       <rect>
+        <x>65</x>
+        <y>161</y>
+        <width>601</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
       </property>
      </widget>
     </widget>
@@ -252,50 +268,17 @@ border:1px solid white;</string>
        <string>Done editing</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_select_sub">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>70</y>
-        <width>151</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Select a subscription to edit :</string>
-      </property>
-     </widget>
-     <widget class="QListWidget" name="listWidget_subscriptions_2">
-      <property name="geometry">
-       <rect>
-        <x>190</x>
-        <y>100</y>
-        <width>256</width>
-        <height>51</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_select_sub">
-      <property name="geometry">
-       <rect>
-        <x>270</x>
-        <y>160</y>
-        <width>80</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Edit selected</string>
-      </property>
-     </widget>
      <widget class="QStackedWidget" name="stackedWidget_editType">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>210</y>
-        <width>451</width>
-        <height>421</height>
+        <x>70</x>
+        <y>80</y>
+        <width>531</width>
+        <height>551</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
@@ -306,7 +289,7 @@ border:1px solid white;</string>
          <rect>
           <x>30</x>
           <y>40</y>
-          <width>71</width>
+          <width>91</width>
           <height>16</height>
          </rect>
         </property>
@@ -317,19 +300,19 @@ border:1px solid white;</string>
        <widget class="QLineEdit" name="lineEdit_planName_fixed">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>150</x>
           <y>40</y>
           <width>113</width>
           <height>24</height>
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_12">
+       <widget class="QPushButton" name="editmonthly_button">
         <property name="geometry">
          <rect>
-          <x>19</x>
+          <x>-1</x>
           <y>70</y>
-          <width>111</width>
+          <width>131</width>
           <height>24</height>
          </rect>
         </property>
@@ -337,12 +320,12 @@ border:1px solid white;</string>
          <string>Edit Monthly Plans</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_23">
+       <widget class="QPushButton" name="edityearly_button">
         <property name="geometry">
          <rect>
           <x>150</x>
           <y>70</y>
-          <width>111</width>
+          <width>141</width>
           <height>24</height>
          </rect>
         </property>
@@ -378,7 +361,7 @@ border:1px solid white;</string>
          <rect>
           <x>49</x>
           <y>160</y>
-          <width>91</width>
+          <width>101</width>
           <height>24</height>
          </rect>
         </property>
@@ -432,7 +415,7 @@ border:1px solid white;</string>
          <rect>
           <x>20</x>
           <y>40</y>
-          <width>81</width>
+          <width>101</width>
           <height>16</height>
          </rect>
         </property>
@@ -443,7 +426,7 @@ border:1px solid white;</string>
        <widget class="QLineEdit" name="lineEdit_planName_wallet">
         <property name="geometry">
          <rect>
-          <x>110</x>
+          <x>130</x>
           <y>30</y>
           <width>113</width>
           <height>24</height>
@@ -455,7 +438,7 @@ border:1px solid white;</string>
          <rect>
           <x>10</x>
           <y>60</y>
-          <width>111</width>
+          <width>141</width>
           <height>16</height>
          </rect>
         </property>
@@ -466,11 +449,17 @@ border:1px solid white;</string>
        <widget class="QSpinBox" name="spinBox_cardBalance_2">
         <property name="geometry">
          <rect>
-          <x>120</x>
+          <x>160</x>
           <y>60</y>
-          <width>42</width>
+          <width>61</width>
           <height>25</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_43">
@@ -478,7 +467,7 @@ border:1px solid white;</string>
          <rect>
           <x>30</x>
           <y>90</y>
-          <width>91</width>
+          <width>111</width>
           <height>16</height>
          </rect>
         </property>
@@ -489,9 +478,9 @@ border:1px solid white;</string>
        <widget class="QSpinBox" name="spinBox_fundMultiple">
         <property name="geometry">
          <rect>
-          <x>130</x>
+          <x>180</x>
           <y>90</y>
-          <width>42</width>
+          <width>71</width>
           <height>25</height>
          </rect>
         </property>
@@ -501,7 +490,7 @@ border:1px solid white;</string>
          <rect>
           <x>30</x>
           <y>120</y>
-          <width>101</width>
+          <width>131</width>
           <height>16</height>
          </rect>
         </property>
@@ -512,9 +501,9 @@ border:1px solid white;</string>
        <widget class="QSpinBox" name="spinBox_zoneNum">
         <property name="geometry">
          <rect>
-          <x>140</x>
+          <x>180</x>
           <y>120</y>
-          <width>42</width>
+          <width>61</width>
           <height>25</height>
          </rect>
         </property>
@@ -583,7 +572,7 @@ border:1px solid white;</string>
          <rect>
           <x>50</x>
           <y>320</y>
-          <width>80</width>
+          <width>101</width>
           <height>24</height>
          </rect>
         </property>
@@ -636,9 +625,9 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>10</y>
-          <width>101</width>
-          <height>16</height>
+          <y>5</y>
+          <width>151</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -649,9 +638,9 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>90</x>
-          <y>70</y>
+          <y>120</y>
           <width>256</width>
-          <height>101</height>
+          <height>91</height>
          </rect>
         </property>
        </widget>
@@ -659,9 +648,9 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>90</x>
-          <y>50</y>
-          <width>231</width>
-          <height>16</height>
+          <y>90</y>
+          <width>311</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -672,8 +661,8 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>190</y>
-          <width>121</width>
+          <y>220</y>
+          <width>161</width>
           <height>16</height>
          </rect>
         </property>
@@ -685,9 +674,9 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>220</y>
-          <width>111</width>
-          <height>16</height>
+          <y>250</y>
+          <width>131</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -698,8 +687,8 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>250</y>
-          <width>101</width>
+          <y>280</y>
+          <width>141</width>
           <height>16</height>
          </rect>
         </property>
@@ -711,9 +700,9 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>80</x>
-          <y>280</y>
+          <y>310</y>
           <width>91</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -724,9 +713,9 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>300</y>
+          <y>340</y>
           <width>301</width>
-          <height>61</height>
+          <height>71</height>
          </rect>
         </property>
         <property name="widgetResizable">
@@ -738,7 +727,7 @@ border:1px solid white;</string>
            <x>0</x>
            <y>0</y>
            <width>299</width>
-           <height>59</height>
+           <height>69</height>
           </rect>
          </property>
         </widget>
@@ -746,44 +735,53 @@ border:1px solid white;</string>
        <widget class="QPushButton" name="pushButton_editMonthSave">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>370</y>
-          <width>80</width>
+          <x>90</x>
+          <y>480</y>
+          <width>131</width>
           <height>24</height>
          </rect>
         </property>
         <property name="text">
-         <string>Save</string>
+         <string>Save Changes</string>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox_monthDuration">
         <property name="geometry">
          <rect>
-          <x>200</x>
-          <y>180</y>
-          <width>42</width>
+          <x>240</x>
+          <y>220</y>
+          <width>61</width>
           <height>25</height>
          </rect>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox_monthTrips">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>220</y>
-          <width>42</width>
+          <x>260</x>
+          <y>250</y>
+          <width>61</width>
           <height>25</height>
          </rect>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox_monthZones">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>250</y>
-          <width>42</width>
+          <x>260</x>
+          <y>280</y>
+          <width>61</width>
           <height>25</height>
          </rect>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_currentEditedPlanMonthly">
@@ -799,6 +797,78 @@ border:1px solid white;</string>
          <string/>
         </property>
        </widget>
+       <widget class="QPushButton" name="pushButton_cancel_changeseditmonthly">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>480</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_backeditmonthly">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>510</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_notes_fixed_2">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>430</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Notes :</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_notes_editmonthly">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>430</y>
+          <width>271</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_plan_name_fixed_2">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>70</y>
+          <width>151</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Subscription name :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="subname_editmonthly">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>70</y>
+          <width>113</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="page_edit_yearly">
        <widget class="QLabel" name="label_64">
@@ -806,8 +876,8 @@ border:1px solid white;</string>
          <rect>
           <x>170</x>
           <y>0</y>
-          <width>101</width>
-          <height>16</height>
+          <width>131</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -817,10 +887,10 @@ border:1px solid white;</string>
        <widget class="QLabel" name="label_65">
         <property name="geometry">
          <rect>
-          <x>120</x>
-          <y>50</y>
-          <width>231</width>
-          <height>16</height>
+          <x>80</x>
+          <y>100</y>
+          <width>291</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -831,19 +901,19 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>100</x>
-          <y>70</y>
+          <y>130</y>
           <width>256</width>
-          <height>101</height>
+          <height>91</height>
          </rect>
         </property>
        </widget>
        <widget class="QLabel" name="label_66">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>190</y>
-          <width>121</width>
-          <height>16</height>
+          <x>60</x>
+          <y>230</y>
+          <width>161</width>
+          <height>20</height>
          </rect>
         </property>
         <property name="text">
@@ -853,10 +923,10 @@ border:1px solid white;</string>
        <widget class="QLabel" name="label_67">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>210</y>
-          <width>111</width>
-          <height>16</height>
+          <x>60</x>
+          <y>260</y>
+          <width>131</width>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -867,8 +937,8 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>250</y>
-          <width>101</width>
+          <y>290</y>
+          <width>131</width>
           <height>16</height>
          </rect>
         </property>
@@ -880,39 +950,48 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>210</x>
-          <y>180</y>
-          <width>42</width>
+          <y>230</y>
+          <width>61</width>
           <height>25</height>
          </rect>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox_yearTrips">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>210</y>
-          <width>42</width>
+          <x>220</x>
+          <y>260</y>
+          <width>61</width>
           <height>25</height>
          </rect>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
         </property>
        </widget>
        <widget class="QSpinBox" name="spinBox_yearZones">
         <property name="geometry">
          <rect>
-          <x>170</x>
-          <y>240</y>
-          <width>42</width>
+          <x>230</x>
+          <y>290</y>
+          <width>61</width>
           <height>25</height>
          </rect>
+        </property>
+        <property name="maximum">
+         <number>10000</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_69">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>280</y>
+          <x>60</x>
+          <y>310</y>
           <width>91</width>
-          <height>16</height>
+          <height>21</height>
          </rect>
         </property>
         <property name="text">
@@ -923,7 +1002,7 @@ border:1px solid white;</string>
         <property name="geometry">
          <rect>
           <x>60</x>
-          <y>300</y>
+          <y>340</y>
           <width>301</width>
           <height>61</height>
          </rect>
@@ -945,14 +1024,14 @@ border:1px solid white;</string>
        <widget class="QPushButton" name="pushButton_editYearSave">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>370</y>
-          <width>80</width>
+          <x>90</x>
+          <y>450</y>
+          <width>111</width>
           <height>24</height>
          </rect>
         </property>
         <property name="text">
-         <string>Save</string>
+         <string>Save Changes</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_currentEditedPlanYearly">
@@ -966,6 +1045,78 @@ border:1px solid white;</string>
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_cancel_changesedityearly">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>450</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_backedityearly">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>470</y>
+          <width>80</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Back</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_notes_fixed_3">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>410</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Notes :</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit_notes_edityearly">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>410</y>
+          <width>271</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_plan_name_fixed_3">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>80</y>
+          <width>151</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Subscription name :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="subname_edityearly">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>80</y>
+          <width>113</width>
+          <height>24</height>
+         </rect>
         </property>
        </widget>
       </widget>
@@ -2207,7 +2358,7 @@ border:1px solid white;</string>
        <rect>
         <x>120</x>
         <y>90</y>
-        <width>141</width>
+        <width>211</width>
         <height>31</height>
        </rect>
       </property>
@@ -2215,7 +2366,7 @@ border:1px solid white;</string>
        <string notr="true">font: 700 18pt &quot;Times New Roman&quot;;</string>
       </property>
       <property name="text">
-       <string>Plan Name : </string>
+       <string>Subscription Name : </string>
       </property>
      </widget>
      <widget class="QLabel" name="label_20">
@@ -2263,7 +2414,7 @@ border:1px solid white;</string>
      <widget class="QLineEdit" name="lineEdit_7">
       <property name="geometry">
        <rect>
-        <x>260</x>
+        <x>350</x>
         <y>90</y>
         <width>141</width>
         <height>24</height>
@@ -2274,35 +2425,6 @@ border:1px solid white;</string>
 font: 10pt &quot;Segoe UI&quot;;
 border:1px solid white;</string>
       </property>
-     </widget>
-     <widget class="QWidget" name="widget_16" native="true">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>20</y>
-        <width>241</width>
-        <height>611</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/QtWidgetsApplication3/download-removebg-preview.png);
-background-position: center;
-    background-repeat: no-repeat;
-</string>
-      </property>
-      <widget class="QPushButton" name="back9">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>530</y>
-         <width>80</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Back</string>
-       </property>
-      </widget>
      </widget>
      <widget class="QLabel" name="label_11">
       <property name="geometry">
@@ -2327,23 +2449,10 @@ background-position: center;
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_addAnother">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>580</y>
-        <width>81</width>
-        <height>24</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Add Another ?</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="pushButton_submit">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>290</x>
         <y>580</y>
         <width>80</width>
         <height>24</height>
@@ -2363,7 +2472,7 @@ background-position: center;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QGroupBox" name="groupBox_fixed">
@@ -2410,10 +2519,10 @@ background-position: center;
        <widget class="QGroupBox" name="groupBox_walletOptions">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>30</x>
           <y>10</y>
-          <width>301</width>
-          <height>201</height>
+          <width>361</width>
+          <height>311</height>
          </rect>
         </property>
         <property name="title">
@@ -2423,8 +2532,8 @@ background-position: center;
          <property name="geometry">
           <rect>
            <x>100</x>
-           <y>40</y>
-           <width>42</width>
+           <y>50</y>
+           <width>61</width>
            <height>25</height>
           </rect>
          </property>
@@ -2445,7 +2554,7 @@ background-position: center;
         <widget class="QLabel" name="label_10">
          <property name="geometry">
           <rect>
-           <x>160</x>
+           <x>190</x>
            <y>50</y>
            <width>91</width>
            <height>16</height>
@@ -2458,9 +2567,9 @@ background-position: center;
         <widget class="QSpinBox" name="spinBox">
          <property name="geometry">
           <rect>
-           <x>250</x>
-           <y>40</y>
-           <width>42</width>
+           <x>280</x>
+           <y>50</y>
+           <width>71</width>
            <height>25</height>
           </rect>
          </property>
@@ -2468,10 +2577,33 @@ background-position: center;
         <widget class="QTableWidget" name="tableWidget_walletZones">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>80</y>
+           <x>30</x>
+           <y>140</y>
            <width>256</width>
-           <height>121</height>
+           <height>141</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_53">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>100</y>
+           <width>111</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Number of zones :</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spinBox_wallet_zones">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>100</y>
+           <width>61</width>
+           <height>25</height>
           </rect>
          </property>
         </widget>
@@ -2495,7 +2627,7 @@ background-position: center;
           <rect>
            <x>140</x>
            <y>70</y>
-           <width>42</width>
+           <width>51</width>
            <height>25</height>
           </rect>
          </property>
@@ -2518,7 +2650,7 @@ background-position: center;
           <rect>
            <x>120</x>
            <y>30</y>
-           <width>42</width>
+           <width>51</width>
            <height>25</height>
           </rect>
          </property>
@@ -2580,7 +2712,7 @@ background-position: center;
           <rect>
            <x>140</x>
            <y>110</y>
-           <width>42</width>
+           <width>51</width>
            <height>25</height>
           </rect>
          </property>
@@ -2602,9 +2734,9 @@ background-position: center;
         <property name="geometry">
          <rect>
           <x>90</x>
-          <y>20</y>
-          <width>321</width>
-          <height>331</height>
+          <y>30</y>
+          <width>381</width>
+          <height>321</height>
          </rect>
         </property>
         <property name="title">
@@ -2615,7 +2747,7 @@ background-position: center;
           <rect>
            <x>30</x>
            <y>80</y>
-           <width>71</width>
+           <width>61</width>
            <height>16</height>
           </rect>
          </property>
@@ -2628,7 +2760,7 @@ background-position: center;
           <rect>
            <x>30</x>
            <y>120</y>
-           <width>91</width>
+           <width>101</width>
            <height>16</height>
           </rect>
          </property>
@@ -2662,9 +2794,9 @@ background-position: center;
         <widget class="QSpinBox" name="spinBox_month_zones">
          <property name="geometry">
           <rect>
-           <x>140</x>
+           <x>150</x>
            <y>160</y>
-           <width>42</width>
+           <width>61</width>
            <height>25</height>
           </rect>
          </property>
@@ -2698,9 +2830,9 @@ background-position: center;
         <widget class="QSpinBox" name="spinBox_month_trips">
          <property name="geometry">
           <rect>
-           <x>140</x>
+           <x>160</x>
            <y>120</y>
-           <width>42</width>
+           <width>61</width>
            <height>25</height>
           </rect>
          </property>
@@ -2708,15 +2840,28 @@ background-position: center;
         <widget class="QSpinBox" name="spinBox_month_duration">
          <property name="geometry">
           <rect>
-           <x>100</x>
-           <y>70</y>
-           <width>42</width>
+           <x>140</x>
+           <y>80</y>
+           <width>61</width>
            <height>25</height>
           </rect>
          </property>
         </widget>
        </widget>
       </widget>
+     </widget>
+     <widget class="QPushButton" name="back9">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>580</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="manage_plan">
