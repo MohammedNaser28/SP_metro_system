@@ -13,7 +13,9 @@
 #include <QTableWidget>
 #include"choose sub.cpp"
 #include"register.h"
-
+#include <QUrl>
+#include <QtMultimedia/QMediaPlayer>
+#include <QtMultimedia/QAudioOutput>
 class QtWidgetsApplication3 : public QMainWindow
 {
     Q_OBJECT
@@ -162,9 +164,18 @@ private slots:
     void refreshSubscriptionTable();
     void on_deletesub_clicked();
     void on_backtosub_clicked();
+
+    void playTrainSound();
+    void restartBackgroundMusic();    
+    void onTrainSoundFinished();
+
+
 private:
     Ui::MainWindow* ui;  // Use Ui::MainWindow, not Ui::QtWidgetsApplication3
-   
+    QMediaPlayer* backgroundMusic;
+    QMediaPlayer* trainSound;
+    QAudioOutput* audioOutput;
+    QAudioOutput* trainAudioOutput;
 signals: 
     void switchToDialog();
 };
