@@ -5,7 +5,10 @@ Register::Register(QWidget* parent)
     , ui(new Ui::Register)
 {
     ui->setupUi(this);
-    ui->stackedWidget->setCurrentWidget(ui->welcome1_page);
+    //ui->stackedWidget->setCurrentWidget(ui->welcome1_page);
+    QPixmap pix(":/QtWidgetsApplication3/metro_logo_cropped.png");  // Or use "images/background.jpg" if from file system
+    ui->label_6->setPixmap(pix.scaled(ui->label_6->size(), Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+    ui->label_6->setScaledContents(true);  // Optional, auto-scales content to label size
 }
 
 Register::~Register()
@@ -67,12 +70,12 @@ void Register::on_login_button_clicked()
 
 void Register::on_back_clicked()
 {
-    ui->stackedWidget->setCurrentWidget(ui->welcome1_page);
+    /* ui->stackedWidget->setCurrentWidget(ui->welcome1_page);*/;
 }
 
 void Register::on_back2_clicked()
 {
-    ui->stackedWidget->setCurrentWidget(ui->welcome1_page);
+    /* ui->stackedWidget->setCurrentWidget(ui->welcome1_page);*/;
 }
 
 void Register::on_pushButton_sign_clicked()
