@@ -28,7 +28,9 @@ public:
     void start_up();
    // void choose_sub();
    
-    
+    int numStationsInLine[3];
+    Station allStations[3][MAX_STATIONS_PER_LINE];
+
 private slots:
    /* void on_pushButton_23_clicked();*/
     void on_personal_details_clicked();
@@ -46,7 +48,7 @@ private slots:
     //void on_pushButton_17_clicked();
     void on_delete_users_clicked();
     void on_change_users_clicked();
-    void on_admin_mainmenu_clicked();
+    
     void on_confirmride_clicked();
     void on_pushButton_16_clicked();
     void on_pushButton_22_clicked();
@@ -103,9 +105,18 @@ private slots:
     void on_Chargeing_admin_balance_clicked();
     void on_pushButton_24_clicked();
     void on_pushButton_25_clicked();
+    // ? ERror Here
+    //void on_pushButton_16_clicked();
 
-  
-
+  //admin delete station
+    void on_delete55_clicked();
+    void on_pushButton_26_clicked(); //delete
+    void on_pushButton_27_clicked(); //back
+    void shiftStationsUp(int line, int index);
+    bool isInterchangeStation(const QString& name);
+    void saveStationsToFile();
+    void write_stations();
+    void read_stations();
 
     //change subsc #admin 
     void on_pushButton_23_clicked();

@@ -1,7 +1,12 @@
 ﻿#include"QtWidgetsApplication3.h"
-
-
-
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
+#include <QDebug>
+#include <QStringList>
+#include <QListWidgetItem>
+#include "global.h"
+#include "structures.h"
 
 void  QtWidgetsApplication3::on_pushButton_15_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
@@ -444,18 +449,180 @@ void QtWidgetsApplication3::handleWalletRecharge() {
 
         return;
     }
+}
 
-    // Deduct from main balance and add to wallet
-    mainBalance -= amount;
-    userSub.balancew += amount;
+
+
+
+void QtWidgetsApplication3::shiftStationsUp(int line, int index)
+{
+    for (int i = index; i < numStationsInLine[line] - 1; ++i) {
+        allStations[line][i] = allStations[line][i + 1];
+
+        if (allStations[line][i].name != "-" && allStations[line][i].name != "_") {
+            allStations[line][i].number -= 1;
+        }
+    }
+
+    numStationsInLine[line]--;
+    allStations[line][numStationsInLine[line]].name = "-";
+}
+
+//DELETE STATION 
+
+void QtWidgetsApplication3::on_delete55_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->deletestation);
+}
+
+
+bool QtWidgetsApplication3::isInterchangeStation(const QString& name) {
+    return name == "Sadat" || name == "Al_Shohadaa" || name == "Attaba" || name == "Kit_Kat" || name == "Cairo_University";
+}
+
+
+void QtWidgetsApplication3::on_pushButton_26_clicked()
+{
+    int line = ui->line->text().toInt();
+    int index = ui->index->text().toInt() - 1;
+
+    if (line < 1 || line > 3 || index < 0 || index >= MAX_STATIONS_PER_LINE) {
+        QMessageBox::warning(this, "Invalid Input", "Please enter a valid line number and station index.");
+        return;
+    }
+
+    if (allStations[index][line - 1].name == "-") {
+        QMessageBox::warning(this, "Error", "Station does not exist.");
+        return;
+    }
+
+    // if (isInterchangeStation(allStations[index][line - 1].name)) {
+    //    QMessageBox::warning(this, "Error", "You cannot delete an interchange station.");
+    //    return;
+    //}
+
+    shiftStationsUp(line - 1, index);
+    num_stations--;
+    buildGraph();
+
+    saveStationsToFile(); // ✅ دي أهم خطوة
+
+    QMessageBox::information(this, "Done", "Station deleted successfully.");
+}
+
+
+
+void QtWidgetsApplication3::saveStationsToFile() {
+    QFile file("stations.txt");  
+
+    if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out(&file);
+
+        for (int l = 0; l < 3; ++l) {
+            for (int i = 0; i < MAX_STATIONS_PER_LINE; ++i) {
+                if (allStations[i][l].name != "-") {
+                    out << QString::fromStdString(allStations[i][l].name) << "," << (l + 1) << "\n";
+                }
+            }
+        }
+
+        file.close();
+    }
+    else {
+        QMessageBox::warning(this, "Error", "Could not write to file!");
+    }
+}
+
+
+void QtWidgetsApplication3::write_stations()
+{
+    std::ofstream file("stations.txt");
+    if (!file.is_open()) {
+        QMessageBox::warning(this, "Error", "Could not open file for writing!");
+        return;
+    }
+
+    // احسب الخط الأطول
+    int maxStations = 0;
+    for (int line = 0; line < 3; ++line) {
+        if (numStationsInLine[line] > maxStations) {
+            maxStations = numStationsInLine[line];
+        }
+    }
+
+    // اكتب الأعمدة كسطور متوازية
+    for (int i = 0; i < maxStations; ++i) {
+        for (int line = 0; line < 3; ++line) {
+            if (i < numStationsInLine[line]) {
+                file << allStations[line][i].name;
+            }
+            else {
+                file << "-";
+            }
+
+            if (line < 3 - 1) {
+                file << "\t";
+            }
+        }
+        file << "\n";
+    }
+
+    file.close();
+}
+
+
+
+
+void QtWidgetsApplication3::read_stations()
+{
+    std::ifstream file("stations.txt");
+    if (!file.is_open()) {
+        QMessageBox::warning(this, "Error", "Could not open stations.txt for reading!");
+        return;
+    }
+
+    // صفّر العدادات
+    for (int line = 0; line < 3; ++line) {
+        numStationsInLine[line] = 0;
+    }
+
+    std::string name;
+    int lineNumber;
+
+    while (file >> name >> lineNumber) {
+        int lineIndex = lineNumber - 1; // لأن index بيبدأ من صفر
+        int stationIndex = numStationsInLine[lineIndex];
+
+        allStations[lineIndex][stationIndex].name = name;
+        allStations[lineIndex][stationIndex].number = lineNumber;
+
+        numStationsInLine[lineIndex]++;
+    }
+
+    file.close();
+}
+
+
+
+void  QtWidgetsApplication3::on_pushButton_27_clicked() {
+
+    ui->stackedWidget->setCurrentWidget(ui->ride_settings);
+
+//? ERROR HERE
+    //user_subscriptions& userSub = arr_users[admin_chosen_user].sub;
+    //long long& mainBalance = arr_users[admin_chosen_user].balance;
+
+    //// Deduct from main balance and add to wallet
+    //mainBalance -= amount;
+    //userSub.balancew += amount;
 
     // Notify and update label
-    QMessageBox::information(this, "Success",
-        QString("✅ Successfully added %1 LE to wallet.").arg(amount));
+ /*   QMessageBox::information(this, "Success",
+        QString("✅ Successfully added %1 LE to wallet.").arg(amount));*/
 
     // ✅ Update label to reflect new balance
-    ui->label_current_balance->setText(
-        QString("Current Wallet Balance: %1 LE").arg(userSub.balancew));
+    //ui->label_current_balance->setText(
+    //    QString("Current Wallet Balance: %1 LE").arg(userSub.balancew));
 
     // Clear input field
     ui->wallet_admin_enter_balancew->clear();

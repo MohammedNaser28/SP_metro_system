@@ -24,5 +24,12 @@
 #include <QTextEdit>
 #include <QTableWidgetItem>
 #include <QPushButton>
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
+#include <QDebug>
+#include <QStringList>
+#include <QListWidgetItem>
+
 
 using namespace std;
