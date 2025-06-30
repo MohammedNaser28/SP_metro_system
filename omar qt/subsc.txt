@@ -1,3 +1,2 @@
 n omar ID1 0 0 0 0 0
-n alol ID2 Smart_wallet. 0 0 6/5/2025 484
 y alol2 ID3 General_pass. year 1 730 730 2 4000 6/5/2025 28/6/2026

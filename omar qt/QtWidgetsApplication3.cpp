@@ -95,10 +95,7 @@ void QtWidgetsApplication3::start_up()
 
 
 
-void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->admin);
-}
+
 
 
 
@@ -158,6 +155,9 @@ void QtWidgetsApplication3::on_exit02_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 
 }
+
+
+
 
 
 void QtWidgetsApplication3::on_exit4_clicked() {
