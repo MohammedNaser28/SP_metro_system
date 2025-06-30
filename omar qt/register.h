@@ -20,7 +20,7 @@ private:
 
 private slots:
     bool SignInFun(const string& username, const string& userpass, bool& validpasskey);
-    bool newaccount(const string& username, const string& userpass, const string& email);
+    bool newaccount(const string& username, const string& userpass, const string& email,const double& balance);
     void on_create_button_clicked();
     void on_login_button_clicked();
     void on_back_clicked();
@@ -30,5 +30,6 @@ private slots:
 
 signals:
     void switchToMainWindow();
+    void switchTosubWindow();
     void windowadmin();
 };

@@ -1,11 +1,4 @@
 ﻿#include "QtWidgetsApplication3.h"
-#include "ui_QtWidgetsApplication3.h"  // Include the generated UI class
-#include"dependence.h"
-#include"global.h"
-#include"structures.h"
-#include"stations.h"
-#include "view users.h"
-#include <QTableWidget>
 
 int month_index = 0;
 int year_index = 0;
@@ -18,8 +11,17 @@ int year_index = 0;
 // int chosenSubscriptionIndex;
 //
 
-#include"register.h"
-int chosenSubscriptionIndex = -1;
+
+// DOOOONT PUT RECHARGE  OR SUBMIT BALANCE IN THIS FILE 
+//DONT DO THAT I WILL KILL YOU 
+//THEY ARE IN SUBSCRBITION .CPP  DONT PUT IT HERE 
+//DONT PUT RECHARGE BUTTON OR SUBMIT BALANCE OR BACK FROM BALANCE LEAVE THEM ALONE 
+//DANGEROUS 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
+
+//IF YOU PUT IT IT WILL BE A BIG MISTAKE
+
+
 QtWidgetsApplication3::QtWidgetsApplication3(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)  // Correct link to the UI class generated from the .ui file
@@ -57,6 +59,32 @@ connect(ui->tableWidget_yearly, &QTableWidget::cellClicked, this, &QtWidgetsAppl
 
 
 }
+    ui->user_input_balance->setMaximum(10000.0);  // or whatever max you want
+    ui->user_input_balance->setRange(0.0, 10000.0);     // sets both min and max
+    ui->user_input_balance->setSingleStep(0.5);       // how much it increases/decreases per step
+    connect(ui->admin_rech_balance_in_subsc, &QPushButton::clicked, this, [=]() {
+        // Navigate to charge balance page
+        ui->stackedWidget->setCurrentWidget(ui->charge_balance);
+        });
+
+
+    connect(ui->a_wallet, &QPushButton::clicked, this, [=]() {
+        bool ok;
+        int amount = ui->wallet_admin_enter_balancew->text().toInt(&ok);
+
+        if (!ok || amount <= 0) {
+            QMessageBox::warning(this, "Invalid Input", "Please enter a valid positive number.");
+            return;
+        }
+
+        // Call handleWalletRecharge to process the recharge
+        handleWalletRecharge();
+        });
+}
+
+
+  
+
 
 QtWidgetsApplication3::~QtWidgetsApplication3()
 {
@@ -65,233 +93,57 @@ QtWidgetsApplication3::~QtWidgetsApplication3()
 
 
 
-void  QtWidgetsApplication3::on_personal_details_clicked() {
-    ui->email_label->setText(QString::fromStdString(arr_users[indexofuser].contactdet.email));
-    ui->pass_label->setText(QString::fromStdString(arr_users[indexofuser].pass));
-    ui->id_label->setText(QString::fromStdString(arr_users[indexofuser].id));
-    ui->balance_label->setText(QString::number(arr_users[indexofuser].balance));
-    ui->username_label->setText(QString::fromStdString(arr_users[indexofuser].username));
-    ui->stackedWidget->setCurrentWidget(ui->current_data);
-}
-void  QtWidgetsApplication3::on_rides_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->rides_2);
-}
-void  QtWidgetsApplication3::on_sub_settings_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->manage_plan);
+
+void QtWidgetsApplication3::setPage(int index)
+{
+    ui->stackedWidget->setCurrentIndex(index);
+
 }
 
-void  QtWidgetsApplication3::on_pushButton_6_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->new_rides);
 
-    ///--------           FILL STATIONS COMBOBOX            ----------///
 
-    for (int i = 0; i < NUM_LINES; i++)
-    {
-        for (int j = 0; j < MAX_STATIONS_PER_LINE; j++)
-        {
+std::string QtWidgetsApplication3::getCurrentDate()
+{
 
-            if (allStations[j][i].name == "-" || allStations[j][i].name == "Switching.")
-            {
-                continue;
-            }
-            ui->startstation->addItem(QString::fromStdString(allStations[j][i].name));
-            ui->endstation->addItem(QString::fromStdString(allStations[j][i].name));
+    auto now = chrono::system_clock::now();
+    time_t now_time = chrono::system_clock::to_time_t(now);
+
+    struct tm timeinfo;
+    localtime_s(&timeinfo, &now_time);
+
+    char buffer[80];
+    strftime(buffer, sizeof(buffer), "%d/%m/%Y", &timeinfo);
+    return string(buffer);
+
+}
+
+
+
+std::string QtWidgetsApplication3::saveExpiry()
+{
+    time_t now = time(NULL);
+    tm localTime;
+    localtime_s(&localTime, &now);
+    string exp_date;
+    if (arr_users[indexofuser].sub.fixed == 'y') {
+        if (arr_users[indexofuser].sub.plan_type == "month") {
+            localTime.tm_mon += arr_users[indexofuser].sub.duriation_plan_type;
         }
-    }
-}
-void QtWidgetsApplication3::on_pushButton_7_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->rides_history);
-
-    QString output;
-    output += "\n--- Ride History for User ID: " + QString::fromStdString(arr_users[indexofuser].id) + " ---\n";
-    bool found = false;
-    int cntride = 1;
-
-    for (int i = 0; i < MAX_rides; i++) {
-        if (rides[i].id == arr_users[indexofuser].id) {
-            output += "Trip number " + QString::number(cntride) + "\n";
-            output += " Entry station : " + QString::fromStdString(rides[i].entryStation) + "\n";
-            output += " Exit station : " + QString::fromStdString(rides[i].ExitStation) + "\n";
-            output += " Your subscription is : " + QString::fromStdString(arr_users[indexofuser].sub.subscription_type) + "\n";
-
-            if (arr_users[indexofuser].sub.fixed == 'n') {
-                output += " And you take : " + QString::number(rides[i].RideFare) + " From Your balance\n";
-                output += " Your remaining balance is : " + QString::number(arr_users[indexofuser].sub.balancew) + "\n";
-            }
-            else if (arr_users[indexofuser].sub.fixed == 'y') {
-                output += " And you used one trip from your travel balance and your remaining trips is : "
-                    + QString::number(rides[i].RideFare) + "\n";
-            }
-
-            output += "  Date of trip : " + (rides[i].Date) + "\n";
-            output += "____________________________________________________________\n\n";
-            found = true;
-            cntride++;
+        else if (arr_users[indexofuser].sub.plan_type == "year") {
+            localTime.tm_year += arr_users[indexofuser].sub.duriation_plan_type;
         }
+        mktime(&localTime);
+        int day = localTime.tm_mday;
+        int month = localTime.tm_mon + 1;
+        int year = localTime.tm_year + 1900;
+         exp_date = arr_users[indexofuser].sub.expiry = to_string(day) + "/" + to_string(month) + "/" + to_string(year);
+    }
+    else if (arr_users[indexofuser].sub.fixed == 'n') {
+         exp_date = arr_users[indexofuser].sub.expiry = "0";
+
     }
 
-    if (!found) {
-        output += "No rides found.\n";
-    }
-
-    ui->textEdit_rideHistory->setText(output);  // Replace with your QTextEdit or QLabel name
-}
-
-void  QtWidgetsApplication3::on_pushButton_8_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->view_sub);
-}
-void  QtWidgetsApplication3::on_pushButton_9_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->renew_sub);
-}
-
-
-void QtWidgetsApplication3::on_pushButton_10_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->subscriptions);
-    ui->listWidget_subscriptions->clear();
-    ui->label_subscription_details->clear();  // QTextEdit (not QLabel anymore)
-    chosenSubscriptionIndex = -1;
-
-    if (num_of_subsc == 0) {
-        ui->listWidget_subscriptions->addItem("No available subscriptions");
-        return;
-    }
-
-    for (int i = 0; i < num_of_subsc; i++) {
-        QString planName = QString::fromStdString(arr_subscription[i].plan_name);
-        QListWidgetItem* item = new QListWidgetItem(QString::number(i + 1) + " - " + planName);
-        item->setData(Qt::UserRole, i);
-        ui->listWidget_subscriptions->addItem(item);
-    }
-
-    connect(ui->listWidget_subscriptions, &QListWidget::itemClicked, this, [=](QListWidgetItem* item) {
-        int i = item->data(Qt::UserRole).toInt();
-        chosenSubscriptionIndex = i;
-
-        QString details;
-        details += "📦 Plan Name: " + QString::fromStdString(arr_subscription[i].plan_name) + "\n";
-
-        if (arr_subscription[i].fixed == 'y') {
-            details += "\n🟦 Fixed Subscription:\n";
-
-            if (arr_subscription[i].month_count > 0) {
-                details += "\n📅 Monthly Plans:\n";
-                for (int j = 0; j < arr_subscription[i].month_count; j++) {
-                    details += "➤ " + QString::number(arr_subscription[i].month_sub[j].duration) + " month(s), "
-                        + QString::number(arr_subscription[i].month_sub[j].no_of_trips) + " trips\n";
-                    for (int k = 0; k < arr_subscription[i].month_sub[j].zone_num; k++) {
-                        details += "   • Zone " + QString::number(k + 1) + ": "
-                            + QString::number(arr_subscription[i].month_sub[j].zonesPrice[k]) + " LE\n";
-                    }
-                }
-            }
-
-            if (arr_subscription[i].year_count > 0) {
-                details += "\n📅 Yearly Plans:\n";
-                for (int j = 0; j < arr_subscription[i].year_count; j++) {
-                    details += "➤ " + QString::number(arr_subscription[i].year_sub[j].duration) + " year(s), "
-                        + QString::number(arr_subscription[i].year_sub[j].no_of_trips) + " trips\n";
-                    for (int k = 0; k < arr_subscription[i].year_sub[j].zone_num; k++) {
-                        details += "   • Zone " + QString::number(k + 1) + ": "
-                            + QString::number(arr_subscription[i].year_sub[j].zonesPrice[k]) + " LE\n";
-                    }
-                }
-            }
-        }
-        else {
-            details += "\n🟨 Wallet Subscription:\n";
-            details += "• Add balance in multiples of: " + QString::number(arr_subscription[i].wallet_sub.fund_multiple) + " LE\n";
-            details += "• Maximum card balance: " + QString::number(arr_subscription[i].wallet_sub.card_balance) + " LE\n";
-            details += "• Zones and Prices:\n";
-            for (int k = 0; k < arr_subscription[i].wallet_sub.zone_num; k++) {
-                details += "   • Zone " + QString::number(k + 1) + ": "
-                    + QString::number(arr_subscription[i].wallet_sub.zonesPrice[k]) + " LE\n";
-            }
-        }
-
-        if (!arr_subscription[i].notes.empty()) {
-            details += "\n📝 Notes:\n" + QString::fromStdString(arr_subscription[i].notes);
-        }
-
-        ui->label_subscription_details->setPlainText(details);  // For QTextEdit
-        });
-}
-
-void  QtWidgetsApplication3::on_pushButton_15_clicked() {
-   /* ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
-
-
-        ui->tableWidget_users->setRowCount(0);
-        ui->tableWidget_users->setColumnCount(5);
-        QStringList headers;
-        headers << "Name"<<"Complaints" << "Email" << "Balance" << "Subscription Type";
-        ui->tableWidget_users->setHorizontalHeaderLabels(headers);
-
-        int row = 0;
-        for (int i = 0; i < number_of_users_in_array; ++i) {
-            if (arr_users[i].admin_role == 0) {
-                ui->tableWidget_users->insertRow(row);
-
-                ui->tableWidget_users->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(arr_users[i].username)));
-                ui->tableWidget_users->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(arr_users[i].complaints)));
-                ui->tableWidget_users->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(arr_users[i].contactdet.email)));
-                ui->tableWidget_users->setItem(row, 3, new QTableWidgetItem(QString::number(arr_users[i].balance)));
-                ui->tableWidget_users->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(arr_users[i].sub.subscription_type)));
-           
-
-                row++;
-            }
-        }*/
-    ui->stackedWidget->setCurrentWidget(ui->view_users_toadmin);
-
-    ui->tableWidget_users->setRowCount(0);
-    ui->tableWidget_users->setColumnCount(5);
-    QStringList headers;
-    headers << "Name" << "Complaints" << "Email" << "Balance" << "Subscription Type";
-    ui->tableWidget_users->setHorizontalHeaderLabels(headers);
-
-    int row = 0;
-    for (int i = 0; i < number_of_users_in_array; ++i) {
-        if (arr_users[i].admin_role == 0) {
-            ui->tableWidget_users->insertRow(row);
-
-            ui->tableWidget_users->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(arr_users[i].username)));
-
-
-            QString complaintText = QString::fromStdString(arr_users[i].complaints);
-            QString shortenedText = complaintText.left(30);
-            if (complaintText.length() > 30)
-                shortenedText += "...";
-
-            QTableWidgetItem* item = new QTableWidgetItem(shortenedText);
-            item->setToolTip(complaintText);
-            ui->tableWidget_users->setItem(row, 1, item);
-
-            ui->tableWidget_users->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(arr_users[i].contactdet.email)));
-            ui->tableWidget_users->setItem(row, 3, new QTableWidgetItem(QString::number(arr_users[i].balance)));
-            ui->tableWidget_users->setItem(row, 4, new QTableWidgetItem(QString::fromStdString(arr_users[i].sub.subscription_type)));
-
-            row++;
-        }
-    }
-    
-}
-
-void QtWidgetsApplication3::gotoadmin() {
-    ui->stackedWidget->setCurrentWidget(ui->admin);  
-}
-
-
-
-
-void QtWidgetsApplication3::on_pushButton_confirm_clicked() {
-    if (chosenSubscriptionIndex == -1) 
-    {
-        QMessageBox::warning(this, "No Selection", "Please choose a subscription first.");
-        return;
-    }
-
-    QString selectedPlan = QString::fromStdString(arr_subscription[chosenSubscriptionIndex].plan_name);
-    QMessageBox::information(this, "Subscribed!", "You selected: " + selectedPlan);
+    return exp_date;
 }
 
 
@@ -662,111 +514,40 @@ void  QtWidgetsApplication3::on_confirmride_clicked()
     // Assuming this runs after user chooses start and end station
     int real_zone = 0;
 
-    if (stationcnt >= 1 && stationcnt <= 9)
-        real_zone = 1;
-    else if (stationcnt >= 10 && stationcnt <= 16)
-        real_zone = 2;
-    else if (stationcnt >= 17 && stationcnt <= 23)
-        real_zone = 3;
-    else if (stationcnt >= 24)
-        real_zone = 4;
-
-    // Assume 'indexofuser', 'arr_users', etc. are already loaded.
-    if (arr_users[indexofuser].sub.fixed == 'n') {
-        for (int i = 0; i < num_of_subsc; i++) {
-            if (arr_users[indexofuser].sub.subscription_type == arr_subscription[i].plan_name) {
-                double requiredBalance = arr_subscription[i].wallet_sub.zonesPrice[real_zone - 1];
-                if (arr_users[indexofuser].sub.balancew >= requiredBalance) {
-
-                    string path = findShortestPath(find_st_num(start_st), find_st_num(end_st));
-                    ui->viewride->clear();
-                    ui->viewride->setText(QString::fromStdString(path));
-
-                    rides[ride_cnt].entryStation = start_st;
-                    rides[ride_cnt].ExitStation = end_st;
-                    rides[ride_cnt].RideFare = not_fixed(stationcnt);
-                    rides[ride_cnt].Date = getCurrentDate();
-                    rides[ride_cnt].id = arr_users[indexofuser].id;
-                    ride_cnt++;
-
-                    QMessageBox::information(this, "Success", "Trip recorded successfully!");
-
-                }
 
 
-                // will fix this when we put subscreption or with haya 
-                //else { 
-                //    QMessageBox msgBox;
-                //    msgBox.setText("Your wallet balance is low, please charge it.");
-                //    msgBox.setInformativeText("To renew press 'Yes'. To choose another station press 'No'.");
-                //    msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-                //    int ret = msgBox.exec();
 
-                //    if (ret == QMessageBox::Yes) {
-                //        renew_time(arr_users[indexofuser].sub);
-                //    }
-                //    else {
-                //        return;
-                //    }
-                //}
-            }
-        }
-    }
-    else if (arr_users[indexofuser].sub.fixed == 'y') {
-        bool not_your_zone = real_zone > arr_users[indexofuser].sub.zone;
+// DOOOONT PUT RECHARGE HERE OR SUBMIT BALANCE 
+//DONT DO THAT I WILL KILL YOU 
+//THEY ARE IN SUBSCRBITION .CPP  DONT PUT IT HERE 
+//DONT PUT RECHARGE BUTTON OR SUBMIT BALANCE OR BACK FROM BALANCE LEAVE THEM ALONE 
+//DANGEROUS 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
+//PLEASE DONT DO THAT IF YOU DO THAT I WILL KILL YOU 
 
-        if (!not_your_zone) {
-            if (arr_users[indexofuser].sub.remaining_trips > 0) {
+//IF YOU PUT IT IT WILL BE A BIG MISTAKE
 
-                string path = findShortestPath(find_st_num(start_st), find_st_num(end_st));
-                ui->viewride->clear();
-                ui->viewride->setText(QString::fromStdString(path));
 
-                rides[ride_cnt].entryStation = start_st;
-                rides[ride_cnt].ExitStation = end_st;
-                rides[ride_cnt].RideFare = calculated_fare(real_zone);
-                rides[ride_cnt].Date = getCurrentDate();
-                rides[ride_cnt].id = arr_users[indexofuser].id;
-                ride_cnt++;
+void QtWidgetsApplication3::start_up()
+{
 
-                QMessageBox::information(this, "Success", "Trip recorded successfully!");
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
 
-            }
-            //also will fix this with haya 
-            /*else {
-                QMessageBox msgBox;
-                msgBox.setText("You have reached the maximum number of trips.");
-                msgBox.setInformativeText("Renew subscription? Press Yes. Main menu? Press No.");
-                msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-                int ret = msgBox.exec();
+}
 
-                if (ret == QMessageBox::Yes) {
-                    renew_time(arr_users[indexofuser].sub);
-                }
-                else {
-                    return;
-                }
-            }*/
-        }
-        else {
-            QMessageBox::warning(this, "Zone Error", "You didn't subscribe to this zone. Try another one.");
-            return;
-        }
-    }
 
-    // Ask for another trip
-    //QMessageBox againBox;
-    //againBox.setText("Do you want another trip?");
-    //againBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-    //int againResponse = againBox.exec();
-    //if (againResponse == QMessageBox::No) {
-    //    close(); // Or go to main menu
-    //}
 
- string path= findShortestPath(find_st_num(start_st),find_st_num(end_st));
-  
-    ui->viewride->clear();
-   ui->viewride->setText(QString::fromStdString(path));
+void  QtWidgetsApplication3::on_admin_mainmenu_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->admin);
+}
+
+
+//DONT PUT THE USERNAME SAVE OR EMAIL SAVE OR TOEDIT HERE 
+//THEY ARE IN THE PERSONAL DETAILS .CPP DONT PUT IT HERE AGAIN 
+//SEEE THAT COMMENT 
+//I WILL KILL THE PERSON WHO WILL PUT IT HERE 
+//I 
 
 
 }
@@ -1334,6 +1115,7 @@ void QtWidgetsApplication3::on_pushButton_addYear_clicked() {
 void QtWidgetsApplication3::on_back1_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
+
 void QtWidgetsApplication3::on_back2_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->welcome2);
 }
@@ -1353,7 +1135,11 @@ void QtWidgetsApplication3::on_back7_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->manage_plan);
 }
 void QtWidgetsApplication3::on_back8_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->manage_plan);
+    ui->stackedWidget->setCurrentWidget(ui->welcome2);
+}
+
+void QtWidgetsApplication3::on_back12_clicked() {
+    ui->stackedWidget->setCurrentWidget(ui->current_data);
 }
 void QtWidgetsApplication3::on_back9_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->subscription_settings);
@@ -1379,7 +1165,10 @@ void QtWidgetsApplication3::on_exit3_clicked() {
 
 void QtWidgetsApplication3::on_exit02_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
+
 }
+
+
 void QtWidgetsApplication3::on_exit4_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 }
@@ -1395,9 +1184,6 @@ void QtWidgetsApplication3::on_exit7_clicked() {
 void QtWidgetsApplication3::on_exit8_clicked() {
     ui->stackedWidget->setCurrentWidget(ui->end);
 }
-
-
-
 
 
 void QtWidgetsApplication3::on_logout_clicked() {
