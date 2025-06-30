@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
 
     Register x;
     QtWidgetsApplication3 w;
-
+    x.resize(1440, 1028);
     QObject::connect(&x, &Register::switchToMainWindow, &x, [&x, &w]() {
         
 
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
         x.hide();
         w.show();
         w.setPage(0);
-        w.choose_sub();
+        //w.choose_sub();
 
         });
 

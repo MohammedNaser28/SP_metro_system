@@ -38,7 +38,7 @@ struct wallet {
 struct info {
     int duration;
     int no_of_trips;
-    int zonesPrice[30] = { 0 };
+    int zonesPrice[30];
     int zone_num;
 };
 
