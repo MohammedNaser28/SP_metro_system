@@ -1,42 +1,89 @@
-line 1  				line 2  					line 3
-
-Helwan.             	El-Monib.           	Adly_Mansour.       	
-Ain_Helwan.         	Sakiat_Mekki.       	El-Haykestep.       	
-Helwan_University.  	Omm_El-Misryeen.    	Omar_Ibn_El-Khattab.	
-Wadi_Hof.           	Giza.               	Qobaa.              	
-Hadayek_Helwan.     	Faisal.             	Hesham_Barakat.     	
-El-Ma'sara.         	Cairo_University_2.   	El-Nozha.           	
-Torah_El-Asmant.    	El_Bohouth.         	Shams_Club.         	
-Kotsika.            	Dokki.              	Alf_Maskan.         	
-Torah_El-Balad.     	Opera.              	Heliopolis.         	
-Thakanat_El-Maadi.  	Sadat.              	Haroun.             	
-El-Maadi.           	Mohamed_Naguib.     	El-Ahram.           	
-Hadayek_El-Maadi.   	Attaba.             	Kolyet_El-Banat.    	
-Dar_El-Salam.       	Shohadaa.           	Cairo_Stadium.      	
-El-Zahraa.          	Massara.            	Fair_zone.          	
-Mar-Girgis.         	Rod_El-Farag.       	Abbassia.           	
-El-Malek_El-Saleh.  	Saint_Theresa.      	Abdou_Pasha.        	
-Sayeda_Zeinab.      	El-Khalafawy.       	El-Geish.           	
-Saad_Zaghloul.      	Mezallat.           	Bab_El-Shaaria.     	
-Sadat.              	Koliet_El-Zeraa.    	Attaba.             	
-Nasser.             	Shubra_El-Kheima.   	Nasser.             	
-Orabi.              	-                   	Maspero.            	
-Shohadaa.           	-                   	Safaa_Hegazy.       	
-Ghamra.             	-                   	Kit_Kat.            	
-Demerdash.          	-                   	Sudan.              	
-Manshiet_El-Sadr.   	-                   	Imbaba.             	
-Kobri_El-Qobba.     	-                   	El-Bohy.            	
-Hammamat_El-Qobba.  	-                   	El-Qawmeya_El-Arabia.	
-Saray_El-Qobba.     	-                   	Ring_Road.          	
-Hadayek_El-Zaitoun. 	-                   	Rod_El-Farag_corr.  	
-Helmeyet_El-Zaitoun.	-                   	Switching.        	
-El-Matareyya.       	-                   	El-Tawfikia.       	
-Ain-Shams.          	-                   	Wadi_El-Nile.    	
-Ezbet_El-Nakhl.     	-                   	Gameat_El-Dowal.  	
-El-Marg.            	-                   	Boulak_El-Dakrour.   	
-New_El-Marg.        	-                   	Cairo_University.                  	
--                   	-                   	-                   	
--                   	-                   	-                   	
--                   	-                   	-                   	
--                   	-                   	-                   	
--                   	-                   	-                   	
+Helwan.,1
+Ain_Helwan.,1
+Helwan_University.,1
+Giza.,1
+Faisal.,1
+Cairo_University_2.,1
+El_Bohouth.,1
+Dokki.,1
+Opera.,1
+Sadat.,1
+Mohamed_Naguib.,1
+Attaba.,1
+Shohadaa.,1
+Massara.,1
+El-Malek_El-Saleh.,1
+Sayeda_Zeinab.,1
+Saad_Zaghloul.,1
+Sadat.,1
+Nasser.,1
+Orabi.,1
+Shohadaa.,1
+Ghamra.,1
+Demerdash.,1
+Manshiet_El-Sadr.,1
+Kobri_El-Qobba.,1
+Hammamat_El-Qobba.,1
+Saray_El-Qobba.,1
+Hadayek_El-Zaitoun.,1
+Helmeyet_El-Zaitoun.,1
+El-Matareyya.,1
+Ain-Shams.,1
+Ezbet_El-Nakhl.,1
+El-Marg.,1
+New_El-Marg.,1
+El-Monib.,2
+Sakiat_Mekki.,2
+Omm_El-Misryeen.,2
+Qobaa.,2
+Hesham_Barakat.,2
+El-Nozha.,2
+Shams_Club.,2
+Alf_Maskan.,2
+Heliopolis.,2
+Haroun.,2
+El-Ahram.,2
+Kolyet_El-Banat.,2
+Cairo_Stadium.,2
+Fair_zone.,2
+Rod_El-Farag.,2
+Saint_Theresa.,2
+El-Khalafawy.,2
+Mezallat.,2
+Koliet_El-Zeraa.,2
+Shubra_El-Kheima.,2
+Adly_Mansour.,3
+El-Haykestep.,3
+Wadi_Hof.,3
+Hadayek_Helwan.,3
+El-Ma'sara.,3
+Torah_El-Asmant.,3
+Kotsika.,3
+Torah_El-Balad.,3
+Thakanat_El-Maadi.,3
+El-Maadi.,3
+Hadayek_El-Maadi.,3
+Dar_El-Salam.,3
+El-Zahraa.,3
+Mar-Girgis.,3
+Abbassia.,3
+Abdou_Pasha.,3
+El-Geish.,3
+Bab_El-Shaaria.,3
+Attaba.,3
+Nasser.,3
+Maspero.,3
+Safaa_Hegazy.,3
+Kit_Kat.,3
+Sudan.,3
+Imbaba.,3
+El-Bohy.,3
+El-Qawmeya_El-Arabia.,3
+Ring_Road.,3
+Rod_El-Farag_corr.,3
+Switching.,3
+El-Tawfikia.,3
+Wadi_El-Nile.,3
+Gameat_El-Dowal.,3
+Boulak_El-Dakrour.,3
+Cairo_University.,3
